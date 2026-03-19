@@ -46,7 +46,7 @@ export function Header() {
   return (
     <>
       <header className={`w-full sticky top-0 z-50 ${isHome ? 'bg-[#1a1a1a] text-white' : 'bg-white border-b border-gray-100 text-gray-900'}`}>
-        <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between w-full">
+        <nav className="max-w-7xl mx-auto px-0 md:px-6 h-20 flex items-center justify-between w-full">
           <Link href="/" className="relative h-30 w-50 block">
             <Image
               src="/OG.PNG"
@@ -84,11 +84,11 @@ export function Header() {
 
             {/* Hamburger button — mobile only */}
             <button
-              className="md:hidden p-2 -mr-2"
+              className="md:hidden p-2.5 -mr-2 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-md"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </nav>
