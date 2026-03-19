@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-edu-gold: #f59e0b;
+  --color-edu-orange: #ea580c;
+  --color-edu-dark: #0a0a0a;
+  --color-primary: #ec5b13;
+}
+
+.skew-card {
+  transform: skewX(-10deg);
+}
+.unskew {
+  transform: skewX(10deg);
+}
+.accordion-item[open] summary svg {
+  transform: rotate(45deg);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
