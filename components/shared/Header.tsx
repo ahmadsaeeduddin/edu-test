@@ -58,7 +58,7 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <div className="hidden md:flex items-center space-x-8 text-sm font-regular font-inter">
             <Link href="/about" className={linkClass('/about')}>About Us</Link>
             <div className="relative group">
               <button className={`flex items-center transition-colors ${isHome ? 'hover:text-orange-400' : (pathname === '/services' ? 'text-black font-semibold' : 'text-gray-600 hover:text-black')}`}>

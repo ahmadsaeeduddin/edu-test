@@ -4,39 +4,39 @@ export function About() {
   return (
     <section className="relative -mt-15 z-10 pb-20">
       <div className="layout-container">
-      <div className="bg-white p-6 md:p-12 shadow-sm">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-          <div className="w-full md:w-1/2">
-            <h2 className="font-general text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-4">
-              About Edunautics
-              <span className="h-px bg-gray-200 flex-grow"></span>
+        <div className="bg-white p-6 shadow-sm md:p-12">
+          <div className="w-full">
+            <h2 className="font-general mb-6 flex w-full items-baseline gap-4 text-2xl font-medium md:mb-8 md:text-3xl">
+              <span className="shrink-0">About Edunautics</span>
+              <span className="flex min-w-0 flex-1 justify-center" aria-hidden>
+                <span className="h-0.5 w-27 shrink-0 bg-gray-200  md:w-67 lg:w-126" />
+              </span>
             </h2>
-            <p className="text-base md:text-3xl text-gray-400 leading-snug">
+            <p className="text-base leading-snug text-gray-400 md:text-3xl">
               Edunautics is more than an EdTech platform - <span className="text-gray-800">it&apos;s an initiative to reimagine education through research, innovation and industry collaboration.</span>
             </p>
           </div>
-        </div>
-        
-        <div className="mt-10 md:mt-20 bg-gradient-to-br from-[#2b251a] via-[#1f1a12] to-[#3a2f1e] text-white p-6 md:p-16 rounded-xl skew-card">
-          <div className="unskew grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-8 gap-x-12">
-            {[
-              "Mentorship Programs",
-              "Hands-On Projects",
-              "Research-Driven Learning",
-              "Experiential Learning",
-              "Artificial Intelligence Learning",
-              "Innovation Ecosystem"
-            ].map((feature, i) => (
-              <div key={i} className="flex items-center gap-3 md:gap-4">
-                <span className="bg-white/10 p-1.5 md:p-2 rounded-full shrink-0">
-                  <Check className="w-4 h-4 md:w-5 md:h-5 text-orange-400" />
-                </span>
-                <span className="text-sm md:text-lg font-medium">{feature}</span>
-              </div>
-            ))}
+
+          <div className="mt-10 skew-card rounded-xl bg-gradient-to-br from-[#2b251a] via-[#1f1a12] to-[#3a2f1e] p-6 text-white md:mt-20 md:p-16">
+            <div className="unskew grid grid-cols-1 gap-x-12 gap-y-5 md:grid-cols-2 md:gap-y-8">
+              {[
+                'Mentorship Programs',
+                'Hands-On Projects',
+                'Research-Driven Learning',
+                'Experiential Learning',
+                'Artificial Intelligence Learning',
+                'Innovation Ecosystem',
+              ].map((feature, i) => (
+                <div key={i} className="flex items-center gap-3 md:gap-4">
+                  <span className="shrink-0 rounded-full bg-white/10 p-1.5 md:p-2">
+                    <Check className="h-4 w-4 text-orange-400 md:h-5 md:w-5" />
+                  </span>
+                  <span className="text-sm font-medium md:text-lg">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );
