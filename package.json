@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "clean": "next clean"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@google/genai": "^1.17.0",

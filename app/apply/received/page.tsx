@@ -18,7 +18,7 @@ export default function ApplicationReceivedPage() {
             </svg>
           </div>
         </div>
-        <h1 className="font-[family-name:var(--font-dm-serif)] text-4xl md:text-5xl font-bold text-[#111827] mb-6 tracking-tight">
+        <h1 className="font-general text-4xl md:text-5xl font-bold text-[#111827] mb-6 tracking-tight">
           Thank you for Applying!
         </h1>
         <p className="text-lg text-gray-500 leading-relaxed mb-10 max-w-xl mx-auto">

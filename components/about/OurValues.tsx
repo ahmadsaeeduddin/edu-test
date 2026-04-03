@@ -4,7 +4,7 @@ export default function OurValues() {
   return (
     <section className="flex flex-col gap-12">
       <div className="flex flex-col gap-4">
-        <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-3xl font-bold tracking-tight">Our Values</h2>
+        <h2 className="font-general text-2xl md:text-3xl font-bold tracking-tight">Our Values</h2>
         <h3 className="text-xl font-bold text-slate-800">Principles That Power Every Learner&apos;s Journey</h3>
         <p className="text-slate-600 text-lg max-w-4xl">At Edunautics, our values are the compass guiding how we teach, learn, and innovate. They shape our culture, our programs, and every collaboration - ensuring that learning isn&apos;t just about growth, but about impact with integrity.</p>
       </div>

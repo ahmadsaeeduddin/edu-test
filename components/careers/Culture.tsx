@@ -25,7 +25,7 @@ export default function Culture() {
   return (
     <section id="culture" className="py-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-3xl font-bold mb-16">Our Culture</h2>
+        <h2 className="font-general text-2xl md:text-3xl font-bold mb-16">Our Culture</h2>
         <div className="space-y-0 border-t border-gray-200">
           {items.map((item, index) => (
             <div key={index} className="flex flex-col md:flex-row py-10 border-b border-gray-200">

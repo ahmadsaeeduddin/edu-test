@@ -22,9 +22,9 @@ export function WhatWeOffer() {
 
   return (
     <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-4xl font-bold mb-6">What We Offer</h2>
+      <div className="layout-container">
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <h2 className="font-general text-2xl md:text-4xl font-bold mb-6">What We Offer</h2>
           <p className="text-gray-500">At Edunautics, we design experiences that go beyond courses - connecting curiosity with capability and research with real-world application.</p>
         </div>
         {/* Mobile: horizontal scroll */}

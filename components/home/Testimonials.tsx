@@ -25,9 +25,9 @@ export function Testimonials() {
 
   return (
     <section className="py-24 bg-[#f9f9f9]">
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="layout-container">
       <div className="flex justify-between items-center mb-16">
-        <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-4xl font-bold">Testimonials</h2>
+        <h2 className="font-general text-2xl md:text-4xl font-bold">Testimonials</h2>
         <div className="flex gap-4">
           <button className="w-10 h-10 border border-gray-300 flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
             <ChevronLeft className="w-5 h-5" />

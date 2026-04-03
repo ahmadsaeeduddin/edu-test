@@ -11,9 +11,9 @@ export function FAQ() {
 
   return (
     <section className="py-24 bg-[#fcfcfc]">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="layout-container grid grid-cols-1 gap-16 md:grid-cols-2">
         <div>
-          <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-4xl font-bold leading-tight">Frequently <br/>Asked Questions</h2>
+          <h2 className="font-general text-2xl md:text-4xl font-bold leading-tight">Frequently <br/>Asked Questions</h2>
         </div>
         <div className="space-y-4">
           {faqs.map((faq, i) => (

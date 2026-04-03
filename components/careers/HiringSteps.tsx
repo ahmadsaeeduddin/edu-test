@@ -41,7 +41,7 @@ export default function HiringSteps() {
     <section className="py-20 md:py-32">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-4xl font-bold">Steps of Hiring</h2>
+          <h2 className="font-general text-2xl md:text-4xl font-bold">Steps of Hiring</h2>
         </div>
 
         {/* Mobile: horizontal scrollable cards */}

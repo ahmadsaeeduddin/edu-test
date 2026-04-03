@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-20 pb-16">
       <div className="max-w-4xl">
-        <h1 className="font-[family-name:var(--font-dm-serif)] text-3xl md:text-6xl font-bold tracking-tight text-black mb-6">Our Approach</h1>
+        <h1 className="font-general text-3xl md:text-6xl font-bold tracking-tight text-black mb-6">Our Approach</h1>
         <p className="text-xl text-gray-500 font-medium mb-12">Bridging Curiosity, Research, and Real-World Impact</p>
       </div>
       <div className="w-full rounded-2xl overflow-hidden mb-16 shadow-2xl relative aspect-[2.4/1]">

@@ -4,11 +4,11 @@ import { Mail, Phone, Globe, Linkedin, Instagram } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-white pt-24 pb-8">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="layout-container">
         {/* Newsletter Row */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-24">
           <div className="max-w-md mb-8 md:mb-0">
-            <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-4xl font-bold leading-tight">Subscribe for Institutional Insights</h2>
+            <h2 className="font-general text-2xl md:text-4xl font-bold leading-tight">Subscribe for Institutional Insights</h2>
           </div>
           <div className="w-full md:w-auto flex items-center">
             <input

@@ -5,7 +5,7 @@ export default function OurImpact() {
     <section className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="mb-16">
-          <h2 className="font-[family-name:var(--font-dm-serif)] text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Impact</h2>
+          <h2 className="font-general text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Impact</h2>
           <p className="text-lg font-semibold text-gray-800 mb-6">Principles That Power Every Learner&apos;s Journey</p>
           <p className="max-w-4xl text-gray-600 leading-relaxed">
             At Edunautics, impact is not a buzzword &mdash; it&apos;s our benchmark. Every program, partnership, and research initiative is designed to create meaningful outcomes that extend far beyond classrooms. We measure our success not just by what students learn, but by how they apply it to solve real problems, shape industries, and inspire others.

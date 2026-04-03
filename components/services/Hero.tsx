@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <>
       <div className="pb-12 animate-in fade-in slide-in-from-bottom-6 duration-700">
-        <h1 className="font-[family-name:var(--font-dm-serif)] text-[40px] md:text-[56px] lg:text-[64px] leading-[1.1] tracking-[-0.5px] text-[#111110] mb-6">
+        <h1 className="font-general text-[40px] md:text-[56px] lg:text-[64px] leading-[1.1] tracking-[-0.5px] text-[#111110] mb-6">
           Self-Paced Learning Programs
         </h1>
         <p className="text-[16px] text-[#666660] max-w-[800px] leading-[1.6]">

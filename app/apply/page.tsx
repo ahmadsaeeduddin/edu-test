@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ApplyPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-inter">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Hero />
         <ApplicationForm />

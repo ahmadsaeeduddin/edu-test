@@ -16,7 +16,7 @@ export default function Hero() {
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <p className="text-lg font-medium mb-6">Careers</p>
-        <h1 className="font-[family-name:var(--font-dm-serif)] text-3xl md:text-6xl font-bold leading-tight mb-8">
+        <h1 className="font-general text-3xl md:text-6xl font-bold leading-tight mb-8">
           Join Us in Shaping the <br />Future of Learning
         </h1>
         <p className="text-xl opacity-90 mb-10 max-w-2xl leading-relaxed">

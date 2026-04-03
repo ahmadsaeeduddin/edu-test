@@ -3,11 +3,11 @@ import { Check } from 'lucide-react';
 export function About() {
   return (
     <section className="relative -mt-15 z-10 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="layout-container">
       <div className="bg-white p-6 md:p-12 shadow-sm">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
           <div className="w-full md:w-1/2">
-            <h2 className="font-[family-name:var(--font-dm-serif)] text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-4">
+            <h2 className="font-general text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-4">
               About Edunautics
               <span className="h-px bg-gray-200 flex-grow"></span>
             </h2>

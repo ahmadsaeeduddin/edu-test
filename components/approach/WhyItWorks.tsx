@@ -4,7 +4,7 @@ export default function WhyItWorks() {
   return (
     <section className="py-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <h2 className="font-[family-name:var(--font-dm-serif)] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Why Our Approach Works</h2>
+        <h2 className="font-general text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Why Our Approach Works</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="rounded-2xl overflow-hidden relative aspect-square">
             <Image

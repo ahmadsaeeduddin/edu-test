@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="flex flex-col gap-6">
       <div className="flex flex-col gap-4">
-        <h1 className="font-[family-name:var(--font-dm-serif)] text-slate-900 text-3xl md:text-6xl font-bold tracking-tight">
+        <h1 className="font-general text-slate-900 text-3xl md:text-6xl font-bold tracking-tight">
           About Edunautics
         </h1>
         <p className="text-slate-700 text-xl font-medium">
