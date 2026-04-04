@@ -4,7 +4,9 @@ export default function WhyItWorks() {
   return (
     <section className="py-24">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <h2 className="font-general text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Why Our Approach Works</h2>
+        <h2 className="mb-16 text-center font-general text-2xl font-medium tracking-tight text-slate-900 md:text-4xl">
+          Why Our Approach Works
+        </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="rounded-2xl overflow-hidden relative aspect-square">
             <Image
@@ -20,27 +22,34 @@ export default function WhyItWorks() {
 
             <div className="relative pl-8">
               <div className="absolute left-[-2.05rem] top-1 w-4 h-4 rounded-full bg-white border-4 border-edu-gold"></div>
-              <h3 className="text-xl font-bold mb-3">Hands-on, Mentor-Led Learning</h3>
-              <p className="text-gray-600 leading-relaxed">Every program combines guided exploration with teamwork and personalized mentorship.</p>
+              <h3 className="mb-3 font-general text-xl font-medium">Hands-on, Mentor-Led Learning</h3>
+              <p className="font-inter font-regular leading-relaxed text-slate-600">
+                Every program combines guided exploration with teamwork and personalized mentorship.
+              </p>
             </div>
 
             <div className="relative pl-8">
               <div className="absolute left-[-2.05rem] top-1 w-4 h-4 rounded-full bg-white border-4 border-edu-gold"></div>
-              <h3 className="text-xl font-bold mb-3">Community &amp; Collaboration</h3>
-              <p className="text-gray-600 leading-relaxed">Open learning circles and innovation labs create spaces for knowledge exchange and creativity.</p>
+              <h3 className="mb-3 font-general text-xl font-medium">Community &amp; Collaboration</h3>
+              <p className="font-inter font-regular leading-relaxed text-slate-600">
+                Open learning circles and innovation labs create spaces for knowledge exchange and creativity.
+              </p>
             </div>
 
             <div className="relative pl-8">
               <div className="absolute left-[-2.05rem] top-1 w-4 h-4 rounded-full bg-white border-4 border-edu-gold"></div>
-              <h3 className="text-xl font-bold mb-3">Continuous Evolution</h3>
-              <p className="text-gray-600 leading-relaxed">We adapt our courses and research tracks with the evolving EdTech landscape to stay ahead of trends.</p>
+              <h3 className="mb-3 font-general text-xl font-medium">Continuous Evolution</h3>
+              <p className="font-inter font-regular leading-relaxed text-slate-600">
+                We adapt our courses and research tracks with the evolving EdTech landscape to stay ahead of trends.
+              </p>
             </div>
           </div>
         </div>
 
         <div className="mt-24 text-center max-w-4xl mx-auto">
-          <p className="text-xl md:text-3xl font-light text-gray-700 leading-tight">
-            At Edunautics, learning is not <span className="font-medium">just preparation for the future - it creates the future.</span>
+          <p className="font-inter text-xl font-regular leading-tight text-slate-700 md:text-2xl">
+            At Edunautics, learning is not{' '}
+            <span className="font-medium">just preparation for the future - it creates the future.</span>
           </p>
         </div>
       </div>

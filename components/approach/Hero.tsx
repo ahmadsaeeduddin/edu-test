@@ -2,26 +2,27 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-20 pb-16">
-      <div className="max-w-4xl">
-        <h1 className="font-general text-3xl md:text-6xl font-bold tracking-tight text-black mb-6">Our Approach</h1>
-        <p className="text-xl text-gray-500 font-medium mb-12">Bridging Curiosity, Research, and Real-World Impact</p>
+    <section className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
+        <h1 className="font-general text-3xl font-medium tracking-tight text-slate-900 md:text-6xl">Our Approach</h1>
+        <p className="font-inter text-xl font-regular text-slate-700 md:text-2xl">
+          Bridging Curiosity, Research, and Real-World Impact
+        </p>
       </div>
-      <div className="w-full rounded-2xl overflow-hidden mb-16 shadow-2xl relative aspect-[2.4/1]">
+      <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl shadow-sm">
         <Image
-          // src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkiRinbIxtXbWN9A2VZxTeQBeydum6I2ux6TnYGb9zyMCPuLPeBmcqrU3t0Y5rxTKu4AxUgyrfPJ4oRXlqk2Y8VKlgurzN21P5zInOhiOHs2oPuWTpP3MQJX6hCz0iNN0AjL_s4VPPmrZX3QsR-L0jJtBYZxi347WXxoZmGcrMrLL69NUR7890tkH1FqrmmqkMXFCFBgSgkZiTdKEdl1WAsAOIhOf23qMzi_mWDFL4Swx5119V6YfRRi5IUqSntRjpV2ia9vHV-04"
-          src="/approch.jpg"
+          src="/assets/hero-images/our-approach-hero.webp"
           alt="Abstract golden swirls representing the learning journey"
           fill
-          className="object-cover"
-          referrerPolicy="no-referrer"
+          className="scale-100 object-cover"
+          priority
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
-        <div className="text-lg leading-relaxed text-gray-600">
+      <div className="grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-2">
+        <div className="font-inter text-lg font-regular leading-relaxed text-slate-600 md:text-xl">
           At Edunautics, our approach to learning goes beyond courses&mdash;it&apos;s about cultivating a mindset of discovery. We believe education should not stop at understanding concepts but evolve into creating solutions that make a difference. Every learner here is encouraged to question, explore, and innovate, transforming research into real-world outcomes.
         </div>
-        <div className="text-lg leading-relaxed text-gray-600">
+        <div className="font-inter text-lg font-regular leading-relaxed text-slate-600 md:text-xl">
           Our model integrates academic excellence, industry collaboration, and AI-driven exploration to ensure students don&apos;t just learn - they lead the change.
         </div>
       </div>

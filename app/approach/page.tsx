@@ -13,8 +13,10 @@ export const metadata: Metadata = {
 
 export default function ApproachPage() {
   return (
-    <div className="bg-white text-gray-800">
-      <Hero />
+    <div className="flex w-full flex-col overflow-x-clip">
+      <div className="mx-auto w-full max-w-[1200px] px-6 pt-16 pb-24 md:px-12">
+        <Hero />
+      </div>
       <CorePillars />
       <WhyItWorks />
       <OurImpact />

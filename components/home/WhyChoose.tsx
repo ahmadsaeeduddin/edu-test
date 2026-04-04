@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function WhyChoose() {
   return (
-    <section className="bg-[#f9f9f9] py-20">
+    <section className="bg-light-bg py-20">
       <div className="layout-container">
         <h2 className="font-general mb-16 text-center text-3xl font-medium md:text-5xl">
           Why Choose Edunautics Programs

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Mail, Phone, Globe, Linkedin, Instagram } from 'lucide-react';
 import { FaqFooterLink } from '@/components/shared/FaqFooterLink';
+import { FooterSubscribeButton } from '@/components/shared/FooterSubscribeButton';
 
 export function Footer() {
   return (
@@ -17,12 +18,7 @@ export function Footer() {
               placeholder="Enter email address"
               type="email"
             />
-            <button
-              type="button"
-              className="border-y border-r border-edu-gold border-l-0 bg-edu-gold px-8 py-3 font-bold whitespace-nowrap text-darkText transition-[filter] hover:brightness-95"
-            >
-              Subscribe Now &rarr;
-            </button>
+            <FooterSubscribeButton />
           </div>
         </div>
 

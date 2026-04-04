@@ -9,7 +9,7 @@ import { HomeHashScroll } from '@/components/home/HomeHashScroll';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen overflow-x-clip bg-white text-gray-900">
       <HomeHashScroll />
       <Hero />
       <About />

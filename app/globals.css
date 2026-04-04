@@ -58,9 +58,13 @@
   --color-primary: #ec5b13;
   --color-dark: #1a1a1a;
   --color-lightGray: #E6E9EA;
-  --color-black: ##0D0D0D;
+  --color-black: #0d0d0d;
   --color-darkText: #1D1D1D;
   --color-separator: #727272;
+  --color-light-yellow: #fff7ea;
+  --color-white: #ffffff;
+  --color-gradientOuter: #EDEDED;
+  --color-light-bg: #f6f6f6;
 }
 
 /* One source of truth: same box as max-w-7xl + mx-auto + px-6 (avoids subtle flex/HMR mismatches) */
@@ -69,6 +73,11 @@
   max-width: 80rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
+}
+
+/* CTA sections: white center → --color-gradientOuter at edges */
+.cta-radial-bg {
+  background-image: radial-gradient(circle at center, #ffffff 0%, var(--color-gradientOuter) 100%);
 }
 
 .skew-card {
