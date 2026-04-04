@@ -12,12 +12,12 @@ export function About() {
                 <span className="h-0.5 w-27 shrink-0 bg-gray-200  md:w-67 lg:w-126" />
               </span>
             </h2>
-            <p className="text-base leading-snug text-gray-400 md:text-3xl">
+            <p className="text-base leading-snug text-gray-400 md:text-3xl w-[70%]">
               Edunautics is more than an EdTech platform - <span className="text-gray-800">it&apos;s an initiative to reimagine education through research, innovation and industry collaboration.</span>
             </p>
           </div>
 
-          <div className="mt-10 skew-card rounded-xl bg-gradient-to-br from-[#2b251a] via-[#1f1a12] to-[#3a2f1e] p-6 text-white md:mt-20 md:p-16">
+          <div className="mt-5 skew-card rounded-xl bg-gradient-to-br from-[#2b251a] via-[#1f1a12] to-[#3a2f1e] p-6 text-white md:mt-20 md:p-16">
             <div className="unskew grid grid-cols-1 gap-x-12 gap-y-5 md:grid-cols-2 md:gap-y-8">
               {[
                 'Mentorship Programs',
@@ -28,10 +28,10 @@ export function About() {
                 'Innovation Ecosystem',
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 md:gap-4">
-                  <span className="shrink-0 rounded-full bg-white/10 p-1.5 md:p-2">
-                    <Check className="h-4 w-4 text-orange-400 md:h-5 md:w-5" />
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white md:size-9">
+                    <Check className="size-4 text-[#FFFFFF] md:size-5" strokeWidth={2} />
                   </span>
-                  <span className="text-sm font-medium md:text-lg">{feature}</span>
+                  <span className="text-sm font-medium text-[#FFFFFF] md:text-lg">{feature}</span>
                 </div>
               ))}
             </div>
