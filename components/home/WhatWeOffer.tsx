@@ -1,69 +1,81 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-export function WhatWeOffer() {
-  const offers = [
-    {
-      title: "Self-Paced Learning Programs",
-      desc: "Learn from anywhere with flexible scheduling",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBPxbALDDz0K53ZN6IzjlyRdpDrqCh43US-oLK-95eH4lwP0iRJPkhl4CzRyLG9E3wnVexwIU4YPbJ4nTLz_txAjJMT_vAziGRv3WGb-JKZ7s6YnjbnRIOoSBMZv3-b5dsKWqTLsqeISzN-DfWRJLAUe45kShOi3SlJ28xIrBEAk39eAVPw4YJowohzMD9NRFOFZ7JNghri_g-GdgcXTrhuLCRNRsKOlQ-iJBgu3f_OHVBvDQynttjizTQUJIdxE3ewvjGcj92FWw"
-    },
-    {
-      title: "In-Person Learning Programs",
-      desc: "Face to face collaboration and hands-on experience",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCQdEq49FhXtahnEMNchspKoXZYXlZYeTzqBksUrOeM9FWmyfIs8FxJ1EGmj4J3jrFx1OFe98t2o77fAf3C2LKMnhBRXa4RUGvwvLnITxuvvk0sEpqMYjVLHT_zYugBlIgEl_0lLvWsoKNzQayjbtMo87TlkddB9JzJxWa2igMF2kHTjO17Ay0YuNyO3YfXBeuHrifOJm6Iz_Mz1xKLsOsj9KB043tEYoBQdBER6Yyimb-ZgoqphBOXIeO_377q3Mk5yzcCYgyrf50"
-    },
-    {
-      title: "Innovation & Community Spaces",
-      desc: "Collaborative projects and networking opportunities",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAP9K5RmmATyS9m4vVQzZgO5y0NUHklTFSMLMXy-_Wqh7Ah0OIwfkAPcL9-TeNaiflmLoMjIlEs0BcbvRy-6g8IaEwmWXQQoJGb1g5EGdgXFsHo_k_dWdd63H-0PBlEQXLbd337n8q4YA6IaFHBf1gyKk80aqvmJQJpB5PoOtXwF1cHRYiONlv2k_igU3o_RpVriO_CJ5r-j_CcNAAKtoDKYDD2T2QVfNxMaN2Wyhese2nz2G-MwNGZ-Yn8EwoFP1t0iUfam4fphBo"
-    }
-  ];
+const offers = [
+  {
+    title: 'Self-Paced Learning Programs',
+    desc: 'Learn from anywhere with flexible scheduling',
+    img: '/assets/WhatWeOffer/Self-Paced_Learning_Programs.webp',
+  },
+  {
+    title: 'In-Person Learning Programs',
+    desc: 'Face to face collaboration and hands-on experience',
+    img: '/assets/WhatWeOffer/In-Person_Learning_Programs.webp',
+  },
+  {
+    title: 'Innovation & Community Spaces',
+    desc: 'Collaborative projects and networking opportunities',
+    img: '/assets/WhatWeOffer/Innovation_Community_Spaces.webp',
+  },
+] as const;
 
+function OfferCard({
+  offer,
+  className,
+}: {
+  offer: (typeof offers)[number];
+  className?: string;
+}) {
+  return (
+    <div
+      className={`group relative shrink-0 overflow-hidden rounded-[4px] ${className ?? ''}`}
+    >
+      <Image
+        alt={offer.title}
+        src={offer.img}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        sizes="(max-width: 768px) 280px, 33vw"
+      />
+      <div className="absolute bottom-2 left-2 right-2 flex items-start justify-between gap-3 rounded-[4px] bg-white/30 p-4 shadow-sm backdrop-blur-md">
+        <div className="min-w-0 flex-1 text-left">
+          <h4 className="font-general text-sm font-bold text-slate-900 md:text-base">{offer.title}</h4>
+          <p className="mt-1 font-inter text-xs font-regular leading-snug text-slate-800 md:text-sm">
+            {offer.desc}
+          </p>
+        </div>
+        <Link
+          href="/services"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition hover:bg-slate-50"
+          aria-label={`Learn more about ${offer.title}`}
+        >
+          <ArrowRight className="h-4 w-4" strokeWidth={2} />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function WhatWeOffer() {
   return (
     <section className="py-24">
       <div className="layout-container">
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <h2 className="font-general text-3xl md:text-5xl font-general font-medium mb-6">What We Offer</h2>
-          <p className="text-gray-500 font-inter font-regular text-lg">At Edunautics, we design experiences that go beyond courses - connecting curiosity with capability and research with real-world application.</p>
-        </div>
-        {/* Mobile: horizontal scroll */}
-        <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide">
-          {offers.map((offer, i) => (
-            <div key={i} className="group relative h-[260px] w-[280px] shrink-0 snap-center overflow-hidden rounded-[4px]">
-              <Image alt={offer.title} className="object-cover" fill src={offer.img} referrerPolicy="no-referrer" />
-              <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-5">
-                <div className="bg-white/90 backdrop-blur p-3 flex items-center justify-between rounded">
-                  <div>
-                    <h4 className="font-bold text-sm">{offer.title}</h4>
-                    <p className="text-[10px] text-gray-600">{offer.desc}</p>
-                  </div>
-                  <span className="bg-black text-white p-1 rounded-full shrink-0 ml-2">
-                    <ArrowRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+          <h2 className="mb-6 font-general text-3xl font-medium md:text-5xl">What We Offer</h2>
+          <p className="font-inter text-lg font-regular text-gray-500">
+            At Edunautics, we design experiences that go beyond courses - connecting curiosity with capability and
+            research with real-world application.
+          </p>
         </div>
 
-        {/* Desktop: grid */}
-        <div className="hidden md:grid grid-cols-3 gap-8">
-          {offers.map((offer, i) => (
-            <div key={i} className="group relative h-[300px] overflow-hidden rounded-[4px]">
-              <Image alt={offer.title} className="object-cover" fill src={offer.img} referrerPolicy="no-referrer" />
-              <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
-                <div className="bg-white/90 backdrop-blur p-4 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-bold text-sm">{offer.title}</h4>
-                    <p className="text-[10px] text-gray-600">{offer.desc}</p>
-                  </div>
-                  <span className="bg-black text-white p-1 rounded-full">
-                    <ArrowRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </div>
-            </div>
+        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+          {offers.map((offer) => (
+            <OfferCard
+              key={offer.title}
+              offer={offer}
+              className="h-[400px] w-[280px] snap-center md:h-[400px] md:w-auto"
+            />
           ))}
         </div>
       </div>
