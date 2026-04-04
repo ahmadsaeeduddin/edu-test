@@ -8,13 +8,12 @@ export default function WhyItWorks() {
           Why Our Approach Works
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="rounded-2xl overflow-hidden relative aspect-square">
+          <div className="rounded-md overflow-hidden relative aspect-square">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5QCyMO1Io7aQcV2dbn3v4yw24SoVL7vXVRDNHXo7RvTid4jHy_1NozKadkMoMhjPTLG-SQeC0l_F6aEFulmeDrzSpFVDNOkPJk0BSSnj5T7S9yObvktGc0lauZo3UEhl2XG-mfy2haiVZeIyhDsn9eI1Fhl8sQ3ZVE4cjjM7I3AJQUq-yurFXDj0JLpUiCXGwK57k5AxI2ZmMAhP7sV407o53W5ZhngxfOlJXgXeKzaSlBs9w9DVsns-iwibztB2xn0w-LWSvQ2g"
+              src="/assets/why_it_works-image.webp"
               alt="Supporting abstract imagery"
               fill
               className="object-cover"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="space-y-12 relative">

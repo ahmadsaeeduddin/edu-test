@@ -33,9 +33,9 @@ export function Header() {
   const linkClass = (href: string) => {
     const isActive = pathname === href;
     if (isHome) {
-      return `transition-colors ${isActive ? 'text-orange-400 font-semibold' : 'hover:text-orange-400'}`;
+      return `transition-colors ${isActive ? 'font-bold text-orange-400' : 'font-regular hover:text-orange-400'}`;
     }
-    return `transition-colors ${isActive ? 'text-black font-semibold' : 'text-gray-600 hover:text-black'}`;
+    return `transition-colors ${isActive ? 'font-bold text-black' : 'font-regular text-gray-600 hover:text-black'}`;
   };
 
   const mobileLinkClass = (href: string) => {
@@ -58,14 +58,28 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center space-x-8 text-sm font-regular font-inter">
+          <div className="hidden items-center space-x-8 font-inter text-sm font-regular md:flex">
             <Link href="/about" className={linkClass('/about')}>About Us</Link>
             <div className="relative group">
-              <button className={`flex items-center transition-colors ${isHome ? 'hover:text-orange-400' : (pathname === '/services' ? 'text-black font-semibold' : 'text-gray-600 hover:text-black')}`}>
-                What We Offer <ChevronDown className="ml-1 w-4 h-4" />
+              <button
+                type="button"
+                className={`flex items-center transition-colors ${
+                  pathname === '/services'
+                    ? 'font-bold text-black'
+                    : isHome
+                      ? 'font-regular hover:text-orange-400'
+                      : 'font-regular text-gray-600 hover:text-black'
+                }`}
+              >
+                What We Offer <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute top-full left-0 mt-2 bg-white border border-gray-100 rounded-md shadow-lg py-2 min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                <Link href="/services" className="block px-4 py-2 text-sm text-gray-600 hover:text-black hover:bg-gray-50">Self-Paced Learning Programs</Link>
+              <div className="absolute left-0 top-full mt-2 min-w-[220px] rounded-md border border-gray-100 bg-white py-2 font-inter text-sm shadow-lg opacity-0 invisible transition-all group-hover:visible group-hover:opacity-100">
+                <Link
+                  href="/services"
+                  className={`block px-4 py-2 transition-colors hover:bg-gray-50 ${pathname === '/services' ? 'font-bold text-black' : 'font-regular text-gray-600 hover:text-black'}`}
+                >
+                  Self-Paced Learning Programs
+                </Link>
               </div>
             </div>
             <Link href="/approach" className={linkClass('/approach')}>Our Approach</Link>
@@ -77,7 +91,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/apply"
-              className={`hidden md:inline-block px-6 py-2.5 rounded-md text-sm font-semibold transition ${isHome ? 'border border-white/30 text-white hover:bg-white hover:text-black' : 'bg-black text-white hover:bg-gray-800'}`}
+              className={`hidden rounded-md px-6 py-2.5 font-inter text-sm transition md:inline-block ${pathname === '/apply' ? 'font-bold' : 'font-regular'} ${isHome ? 'border border-white/30 text-white hover:bg-white hover:text-black' : 'bg-black text-white hover:bg-gray-800'}`}
             >
               Start Learning
             </Link>

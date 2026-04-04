@@ -65,6 +65,7 @@
   --color-white: #ffffff;
   --color-gradientOuter: #EDEDED;
   --color-light-bg: #f6f6f6;
+  --color-pillarNumber:#AEAEB2;
 }
 
 /* One source of truth: same box as max-w-7xl + mx-auto + px-6 (avoids subtle flex/HMR mismatches) */

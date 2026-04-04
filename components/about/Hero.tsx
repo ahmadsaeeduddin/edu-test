@@ -11,7 +11,7 @@ export default function Hero() {
           Equipping Research with Tools That Create Impact Beyond Classrooms
         </p>
       </div>
-      <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-sm relative">
+      <div className="w-full aspect-[21/9] rounded-md overflow-hidden shadow-sm relative">
         <Image
           alt="Abstract orange waves"
           className="object-cover scale-100"
