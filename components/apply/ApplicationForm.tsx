@@ -6,16 +6,15 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
+/** FileList exists only in browsers; never reference the global during SSR/prerender. */
+function isNonEmptyFileInputValue(value: unknown): boolean {
+  if (value == null || typeof value !== 'object') return false;
+  const len = (value as { length?: unknown }).length;
+  return typeof len === 'number' && len > 0;
+}
+
 const applicationFormSchema = z.object({
-  resume: z
-    .any()
-    .refine(
-      (files: unknown) =>
-        typeof FileList !== 'undefined' &&
-        files instanceof FileList &&
-        files.length > 0,
-      { message: 'Resume is required' }
-    ),
+  resume: z.any().refine(isNonEmptyFileInputValue, { message: 'Resume is required' }),
   firstName: z
     .string()
     .min(1, 'First name is required')
@@ -161,8 +160,10 @@ export function ApplicationForm() {
               fileInputRef.current = el;
             }}
           />
-          {resumeFiles instanceof FileList && resumeFiles.length > 0 ? (
-            <p className="mt-3 text-xs text-gray-600">{resumeFiles[0]?.name}</p>
+          {isNonEmptyFileInputValue(resumeFiles) ? (
+            <p className="mt-3 text-xs text-gray-600">
+              {(resumeFiles as { 0?: File })[0]?.name}
+            </p>
           ) : null}
           {errorText(errors.resume?.message as string | undefined)}
         </div>
