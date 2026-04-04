@@ -5,10 +5,12 @@ import { WhatWeOffer } from '@/components/home/WhatWeOffer';
 import { FAQ } from '@/components/home/FAQ';
 import { Testimonials } from '@/components/home/Testimonials';
 import { CTA } from '@/components/home/CTA';
+import { HomeHashScroll } from '@/components/home/HomeHashScroll';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      <HomeHashScroll />
       <Hero />
       <About />
       <WhyChoose />

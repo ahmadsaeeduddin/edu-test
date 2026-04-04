@@ -24,13 +24,13 @@ export function WhatWeOffer() {
     <section className="py-24">
       <div className="layout-container">
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <h2 className="font-general text-2xl md:text-4xl font-bold mb-6">What We Offer</h2>
-          <p className="text-gray-500">At Edunautics, we design experiences that go beyond courses - connecting curiosity with capability and research with real-world application.</p>
+          <h2 className="font-general text-3xl md:text-5xl font-general font-medium mb-6">What We Offer</h2>
+          <p className="text-gray-500 font-inter font-regular text-lg">At Edunautics, we design experiences that go beyond courses - connecting curiosity with capability and research with real-world application.</p>
         </div>
         {/* Mobile: horizontal scroll */}
         <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide">
           {offers.map((offer, i) => (
-            <div key={i} className="group relative overflow-hidden h-[260px] snap-center shrink-0 w-[280px] rounded-lg">
+            <div key={i} className="group relative h-[260px] w-[280px] shrink-0 snap-center overflow-hidden rounded-[4px]">
               <Image alt={offer.title} className="object-cover" fill src={offer.img} referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-5">
                 <div className="bg-white/90 backdrop-blur p-3 flex items-center justify-between rounded">
@@ -50,7 +50,7 @@ export function WhatWeOffer() {
         {/* Desktop: grid */}
         <div className="hidden md:grid grid-cols-3 gap-8">
           {offers.map((offer, i) => (
-            <div key={i} className="group relative overflow-hidden h-[300px]">
+            <div key={i} className="group relative h-[300px] overflow-hidden rounded-[4px]">
               <Image alt={offer.title} className="object-cover" fill src={offer.img} referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
                 <div className="bg-white/90 backdrop-blur p-4 flex items-center justify-between">

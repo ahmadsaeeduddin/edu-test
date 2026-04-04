@@ -12,7 +12,7 @@ export function Hero() {
           Today&apos;s education system trains students to pass exams, but rarely to question, research, and create real-world solutions.
         </p>
         <div className="flex flex-wrap gap-4">
-          <button className="bg-gradient-to-r from-amber-500 to-orange-500 text-black px-6 py-3 rounded-md font-medium font-general hover:from-amber-400 hover:to-orange-400 transition-all cursor-pointer">
+          <button className="bg-gradient-to-r from-amber-500 to-orange-500 text-darkText px-6 py-3 rounded-md font-medium font-general hover:from-amber-400 hover:to-orange-400 transition-all cursor-pointer">
             Explore Programs
           </button>
           <button className="border border-edu-gold px-6 py-3 rounded-md font-medium font-general hover:bg-white/10 transition-colors cursor-pointer">

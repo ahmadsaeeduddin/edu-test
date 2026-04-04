@@ -1,22 +1,26 @@
 import Link from 'next/link';
 import { Mail, Phone, Globe, Linkedin, Instagram } from 'lucide-react';
+import { FaqFooterLink } from '@/components/shared/FaqFooterLink';
 
 export function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white pt-24 pb-8">
+    <footer className="bg-[#1A1A1A] text-white pt-24 pb-8">
       <div className="layout-container">
         {/* Newsletter Row */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-24">
           <div className="max-w-md mb-8 md:mb-0">
-            <h2 className="font-general text-2xl md:text-4xl font-bold leading-tight">Subscribe for Institutional Insights</h2>
+            <h2 className="font-general text-2xl md:text-4xl font-medium leading-tight">Subscribe for Insights</h2>
           </div>
           <div className="w-full md:w-auto flex items-center">
             <input
-              className="bg-transparent border border-gray-700 text-white px-4 py-3 w-full md:w-80 focus:outline-none focus:border-amber-500"
+              className="w-full border-y border-l border-white border-r-0 bg-transparent px-4 py-3 text-white focus:border-y-amber-500 focus:border-l-amber-500 focus:outline-none md:w-80"
               placeholder="Enter email address"
               type="email"
             />
-            <button className="bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold px-8 py-3 whitespace-nowrap hover:from-amber-400 hover:to-orange-400 transition-all">
+            <button
+              type="button"
+              className="border-y border-r border-edu-gold border-l-0 bg-edu-gold px-8 py-3 font-bold whitespace-nowrap text-darkText transition-[filter] hover:brightness-95"
+            >
               Subscribe Now &rarr;
             </button>
           </div>
@@ -25,33 +29,34 @@ export function Footer() {
         {/* Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-20">
           <div>
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
+            <h4 className="font-medium font-general text-lg mb-6">Quick Links</h4>
+            <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
               <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
               <li><Link href="/services" className="hover:text-white transition">What We Offer</Link></li>
               <li><Link href="/approach" className="hover:text-white transition">Our Approach</Link></li>
+              <FaqFooterLink />
               <li><Link href="/careers" className="hover:text-white transition">Careers</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg mb-6">Our Programs</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
+            <h4 className="font-medium font-general text-lg mb-6">Our Programs</h4>
+            <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
               <li><Link href="/services" className="hover:text-white transition">Self-Paced Learning Programs</Link></li>
               <li><Link href="/services" className="hover:text-white transition">In-Person Learning Programs</Link></li>
               <li><Link href="/services" className="hover:text-white transition">Innovation &amp; Community Spaces</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg mb-6">Support</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
+            <h4 className="font-medium font-general text-lg mb-6">Support</h4>
+            <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
               <li><Link href="#" className="hover:text-white transition">Privacy Policy</Link></li>
               <li><Link href="#" className="hover:text-white transition">Terms of Service</Link></li>
               <li><Link href="#" className="hover:text-white transition">Cookie Policy</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg mb-6">Stay Connected</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
+            <h4 className="font-medium font-general text-lg mb-6">Stay Connected</h4>
+            <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4" />
                 <span>hr@edunautics.org</span>
@@ -70,7 +75,7 @@ export function Footer() {
 
         {/* Copyright Row */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>&copy; 2025 Intellema &bull; All rights reserved</p>
+          <p>&copy; 2026 Edunautics &bull; All rights reserved</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="hover:text-white">
               <span className="sr-only">LinkedIn</span>
