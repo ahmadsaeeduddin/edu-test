@@ -81,6 +81,15 @@
   background-image: radial-gradient(circle at center, #ffffff 0%, var(--color-gradientOuter) 100%);
 }
 
+/* Why It Works: pill rail, edu-gold full → 40% opacity toward bottom */
+.why-works-rail-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--color-edu-gold) 0%,
+    color-mix(in srgb, var(--color-edu-gold) 40%, transparent) 100%
+  );
+}
+
 /* Core Pillars: vertical rule, white → edu-gold → white */
 .pillar-column-separator {
   width: 1px;

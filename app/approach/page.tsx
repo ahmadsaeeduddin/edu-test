@@ -19,7 +19,12 @@ export default function ApproachPage() {
       </div>
       <CorePillars />
       <WhyItWorks />
-      <OurImpact />
+      {/* Full viewport–width band; content aligned with max-w above (same as About OurValues / OurPromise) */}
+      <div className="w-full bg-light-yellow">
+        <div className="mx-auto flex w-full max-w-[1200px] flex-col px-6 py-24 md:px-12">
+          <OurImpact />
+        </div>
+      </div>
       <ImpactInNumbers />
       <CTA />
     </div>
