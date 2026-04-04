@@ -66,6 +66,11 @@
   --color-gradientOuter: #EDEDED;
   --color-light-bg: #f6f6f6;
   --color-pillarNumber:#AEAEB2;
+  --color-verticalSeparator: #DDDDDD;
+  --color-edu-gold-light: #CF880F;
+  --color-edu-gold-dark: #E2930D;
+  --color-lightBlack: #212121DE;
+  --color-darkBlack: #0D0D0D;
 }
 
 /* One source of truth: same box as max-w-7xl + mx-auto + px-6 (avoids subtle flex/HMR mismatches) */
@@ -79,6 +84,14 @@
 /* CTA sections: white center → --color-gradientOuter at edges */
 .cta-radial-bg {
   background-image: radial-gradient(circle at center, #ffffff 0%, var(--color-gradientOuter) 100%);
+}
+
+/* Careers hiring steps: cards 1 & 3 / 2 & 4 */
+.hiring-step-card-gold {
+  background-image: linear-gradient(to right, var(--color-edu-gold-light), var(--color-edu-gold-dark));
+}
+.hiring-step-card-dark {
+  background-image: linear-gradient(to right, var(--color-lightBlack), var(--color-darkBlack));
 }
 
 /* Why It Works: pill rail, edu-gold full → 40% opacity toward bottom */

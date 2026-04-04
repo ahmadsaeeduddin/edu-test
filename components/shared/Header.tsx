@@ -91,7 +91,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/apply"
-              className={`hidden rounded-md px-6 py-2.5 font-inter text-sm transition md:inline-block ${pathname === '/apply' ? 'font-bold' : 'font-regular'} ${isHome ? 'border border-white/30 text-white hover:bg-white hover:text-black' : 'bg-black text-white hover:bg-gray-800'}`}
+              className={`hidden rounded-md px-6 py-2.5 font-inter text-sm transition md:inline-block ${pathname === '/apply' ? 'font-bold' : 'font-regular'} ${isHome ? 'border border-white/30 text-white hover:bg-[#2f2f2f] hover:text-white' : 'bg-black text-white hover:bg-[#2f2f2f]'}`}
             >
               Start Learning
             </Link>
@@ -161,7 +161,7 @@ export function Header() {
           <div className="px-6 pb-8">
             <Link
               href="/apply"
-              className="block w-full text-center bg-orange-500 text-white py-3 rounded-md text-sm font-semibold hover:bg-orange-600 transition"
+              className="block w-full rounded-md bg-black py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#2f2f2f]"
               onClick={() => setMobileOpen(false)}
             >
               Start Learning

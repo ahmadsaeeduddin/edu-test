@@ -23,22 +23,25 @@ export default function Culture() {
   ];
 
   return (
-    <section id="culture" className="py-24">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <h2 className="font-general text-2xl md:text-3xl font-bold mb-16">Our Culture</h2>
-        <div className="space-y-0 border-t border-gray-200">
-          {items.map((item, index) => (
-            <div key={index} className="flex flex-col md:flex-row py-10 border-b border-gray-200">
-              <div className="flex-shrink-0 w-16 text-2xl md:text-3xl font-bold text-gray-400">{item.num}</div>
-              <div className="flex-grow md:flex md:items-start">
-                <h3 className="w-full md:w-1/3 text-lg font-bold uppercase tracking-wider mb-4 md:mb-0">{item.title}</h3>
-                <p className="w-full md:w-2/3 text-gray-600 leading-relaxed">
-                  {item.desc}
-                </p>
+    <section id="culture" className="flex flex-col">
+      <h2 className="mb-16 font-general text-2xl font-medium md:text-4xl">Our Culture</h2>
+      <div className="space-y-0 border-t border-gray-200">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-1 gap-6 border-b border-gray-200 py-10 md:grid-cols-[minmax(22rem,30rem)_1fr] md:items-center md:gap-x-16 lg:gap-x-24"
+          >
+            <div className="flex min-w-0 shrink-0 items-center gap-4 md:gap-5">
+              <div className="w-12 shrink-0 text-3xl font-medium text-gray-600 font-general md:w-14 md:text-5xl">
+                {item.num}
               </div>
+              <h3 className="min-w-0 text-lg font-medium uppercase tracking-wider font-general md:text-xl">{item.title}</h3>
             </div>
-          ))}
-        </div>
+            <p className="max-w-2xl font-inter text-md font-regular leading-relaxed text-gray-600 md:text-lg">
+              {item.desc}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

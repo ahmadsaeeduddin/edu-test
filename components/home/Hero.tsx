@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section className="bg-dark text-white min-h-screen">
       <div className="layout-container flex min-h-screen w-full flex-col justify-center">
-        <p className="text-orange-400 font-general font-medium mb-6 text-xl">The Challenge</p>
+        <p className="text-orange-400 font-general font-medium mb-6 text-lg md:text-xl">The Challenge</p>
         <h1 className="font-general font-medium text-3xl md:text-6xl leading-tight mb-10">
           When Education <br/>
           Stops at Classrooms, <br/>

@@ -15,18 +15,18 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.2)_0%,transparent_60%)]" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
-        <p className="text-lg font-medium mb-6">Careers</p>
-        <h1 className="font-general text-3xl md:text-6xl font-bold leading-tight mb-8">
+        <p className="font-general font-medium mb-6 text-lg md:text-xl ">Careers</p>
+        <h1 className="font-general text-3xl md:text-6xl font-medium leading-tight mb-8">
           Join Us in Shaping the <br />Future of Learning
         </h1>
-        <p className="text-xl opacity-90 mb-10 max-w-2xl leading-relaxed">
+        <p className="text-lg md:text-xl opacity-90 mb-10 max-w-2xl leading-relaxed">
           Help us redefine education through research, technology, and innovation.
         </p>
         <div className="flex space-x-4">
-          <Link href="#culture" className="bg-black text-white px-8 py-3 rounded text-sm font-semibold hover:bg-gray-900 transition">
+          <Link href="#culture" className="rounded rounded-md bg-black px-8 py-3  font-medium font-general text-white transition-colors hover:bg-[#2f2f2f]">
             Our Culture
           </Link>
-          <Link href="/apply" className="border border-white text-white px-8 py-3 rounded text-sm font-semibold hover:bg-white hover:text-amber-600 transition">
+          <Link href="/apply" className="border border-white text-white px-8 py-3 rounded-md  font-general font-medium hover:bg-white hover:text-amber-600 transition">
             Apply Now
           </Link>
         </div>

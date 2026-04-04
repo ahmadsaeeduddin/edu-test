@@ -1,136 +1,112 @@
-import { FileText, Code, MessageSquare, Briefcase } from 'lucide-react';
+import Image from 'next/image';
 
 const steps = [
   {
     num: '01',
-    icon: FileText,
+    iconSrc: '/assets/hiring_svgs/1-files.svg',
     title: 'Application Submission',
     desc: 'Fill out expression of interest with relevant details and experience. Applications are reviewed for values alignment and core qualifications.',
-    bg: 'bg-amber-600',
+    cardClass: 'hiring-step-card-gold',
     opacity: 'opacity-90',
   },
   {
     num: '02',
-    icon: Code,
+    iconSrc: '/assets/hiring_svgs/2-check_list.svg',
     title: 'Technical Assessment',
     desc: 'A short, practical task relevant to the role.',
-    bg: 'bg-[#1a1a1a]',
+    cardClass: 'hiring-step-card-dark',
     opacity: 'opacity-80',
   },
   {
     num: '03',
-    icon: MessageSquare,
+    iconSrc: '/assets/hiring_svgs/3-chat.svg',
     title: 'Interviews',
     desc: 'Technical discussions with the leadership team to validate expertise.',
-    bg: 'bg-amber-600',
+    cardClass: 'hiring-step-card-gold',
     opacity: 'opacity-90',
   },
   {
     num: '04',
-    icon: Briefcase,
+    iconSrc: '/assets/hiring_svgs/4-checkmark.svg',
     title: 'Offer & Onboarding',
     desc: 'Discussion with executives to align on role expectations, followed by onboarding.',
-    bg: 'bg-[#333333]',
+    cardClass: 'hiring-step-card-dark',
     opacity: 'opacity-80',
-    iconColor: 'text-amber-600',
   },
-];
+] as const;
+
+const desktopLayouts = [
+  { row: 'w-1/2 mb-12', card: 'ml-4' },
+  { row: 'w-full flex justify-center mb-12', card: 'mr-20' },
+  { row: 'w-full flex justify-end mb-12', card: 'mr-40' },
+  { row: 'w-full flex justify-end', card: 'mr-4' },
+] as const;
 
 export default function HiringSteps() {
   return (
     <section className="py-20 md:py-32">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="font-general text-2xl md:text-4xl font-bold">Steps of Hiring</h2>
+      <div className="mx-auto max-w-[1200px] px-6 md:px-12">
+        <div className="mb-12 text-center md:mb-20">
+          <h2 className="font-general text-3xl font-medium md:text-5xl">Steps of Hiring</h2>
         </div>
 
-        {/* Mobile: horizontal scrollable cards */}
-        <div className="md:hidden">
-          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6 scrollbar-hide">
-            {steps.map((step) => {
-              const Icon = step.icon;
+        {/* Mobile: vertical stack */}
+        <div className="flex flex-col gap-6 md:hidden">
+          {steps.map((step) => (
+            <div
+              key={step.num}
+              className={`${step.cardClass} w-full rounded-2xl p-6 text-white shadow-lg`}
+            >
+              <span className="mb-3 block font-general text-sm font-medium opacity-70">STEP {step.num}</span>
+              <div className="mb-4 flex items-center">
+                <Image
+                  src={step.iconSrc}
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="mr-3 h-5 w-5 shrink-0 object-contain"
+                />
+                <h4 className="text-base font-bold">{step.title}</h4>
+              </div>
+              <p className={`text-sm leading-relaxed ${step.opacity}`}>{step.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: staggered layout — vertical guide under each step number */}
+        <div className="relative hidden min-h-[600px] md:block">
+          <div className="pointer-events-none absolute inset-0 grid grid-cols-4">
+            {steps.map((step) => (
+              <div key={step.num} className="flex h-full min-h-0 flex-col items-center px-2">
+                <span className="shrink-0 font-general text-xl font-medium text-gray-300">{step.num}</span>
+                <div className="mt-3 w-px flex-1 bg-verticalSeparator/70" aria-hidden />
+              </div>
+            ))}
+          </div>
+
+          <div className="relative z-10 pt-12">
+            {steps.map((step, index) => {
+              const layout = desktopLayouts[index];
               return (
-                <div
-                  key={step.num}
-                  className={`${step.bg} text-white p-6 rounded-lg shadow-lg snap-center shrink-0 w-[280px]`}
-                >
-                  <span className="text-xs font-bold opacity-50 block mb-3">STEP {step.num}</span>
-                  <div className="flex items-center mb-4">
-                    <Icon className={`w-5 h-5 mr-3 ${step.iconColor || ''}`} />
-                    <h4 className="text-base font-bold">{step.title}</h4>
+                <div key={step.num} className={layout.row}>
+                  <div
+                    className={`${step.cardClass} w-xl rounded-2xl p-8 text-white shadow-lg ${layout.card}`}
+                  >
+                    <div className="mb-4 flex items-center">
+                      <Image
+                        src={step.iconSrc}
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="mr-3 h-6 w-6 shrink-0 object-contain"
+                      />
+                      <h4 className="text-lg md:text-xl font-medium font-general">{step.title}</h4>
+                    </div>
+                    <p className={`text-sm md:text-md font-inter font-regular ${step.opacity}`}>{step.desc}</p>
                   </div>
-                  <p className={`text-sm ${step.opacity} leading-relaxed`}>{step.desc}</p>
                 </div>
               );
             })}
-          </div>
-          <p className="text-center text-xs text-gray-400 mt-2">Swipe to see all steps</p>
-        </div>
-
-        {/* Desktop: staggered layout */}
-        <div className="hidden md:block relative min-h-[600px]">
-          <div className="absolute inset-0 grid grid-cols-4 pointer-events-none">
-            <div className="border-r border-gray-200 border-dashed"></div>
-            <div className="border-r border-gray-200 border-dashed"></div>
-            <div className="border-r border-gray-200 border-dashed"></div>
-            <div></div>
-          </div>
-
-          <div className="grid grid-cols-4 absolute top-0 left-0 w-full text-gray-300 pointer-events-none">
-            <div className="px-4 text-sm font-bold">01</div>
-            <div className="px-4 text-sm font-bold">02</div>
-            <div className="px-4 text-sm font-bold">03</div>
-            <div className="px-4 text-sm font-bold">04</div>
-          </div>
-
-          <div className="relative pt-12">
-            <div className="w-1/2 mb-12">
-              <div className="bg-amber-600 text-white p-8 rounded-lg shadow-lg max-w-sm ml-4">
-                <div className="flex items-center mb-4">
-                  <FileText className="w-6 h-6 mr-3" />
-                  <h4 className="text-lg font-bold">Application Submission</h4>
-                </div>
-                <p className="text-sm opacity-90 leading-relaxed">
-                  Fill out expression of interest with relevant details and experience. Applications are reviewed for values alignment and core qualifications.
-                </p>
-              </div>
-            </div>
-
-            <div className="w-full flex justify-center mb-12">
-              <div className="bg-[#1a1a1a] text-white p-8 rounded-lg shadow-lg max-w-sm mr-20">
-                <div className="flex items-center mb-4">
-                  <Code className="w-6 h-6 mr-3" />
-                  <h4 className="text-lg font-bold">Technical Assessment</h4>
-                </div>
-                <p className="text-sm opacity-80 leading-relaxed">
-                  A short, practical task relevant to the role.
-                </p>
-              </div>
-            </div>
-
-            <div className="w-full flex justify-end mb-12">
-              <div className="bg-amber-600 text-white p-8 rounded-lg shadow-lg max-w-sm mr-40">
-                <div className="flex items-center mb-4">
-                  <MessageSquare className="w-6 h-6 mr-3" />
-                  <h4 className="text-lg font-bold">Interviews</h4>
-                </div>
-                <p className="text-sm opacity-90 leading-relaxed">
-                  Technical discussions with the leadership team to validate expertise.
-                </p>
-              </div>
-            </div>
-
-            <div className="w-full flex justify-end">
-              <div className="bg-[#333333] text-white p-8 rounded-lg shadow-lg max-w-sm mr-4">
-                <div className="flex items-center mb-4">
-                  <Briefcase className="w-6 h-6 mr-3 text-amber-600" />
-                  <h4 className="text-lg font-bold">Offer &amp; Onboarding</h4>
-                </div>
-                <p className="text-sm opacity-80 leading-relaxed">
-                  Discussion with executives to align on role expectations, followed by onboarding.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
