@@ -37,7 +37,7 @@ export default function OurValues() {
   return (
     <section className="flex flex-col gap-12">
       <div className="mb-4 flex flex-col gap-4">
-        <h2 className="font-general text-2xl font-medium tracking-tight md:text-4xl">Our Values</h2>
+        <h2 className="font-general text-2xl font-medium tracking-tight md:text-4xl mb-6">Our Values</h2>
         <h3 className="font-inter text-xl font-regular text-slate-800 md:text-2xl">
           Principles That Power Every Learner&apos;s Journey
         </h3>

@@ -81,6 +81,19 @@
   background-image: radial-gradient(circle at center, #ffffff 0%, var(--color-gradientOuter) 100%);
 }
 
+/* Core Pillars: vertical rule, white → edu-gold → white */
+.pillar-column-separator {
+  width: 1px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    var(--color-edu-gold) 50%,
+    var(--color-white) 100%
+  );
+}
+
 .skew-card {
   transform: none;
 }
