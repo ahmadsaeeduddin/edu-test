@@ -28,7 +28,11 @@ export function Footer() {
             <h4 className="font-medium font-general text-lg mb-6">Quick Links</h4>
             <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
               <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-white transition">What We Offer</Link></li>
+              <li>
+                <Link href="/services" className="transition hover:text-white">
+                  What We Offer
+                </Link>
+              </li>
               <li><Link href="/approach" className="hover:text-white transition">Our Approach</Link></li>
               <FaqFooterLink />
               <li><Link href="/careers" className="hover:text-white transition">Careers</Link></li>
@@ -37,9 +41,17 @@ export function Footer() {
           <div>
             <h4 className="font-medium font-general text-lg mb-6">Our Programs</h4>
             <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
-              <li><Link href="/services" className="hover:text-white transition">Self-Paced Learning Programs</Link></li>
-              <li><Link href="/services" className="hover:text-white transition">In-Person Learning Programs</Link></li>
-              <li><Link href="/services" className="hover:text-white transition">Innovation &amp; Community Spaces</Link></li>
+              <li>
+                <Link href="/services" className="transition hover:text-white">
+                  Self-Paced Learning Programs
+                </Link>
+              </li>
+              <li>
+                <span className="text-gray-400">In-Person Learning Programs</span>
+              </li>
+              <li>
+                <span className="text-gray-400">Innovation &amp; Community Spaces</span>
+              </li>
             </ul>
           </div>
           <div>

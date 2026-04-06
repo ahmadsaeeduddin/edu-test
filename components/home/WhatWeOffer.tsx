@@ -1,24 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import {
+  WHAT_WE_OFFER_SECTION_INTRO,
+  WHAT_WE_OFFER_SECTION_TITLE,
+  whatWeOfferPrograms,
+} from '@/data/whatWeOffer';
 
-const offers = [
-  {
-    title: 'Self-Paced Learning Programs',
-    desc: 'Learn from anywhere with flexible scheduling',
-    img: '/assets/WhatWeOffer/Self-Paced_Learning_Programs.webp',
-  },
-  {
-    title: 'In-Person Learning Programs',
-    desc: 'Face to face collaboration and hands-on experience',
-    img: '/assets/WhatWeOffer/In-Person_Learning_Programs.webp',
-  },
-  {
-    title: 'Innovation & Community Spaces',
-    desc: 'Collaborative projects and networking opportunities',
-    img: '/assets/WhatWeOffer/Innovation_Community_Spaces.webp',
-  },
-] as const;
+const offers = whatWeOfferPrograms.map((p) => ({
+  id: p.id,
+  title: p.title,
+  desc: p.cardDescription,
+  img: p.cardImage,
+}));
 
 function OfferCard({
   offer,
@@ -27,6 +21,16 @@ function OfferCard({
   offer: (typeof offers)[number];
   className?: string;
 }) {
+  const detailHref = offer.id === 'self-paced' ? '/services' : null;
+  const cta = (
+    <span
+      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition ${detailHref ? 'hover:bg-slate-50' : 'cursor-default opacity-60'}`}
+      aria-hidden={!detailHref}
+    >
+      <ArrowRight className="h-4 w-4" strokeWidth={2} />
+    </span>
+  );
+
   return (
     <div
       className={`group relative shrink-0 overflow-hidden rounded-[4px] ${className ?? ''}`}
@@ -45,13 +49,19 @@ function OfferCard({
             {offer.desc}
           </p>
         </div>
-        <Link
-          href="/services"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition hover:bg-slate-50"
-          aria-label={`Learn more about ${offer.title}`}
-        >
-          <ArrowRight className="h-4 w-4" strokeWidth={2} />
-        </Link>
+        {detailHref ? (
+          <Link
+            href={detailHref}
+            className="shrink-0"
+            aria-label={`Learn more about ${offer.title}`}
+          >
+            {cta}
+          </Link>
+        ) : (
+          <span className="shrink-0" aria-label={`${offer.title} — details coming soon`}>
+            {cta}
+          </span>
+        )}
       </div>
     </div>
   );
@@ -62,11 +72,8 @@ export function WhatWeOffer() {
     <section className="py-24">
       <div className="layout-container">
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <h2 className="mb-6 font-general text-3xl font-medium md:text-5xl">What We Offer</h2>
-          <p className="font-inter text-lg font-regular text-gray-500">
-            At Edunautics, we design experiences that go beyond courses - connecting curiosity with capability and
-            research with real-world application.
-          </p>
+          <h2 className="mb-6 font-general text-3xl font-medium md:text-5xl">{WHAT_WE_OFFER_SECTION_TITLE}</h2>
+          <p className="font-inter text-lg font-regular text-gray-500">{WHAT_WE_OFFER_SECTION_INTRO}</p>
         </div>
 
         <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">

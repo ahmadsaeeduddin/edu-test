@@ -3,7 +3,6 @@ import { About } from '@/components/home/About';
 import { WhyChoose } from '@/components/home/WhyChoose';
 import { WhatWeOffer } from '@/components/home/WhatWeOffer';
 import { FAQ } from '@/components/home/FAQ';
-import { Testimonials } from '@/components/home/Testimonials';
 import { CTA } from '@/components/home/CTA';
 import { HomeHashScroll } from '@/components/home/HomeHashScroll';
 
@@ -16,7 +15,6 @@ export default function Home() {
       <WhyChoose />
       <WhatWeOffer />
       <FAQ />
-      <Testimonials />
       <CTA />
     </div>
   );

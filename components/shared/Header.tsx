@@ -9,8 +9,6 @@ import { useState, useEffect } from 'react';
 const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/approach', label: 'Our Approach' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/faqs', label: 'FAQs' },
   { href: '/careers', label: 'Careers' },
 ];
 
@@ -64,7 +62,7 @@ export function Header() {
               <button
                 type="button"
                 className={`flex items-center transition-colors ${
-                  pathname === '/services'
+                  pathname.startsWith('/services')
                     ? 'font-bold text-black'
                     : isHome
                       ? 'font-regular hover:text-orange-400'
@@ -73,18 +71,16 @@ export function Header() {
               >
                 What We Offer <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute left-0 top-full mt-2 min-w-[220px] rounded-md border border-gray-100 bg-white py-2 font-inter text-sm shadow-lg opacity-0 invisible transition-all group-hover:visible group-hover:opacity-100">
+              <div className="absolute left-0 top-full z-50 mt-2 min-w-[240px] rounded-md border border-gray-100 bg-white py-2 font-inter text-sm shadow-lg opacity-0 invisible transition-all group-hover:visible group-hover:opacity-100">
                 <Link
                   href="/services"
                   className={`block px-4 py-2 transition-colors hover:bg-gray-50 ${pathname === '/services' ? 'font-bold text-black' : 'font-regular text-gray-600 hover:text-black'}`}
                 >
-                  Self-Paced Learning Programs
+                  Self-Paced Learning
                 </Link>
               </div>
             </div>
             <Link href="/approach" className={linkClass('/approach')}>Our Approach</Link>
-            <Link href="/testimonials" className={linkClass('/testimonials')}>Testimonials</Link>
-            <Link href="/faqs" className={linkClass('/faqs')}>FAQs</Link>
             <Link href="/careers" className={linkClass('/careers')}>Careers</Link>
           </div>
 
@@ -136,17 +132,22 @@ export function Header() {
           <div className="flex-1 overflow-y-auto px-6 py-8">
             <Link href="/about" className={mobileLinkClass('/about')}>About Us</Link>
 
-            {/* What We Offer — expandable */}
             <button
-              className={`flex items-center justify-between w-full py-3 text-lg font-medium transition-colors ${pathname === '/services' ? 'text-orange-400' : 'text-gray-300 hover:text-white'}`}
+              type="button"
+              className={`flex w-full items-center justify-between py-3 text-lg font-medium transition-colors ${pathname.startsWith('/services') ? 'text-orange-400' : 'text-gray-300 hover:text-white'}`}
               onClick={() => setOfferOpen(!offerOpen)}
             >
               What We Offer
-              <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${offerOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${offerOpen ? 'rotate-180' : ''}`} />
             </button>
-            <div className={`overflow-hidden transition-all duration-200 ${offerOpen ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
-              <Link href="/services" className="block py-2 pl-4 text-base text-gray-400 hover:text-white transition-colors">
-                Self-Paced Learning Programs
+            <div
+              className={`overflow-hidden transition-all duration-200 ${offerOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}
+            >
+              <Link
+                href="/services"
+                className={`block py-2 pl-4 text-base transition-colors hover:text-white ${pathname === '/services' ? 'text-orange-400' : 'text-gray-400'}`}
+              >
+                Self-Paced Learning
               </Link>
             </div>
 
