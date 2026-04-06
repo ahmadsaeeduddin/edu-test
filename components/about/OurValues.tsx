@@ -1,4 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { X } from 'lucide-react';
 
 const values = [
   {
@@ -33,34 +38,232 @@ const values = [
   },
 ] as const;
 
+/** Slightly darker than --color-light-yellow (#fff7ea) for collapsed state */
+const CARD_BG_COLLAPSED = '#f2d48a';
+const CARD_BG_EXPANDED = '#fff7ea';
+
+const cardContainerVariants = {
+  collapsed: {},
+  expanded: {},
+} as const;
+
+const summaryLayerVariants = {
+  collapsed: { opacity: 1, y: 0 },
+  expanded: { opacity: 0, y: -8 },
+} as const;
+
+const detailLayerVariants = {
+  collapsed: { opacity: 0 },
+  expanded: { opacity: 1 },
+} as const;
+
+const cardBgVariants = {
+  collapsed: { backgroundColor: CARD_BG_COLLAPSED },
+  expanded: { backgroundColor: CARD_BG_EXPANDED },
+} as const;
+
+type ValueItem = (typeof values)[number];
+
+function ValueCard({
+  item,
+  index,
+  isOpen,
+  pinned,
+  onHoverIn,
+  onHoverOut,
+  onPin,
+  onUnpin,
+}: {
+  item: ValueItem;
+  index: number;
+  isOpen: boolean;
+  pinned: boolean;
+  onHoverIn: (index: number) => void;
+  onHoverOut: (index: number) => void;
+  onPin: (index: number) => void;
+  onUnpin: (index: number) => void;
+}) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.4, delay: 0.06 * index, ease: [0.4, 0, 0.2, 1] }}
+      className="relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+    >
+      <motion.div
+        role="button"
+        tabIndex={0}
+        aria-expanded={isOpen}
+        aria-label={`${item.title}. Hover to preview; click to keep open.`}
+        variants={cardContainerVariants}
+        initial="collapsed"
+        animate={isOpen ? 'expanded' : 'collapsed'}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="relative flex h-[300px] cursor-pointer flex-col overflow-hidden rounded-lg p-6 shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[320px] md:p-8"
+        onMouseEnter={() => onHoverIn(index)}
+        onMouseLeave={() => onHoverOut(index)}
+        onClick={() => onPin(index)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onPin(index);
+          }
+        }}
+      >
+        {pinned && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onUnpin(index);
+            }}
+            className="absolute right-2 top-2 z-30 flex h-8 w-8 items-center justify-center rounded-md text-slate-600 transition-colors hover:bg-black/5 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold"
+            aria-label="Close"
+          >
+            <X className="h-4 w-4" strokeWidth={2} />
+          </button>
+        )}
+
+        <motion.div
+          variants={cardBgVariants}
+          className="absolute inset-0 rounded-lg"
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          aria-hidden
+        />
+
+        <motion.div
+          variants={summaryLayerVariants}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          className={`relative z-10 flex flex-col items-start gap-4 text-left ${
+            isOpen ? 'pointer-events-none' : ''
+          }`}
+        >
+          <div className="flex w-full flex-col items-start gap-3 md:gap-4">
+            <div className="shrink-0 rounded-lg p-1 md:p-2">
+              <Image
+                src={item.icon}
+                alt=""
+                width={64}
+                height={64}
+                className="h-9 w-9 object-contain md:h-11 md:w-11"
+              />
+            </div>
+            <h4 className="min-w-0 max-w-full font-general text-base font-medium leading-snug text-slate-900 md:text-2xl">
+              {item.title}
+            </h4>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={detailLayerVariants}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          className={`absolute inset-0 z-20 flex flex-col px-5 pb-6 pt-12 md:px-8 md:pb-8 md:pt-14 ${
+            isOpen ? 'pointer-events-auto overflow-y-auto' : 'pointer-events-none'
+          }`}
+        >
+          <p className="font-inter text-base font-regular leading-relaxed text-slate-600 md:text-lg">{item.body}</p>
+        </motion.div>
+      </motion.div>
+    </motion.article>
+  );
+}
+
 export default function OurValues() {
+  const [pinned, setPinned] = useState<boolean[]>(() => Array.from({ length: values.length }, () => false));
+  const [hovered, setHovered] = useState<boolean[]>(() => Array.from({ length: values.length }, () => false));
+
+  const setHover = (index: number, value: boolean) => {
+    setHovered((prev) => {
+      const next = [...prev];
+      next[index] = value;
+      return next;
+    });
+  };
+
+  const pinCard = (index: number) => {
+    setPinned((prev) => {
+      const next = [...prev];
+      next[index] = true;
+      return next;
+    });
+  };
+
+  const unpinCard = (index: number) => {
+    setPinned((prev) => {
+      const next = [...prev];
+      next[index] = false;
+      return next;
+    });
+  };
+
+  const expandAll = () => {
+    setPinned(values.map(() => true));
+  };
+
+  const collapseAll = () => {
+    setPinned(values.map(() => false));
+    setHovered(values.map(() => false));
+  };
+
   return (
     <section className="flex flex-col gap-12">
       <div className="mb-4 flex flex-col gap-4">
-        <h2 className="font-general text-2xl font-medium tracking-tight md:text-4xl mb-6">Our Values</h2>
+        <h2 className="mb-6 font-general text-2xl font-medium tracking-tight md:text-4xl">Our Values</h2>
         <h3 className="font-inter text-xl font-regular text-slate-800 md:text-2xl">
           Principles That Power Every Learner&apos;s Journey
         </h3>
-        <p className="font-inter max-w-5xl text-md font-regular text-slate-600 md:text-lg">
+        <p className="max-w-5xl font-inter text-md font-regular text-slate-600 md:text-lg">
           At Edunautics, our values are the compass guiding how we teach, learn, and innovate. They shape our culture,
           our programs, and every collaboration - ensuring that learning isn&apos;t just about growth, but about impact
           with integrity.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-        {values.map((item) => (
-          <div key={item.title} className="flex flex-col gap-4">
-            <Image
-              src={item.icon}
-              alt=""
-              width={64}
-              height={64}
-              className="h-10 w-10 shrink-0 object-contain md:h-12 md:w-12"
-            />
-            <h4 className="font-general text-xl font-medium">{item.title}</h4>
-            <p className="font-inter text-lg font-regular leading-relaxed text-slate-500">{item.body}</p>
-          </div>
-        ))}
+
+      <div className="flex flex-col">
+        <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
+          <button
+            type="button"
+            onClick={expandAll}
+            className="rounded-md bg-lightGray px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-200/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+          >
+            Expand all
+          </button>
+          <button
+            type="button"
+            onClick={collapseAll}
+            className="rounded-md border border-gray-200 bg-white px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+          >
+            Collapse all
+          </button>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="flex flex-wrap justify-center gap-6"
+        >
+          {values.map((item, index) => {
+            const isPinned = pinned[index] ?? false;
+            const isHovered = hovered[index] ?? false;
+            const isOpen = isPinned || isHovered;
+            return (
+              <ValueCard
+                key={item.title}
+                item={item}
+                index={index}
+                isOpen={isOpen}
+                pinned={isPinned}
+                onHoverIn={(i) => setHover(i, true)}
+                onHoverOut={(i) => setHover(i, false)}
+                onPin={pinCard}
+                onUnpin={unpinCard}
+              />
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

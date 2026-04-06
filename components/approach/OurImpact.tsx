@@ -1,4 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Minus } from 'lucide-react';
 
 const impactItems = [
   {
@@ -24,6 +29,26 @@ const impactItems = [
 ] as const;
 
 export default function OurImpact() {
+  const [expanded, setExpanded] = useState<boolean[]>(() =>
+    Array.from({ length: impactItems.length }, () => false),
+  );
+
+  const toggle = (index: number) => {
+    setExpanded((prev) => {
+      const next = [...prev];
+      next[index] = !next[index];
+      return next;
+    });
+  };
+
+  const expandAll = () => {
+    setExpanded(impactItems.map(() => true));
+  };
+
+  const collapseAll = () => {
+    setExpanded(impactItems.map(() => false));
+  };
+
   return (
     <section className="flex flex-col">
       <div className="mb-16">
@@ -36,22 +61,86 @@ export default function OurImpact() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-x-20 gap-y-16 md:grid-cols-2">
-        {impactItems.map((item) => (
-          <div key={item.title}>
-            <div className="mb-4">
-              <Image
-                src={item.icon}
-                alt=""
-                width={32}
-                height={32}
-                className="h-8 w-8 shrink-0 object-contain"
-              />
-            </div>
-            <h3 className="mb-4 font-general text-xl font-medium">{item.title}</h3>
-            <p className="font-inter text-lg font-regular leading-relaxed text-slate-600">{item.body}</p>
-          </div>
-        ))}
+      <div className="flex flex-col">
+        <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
+          <button
+            type="button"
+            onClick={expandAll}
+            className="rounded-md bg-lightGray px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-200/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+          >
+            Expand all
+          </button>
+          <button
+            type="button"
+            onClick={collapseAll}
+            className="rounded-md border border-gray-200 bg-white px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+          >
+            Collapse all
+          </button>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="border-t border-gray-200"
+        >
+          {impactItems.map((item, index) => {
+            const isOpen = expanded[index] ?? false;
+            return (
+              <div key={item.title} className="border-b border-gray-200">
+                <button
+                  type="button"
+                  onClick={() => toggle(index)}
+                  className="group flex w-full items-center justify-between gap-4 py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+                  aria-expanded={isOpen}
+                  aria-controls={`impact-panel-${index}`}
+                  id={`impact-trigger-${index}`}
+                >
+                  <span className="flex min-w-0 items-center gap-4">
+                    <Image
+                      src={item.icon}
+                      alt=""
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 shrink-0 object-contain"
+                    />
+                    <h3
+                      className={`font-general text-xl font-medium transition-colors duration-100 ${
+                        isOpen ? 'text-edu-gold' : 'text-slate-700 group-hover:text-edu-gold-light'
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                  </span>
+                  <span className="shrink-0 text-slate-500" aria-hidden>
+                    {isOpen ? <Minus className="h-6 w-6" strokeWidth={2} /> : <Plus className="h-6 w-6" strokeWidth={2} />}
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={`impact-panel-${index}`}
+                      role="region"
+                      aria-labelledby={`impact-trigger-${index}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-6 pl-12 font-inter text-lg font-regular leading-relaxed text-slate-600 md:pl-14">
+                        {item.body}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
