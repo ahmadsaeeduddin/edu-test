@@ -6,13 +6,25 @@ import { Plus, X } from 'lucide-react';
 
 const faqs = [
   {
-    q: 'Can institutions customise the program?',
-    a: 'Absolutely. We offer tailored solutions based on institutional goals and student needs.',
+    q: 'Can institutions customize the program?',
+    a: 'Yes, institutions can tailor the program to fit their curriculum, goals, and student needs. We offer flexible modules and collaborative planning to ensure the program aligns with your requirements.',
   },
-  { q: 'How is this different from traditional learning?', a: 'Content coming soon...' },
-  { q: 'Do you provide mentor support?', a: 'Content coming soon...' },
-  { q: 'Who is this platform designed for?', a: 'Content coming soon...' },
-  { q: 'How can we get started?', a: 'Content coming soon...' },
+  {
+    q: 'How is this different from traditional learning?',
+    a: 'Our approach focuses on practical, real-world learning rather than just theory. Students engage in hands-on projects, industry-based tasks, and collaborative experiences that prepare them for real challenges.',
+  },
+  {
+    q: 'Do you provide mentor support?',
+    a: 'Yes, learners receive guidance from experienced mentors who provide support, feedback, and industry insights throughout the program.',
+  },
+  {
+    q: 'Who is this platform designed for?',
+    a: 'The platform is designed for educational institutions, students, and organizations looking to enhance learning through practical and industry-relevant experiences.',
+  },
+  {
+    q: 'How can we get started?',
+    a: "Getting started is simple—reach out to our team, share your requirements, and we'll guide you through onboarding and program setup.",
+  },
 ];
 
 export function FAQ() {

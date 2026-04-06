@@ -81,6 +81,15 @@
   padding-inline: 1.5rem;
 }
 
+/* Home hero: charcoal base + faint blueprint grid (~48px cells, 1px lines) */
+.home-hero-grid-bg {
+  background-color: #121212;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) .5px, transparent .5px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.11) .5px, transparent .5px);
+  background-size: 80px 80px;
+}
+
 /* CTA sections: white center → --color-gradientOuter at edges */
 .cta-radial-bg {
   background-image: radial-gradient(circle at center, #ffffff 0%, var(--color-gradientOuter) 100%);
