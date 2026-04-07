@@ -1,39 +1,55 @@
-import { Check } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export function About() {
   return (
-    <section className="relative -mt-15 z-10 pb-20">
+    <section className="relative z-10 -mt-15 pb-20">
       <div className="layout-container">
         <div className="bg-white p-6 shadow-sm md:p-12">
-          <div className="w-full">
-            <h2 className="font-general mb-6 flex w-full items-baseline gap-4 text-2xl font-medium md:mb-8 md:text-3xl">
-              <span className="shrink-0">About Edunautics</span>
-              <span className="flex min-w-0 flex-1 justify-center" aria-hidden>
-                <span className="h-0.5 w-27 shrink-0 bg-gray-200  md:w-67 lg:w-126" />
-              </span>
-            </h2>
-            <p className="text-base leading-snug text-gray-400 md:text-3xl w-[70%]">
-              Edunautics is more than an EdTech platform - <span className="text-gray-800">it&apos;s an initiative to reimagine education through research, innovation and industry collaboration.</span>
-            </p>
-          </div>
+          <h2 className="mb-8 flex w-full items-baseline gap-4 font-general text-3xl font-medium text-slate-900 md:mb-10 md:text-5xl">
+            <span className="shrink-0">The Challenge</span>
+            <span className="h-[1px] min-w-0 flex-1 bg-gray-300" aria-hidden />
+          </h2>
 
-          <div className="mt-5 skew-card rounded-xl bg-gradient-to-br from-[#2b251a] via-[#1f1a12] to-[#3a2f1e] p-6 text-white md:mt-20 md:p-16">
-            <div className="unskew grid grid-cols-1 gap-x-12 gap-y-5 md:grid-cols-2 md:gap-y-8">
-              {[
-                'Mentorship Programs',
-                'Hands-On Projects',
-                'Research-Driven Learning',
-                'Experiential Learning',
-                'Artificial Intelligence Learning',
-                'Innovation Ecosystem',
-              ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-3 md:gap-4">
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white md:size-9">
-                    <Check className="size-4 text-[#FFFFFF] md:size-5" strokeWidth={2} />
-                  </span>
-                  <span className="text-sm font-medium text-[#FFFFFF] md:text-lg">{feature}</span>
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+            <div className="lg:col-span-7">
+              <div className="flex w-full max-w-2xl flex-col">
+                <h3 className="w-full font-general text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-[2.125rem] lg:leading-snug">
+                  <span className="text-slate-900">When Education Stops </span>
+                  <span className="text-slate-500">at</span>
+                  <span className="block text-slate-500">Classrooms, Innovation Stops Too</span>
+                </h3>
+                <div className="mt-6 w-full space-y-4 font-inter text-base font-regular leading-relaxed text-slate-600 md:text-lg max-w-xl">
+                  <p>
+                    Today&apos;s education system faces a critical gap. Students are trained to pass exams but rarely
+                    guided to question, research, and create. Research often ends in reports instead of real-world
+                    solutions. Meanwhile, industries evolve faster than academic curricula, leaving graduates
+                    underprepared for modern challenges.
+                  </p>
+                  <p>
+                    This disconnect between learning and application limits innovation, curiosity, and confidence — the
+                    very traits needed to thrive in a world driven by technology and change.
+                  </p>
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col items-stretch gap-7 lg:col-span-5 lg:items-end">
+              <Link
+                href="/about"
+                className="inline-flex w-fit shrink-0 items-center justify-center self-start rounded-lg border border-[#000000] bg-white px-5 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-50 lg:self-end"
+              >
+                Learn More
+              </Link>
+              <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-xl lg:ml-auto lg:max-w-none">
+                <Image
+                  src="/assets/main_page_svgs/why-choose-img.webp"
+                  alt="Students collaborating in a learning environment"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
+              </div>
             </div>
           </div>
         </div>

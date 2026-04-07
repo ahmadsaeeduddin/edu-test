@@ -36,7 +36,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     summary:
       'Designed to fit your pace, our programs combine flexibility, mentorship, and real-world learning to help you build practical, future-ready skills.',
     cardDescription:
-      'Designed to fit your pace, our programs combine flexibility, mentorship, and real-world learning to help you build practical, future-ready skills.',
+      'Learn from anywhere with flexible scheduling',
     cardImage: '/assets/WhatWeOffer/Self-Paced_Learning_Programs.webp',
     highlights: [
       {
@@ -64,7 +64,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     summary:
       'Immersive, on-campus experiences designed to bridge theory with real-world industry practice through collaboration, mentorship, and hands-on learning.',
     cardDescription:
-      'Immersive, on-campus experiences designed to bridge theory with real-world industry practice through collaboration, mentorship, and hands-on learning.',
+      'Face to face collaboration and hands-on experience',
     cardImage: '/assets/WhatWeOffer/In-Person_Learning_Programs.webp',
     highlights: [
       {
@@ -88,11 +88,11 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
   {
     id: 'innovation-community',
     order: 3,
-    title: 'Innovation & Community Spaces',
+    title: 'Innovation & Community',
     summary:
       'Collaborative ecosystems where learners, mentors, and industry experts come together to transform ideas into impactful, real-world solutions.',
     cardDescription:
-      'Collaborative ecosystems where learners, mentors, and industry experts come together to transform ideas into impactful, real-world solutions.',
+      'Collaborative projects and networking opportunities',
     cardImage: '/assets/WhatWeOffer/Innovation_Community_Spaces.webp',
     highlights: [
       {

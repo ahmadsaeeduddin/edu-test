@@ -24,10 +24,15 @@ function OfferCard({
   const detailHref = offer.id === 'self-paced' ? '/services' : null;
   const cta = (
     <span
-      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition ${detailHref ? 'hover:bg-slate-50' : 'cursor-default opacity-60'}`}
+      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition duration-300 ease-out group-hover:scale-[1.06] group-hover:shadow-md group-hover:ring-1 group-hover:ring-black/5 ${
+        detailHref ? 'hover:bg-slate-50' : 'cursor-default'
+      }`}
       aria-hidden={!detailHref}
     >
-      <ArrowRight className="h-4 w-4" strokeWidth={2} />
+      <ArrowRight
+        className="h-4 w-4 text-slate-900 transition-transform duration-300 ease-out group-hover:translate-x-0.5"
+        strokeWidth={2}
+      />
     </span>
   );
 
@@ -42,10 +47,12 @@ function OfferCard({
         className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         sizes="(max-width: 768px) 280px, 33vw"
       />
-      <div className="absolute bottom-2 left-2 right-2 flex items-start justify-between gap-3 rounded-[4px] bg-white/30 p-4 shadow-sm backdrop-blur-md">
-        <div className="min-w-0 flex-1 text-left">
-          <h4 className="font-general text-sm font-bold text-slate-900 md:text-base">{offer.title}</h4>
-          <p className="mt-1 font-inter text-xs font-regular leading-snug text-slate-800 md:text-sm">
+      <div className="absolute bottom-2 left-2 right-2 box-border flex h-[98px] min-h-[98px] max-h-[98px] shrink-0 items-start justify-between gap-2 overflow-hidden rounded-[4px] bg-white/60 px-3 py-2 shadow-sm backdrop-blur-md">
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-start overflow-hidden text-left">
+          <h4 className="line-clamp-2 font-general text-base md:text-lg font-medium leading-tight text-slate-900">
+            {offer.title}
+          </h4>
+          <p className="mt-1 line-clamp-2 font-inter text-sm font-regular leading-snug text-slate-800 md:text-md">
             {offer.desc}
           </p>
         </div>
@@ -81,7 +88,7 @@ export function WhatWeOffer() {
             <OfferCard
               key={offer.title}
               offer={offer}
-              className="h-[400px] w-[280px] snap-center md:h-[400px] md:w-auto"
+              className="h-[460px] w-[280px] snap-center md:h-[400px] md:w-auto"
             />
           ))}
         </div>
