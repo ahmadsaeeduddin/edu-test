@@ -11,16 +11,16 @@ const cardVariants = {
       '0px 0px 0px 0px rgba(232, 160, 32, 0), 0px 0px 0px 0px rgba(17, 17, 16, 0)',
   },
   hover: {
-    scale: 1.02,
-    y: -8,
+    scale: 1.001,
+    y: -4,
     boxShadow:
-      '8px 11px 0 0 rgba(232, 160, 32, 0.22), 14px 20px 36px -4px rgba(17, 17, 16, 0.2)',
+      '6px 7px 0 0 rgba(232, 160, 32, 0.16), 10px 14px 22px -6px rgba(17, 17, 16, 0.12)',
   },
 } as const;
 
 const cardTransition = {
   type: 'tween' as const,
-  duration: 0.65,
+  duration: 0.16,
   ease: [0.4, 0, 0.2, 1] as const,
 };
 
