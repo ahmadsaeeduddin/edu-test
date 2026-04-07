@@ -32,7 +32,10 @@ export function Testimonials() {
           <button className="w-10 h-10 border border-gray-300 flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <button className="w-10 h-10 bg-[#1a1a1a] text-white flex items-center justify-center hover:bg-black transition-colors cursor-pointer">
+          <button
+            type="button"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center border border-transparent bg-[#1a1a1a] text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
+          >
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>

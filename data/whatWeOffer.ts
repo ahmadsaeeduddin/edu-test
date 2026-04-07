@@ -25,6 +25,8 @@ export type WhatWeOfferProgram = {
   cardDescription: string;
   /** Home carousel image (same paths as existing assets) */
   cardImage: string;
+  /** Services page hero (`public/assets/Service_hero_imgs/`) */
+  heroImage: string;
   highlights: WhatWeOfferHighlight[];
 };
 
@@ -38,21 +40,22 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     cardDescription:
       'Learn from anywhere with flexible scheduling',
     cardImage: '/assets/WhatWeOffer/Self-Paced_Learning_Programs.webp',
+    heroImage: '/assets/Service_hero_imgs/selfpaced1.png',
     highlights: [
       {
-        heading: 'Learn anywhere. Grow everywhere:',
+        heading: 'Learn anywhere. Grow everywhere',
         body: 'Flexible, mentor-supported programs designed for learners who want to master emerging technologies while staying connected to real industry practice.',
       },
       {
-        heading: 'Cohort Bootcamps:',
+        heading: 'Cohort Bootcamps',
         body: 'Intensive, team-based learning guided by industry mentors. Collaborate on live case studies, tackle real-world challenges, and receive direct feedback from professionals who work in the field.',
       },
       {
-        heading: 'Self-Paced Tracks:',
+        heading: 'Self-Paced Tracks',
         body: 'Progress at your own speed through structured modules, interactive labs, and periodic mentor sessions. Each track integrates industry-based assignments, ensuring your independent learning translates into practical, job-ready skills.',
       },
       {
-        heading: 'Focused Capsules:',
+        heading: 'Focused Capsules  ',
         body: 'Short, specialized courses designed with input from industry experts to sharpen targeted skills — helping you stay current with evolving tools, trends, and technologies that organizations are actively using today.',
       },
     ],
@@ -66,21 +69,22 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     cardDescription:
       'Face to face collaboration and hands-on experience',
     cardImage: '/assets/WhatWeOffer/In-Person_Learning_Programs.webp',
+    heroImage: '/assets/Service_hero_imgs/selfpaced2.webp',
     highlights: [
       {
-        heading: 'Hands-on learning. Real-world impact:',
+        heading: 'Hands-on experiences that connect theory with reality',
         body: 'On-campus, collaborative programs where students don’t just learn — they experience how the industry operates.',
       },
       {
-        heading: 'Community-Based Learning:',
+        heading: 'Community-Based Learning',
         body: 'Join local hubs that mirror professional workspaces. Collaborate with peers on community and industry-linked initiatives, exchange ideas, and co-create innovative solutions.',
       },
       {
-        heading: 'Partner Learning:',
+        heading: 'Partner Learning',
         body: 'Programs co-created with universities, research institutes, and industry leaders. Gain direct exposure to corporate projects, internships, and tools used by top companies — preparing you for seamless industry entry.',
       },
       {
-        heading: 'STEM & AI Workshops:',
+        heading: 'STEM & AI Workshops',
         body: 'Practical, mentor-led workshops built around real datasets, tools, and challenges sourced from industry. Participants apply theoretical concepts to solve current problems faced by organizations.',
       },
     ],
@@ -94,21 +98,22 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     cardDescription:
       'Collaborative projects and networking opportunities',
     cardImage: '/assets/WhatWeOffer/Innovation_Community_Spaces.webp',
+    heroImage: '/assets/Service_hero_imgs/selfpaced3.webp',
     highlights: [
       {
         heading: 'Where ideas turn into impact.',
         body: 'Edunautics goes beyond courses — building ecosystems that connect learners, innovators, and industries to create measurable change.',
       },
       {
-        heading: 'Capstone Projects & Innovation Labs:',
+        heading: 'Capstone Projects & Innovation Labs',
         body: 'Partner with industry teams to build prototypes, test ideas, and transform research into deployable solutions. These labs act as bridges between academia and professional innovation spaces.',
       },
       {
-        heading: 'Open Learning Circles:',
+        heading: 'Open Learning Circles',
         body: 'Peer-driven, industry-informed sessions that encourage research sharing, trend exploration, and collaborative problem-solving — inspired by real-world demands.',
       },
       {
-        heading: 'Networking & Innovation Circles:',
+        heading: 'Networking & Innovation Circles',
         body: 'Connect with mentors, founders, and industry professionals. From startup collaborations to job placements, these circles ensure your learning directly feeds into career and innovation pathways.',
       },
     ],
@@ -120,7 +125,7 @@ export const whatWeOfferById: Record<WhatWeOfferProgram['id'], WhatWeOfferProgra
   whatWeOfferPrograms.map((p) => [p.id, p]),
 ) as Record<WhatWeOfferProgram['id'], WhatWeOfferProgram>;
 
-/** Program id; self-paced is served at `/services` */
+/** Program id; routes are `/services/[slug]` (see `app/services/page.tsx` redirect). */
 export type WhatWeOfferSlug = ServiceProgramSlug;
 
 export function isWhatWeOfferSlug(value: string): value is WhatWeOfferSlug {

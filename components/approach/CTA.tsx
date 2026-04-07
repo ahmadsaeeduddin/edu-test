@@ -6,7 +6,7 @@ export default function CTA() {
           <h2 className="font-general text-2xl font-medium tracking-tight md:text-4xl">Build the Future with Edunautics</h2>
           <button
             type="button"
-            className="cursor-pointer whitespace-nowrap rounded-md bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:bg-[#2f2f2f]"
+            className="cursor-pointer whitespace-nowrap rounded-md border border-transparent bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
           >
             Get in Touch
           </button>

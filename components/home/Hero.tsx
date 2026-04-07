@@ -13,10 +13,16 @@ export function Hero() {
 
         </p>
         <div className="flex flex-wrap gap-4">
-          <button className="bg-gradient-to-r from-amber-500 to-orange-500 text-darkText px-6 py-3 rounded-md font-medium font-general hover:from-amber-400 hover:to-orange-400 transition-all cursor-pointer">
+          <button
+            type="button"
+            className="cursor-pointer rounded-md border-2 border-transparent bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 font-medium font-general text-darkText transition-all hover:border-edu-gold hover:from-white hover:to-white hover:text-edu-gold"
+          >
             Explore Programs
           </button>
-          <button className="border border-edu-gold px-6 py-3 rounded-md font-medium font-general hover:bg-white/10 transition-colors cursor-pointer">
+          <button
+            type="button"
+            className="cursor-pointer rounded-md border border-edu-gold px-6 py-3 font-medium font-general text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+          >
             Get Started
           </button>
         </div>

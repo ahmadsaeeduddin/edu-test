@@ -21,13 +21,10 @@ function OfferCard({
   offer: (typeof offers)[number];
   className?: string;
 }) {
-  const detailHref = offer.id === 'self-paced' ? '/services' : null;
+  const detailHref = `/services/${offer.id}`;
   const cta = (
     <span
-      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition duration-300 ease-out group-hover:scale-[1.06] group-hover:shadow-md group-hover:ring-1 group-hover:ring-black/5 ${
-        detailHref ? 'hover:bg-slate-50' : 'cursor-default'
-      }`}
-      aria-hidden={!detailHref}
+      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition duration-300 ease-out group-hover:scale-[1.06] group-hover:shadow-md group-hover:ring-1 group-hover:ring-black/5 hover:bg-slate-50"
     >
       <ArrowRight
         className="h-4 w-4 text-slate-900 transition-transform duration-300 ease-out group-hover:translate-x-0.5"
@@ -56,19 +53,13 @@ function OfferCard({
             {offer.desc}
           </p>
         </div>
-        {detailHref ? (
-          <Link
-            href={detailHref}
-            className="shrink-0"
-            aria-label={`Learn more about ${offer.title}`}
-          >
-            {cta}
-          </Link>
-        ) : (
-          <span className="shrink-0" aria-label={`${offer.title} — details coming soon`}>
-            {cta}
-          </span>
-        )}
+        <Link
+          href={detailHref}
+          className="shrink-0"
+          aria-label={`Learn more about ${offer.title}`}
+        >
+          {cta}
+        </Link>
       </div>
     </div>
   );

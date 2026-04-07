@@ -46,7 +46,7 @@ export default function Features({ program }: { program: WhatWeOfferProgram }) {
                 {index + 1}
               </div>
               <div className="max-w-[800px]">
-                <h3 className="mb-3 font-general text-[28px] tracking-[-0.2px] text-[#111110]">
+                <h3 className="mb-3 font-general font-medium text-[28px] tracking-[-0.2px] text-[#111110]">
                   {formatHighlightTitle(highlight.heading)}
                 </h3>
                 <p className="font-inter text-base font-regular leading-[1.6] text-[#666660]">{highlight.body}</p>

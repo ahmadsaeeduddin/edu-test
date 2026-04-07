@@ -295,7 +295,7 @@ export function ApplicationForm() {
       <div>
         <button
           type="submit"
-          className="rounded-md bg-edu-gold px-8 py-3 text-sm font-medium font-general text-white shadow-sm transition hover:bg-edu-gold-dark"
+          className="rounded-md border border-edu-gold bg-edu-gold px-8 py-3 text-sm font-medium font-general text-white shadow-sm transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
         >
           Submit Application
         </button>

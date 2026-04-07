@@ -12,14 +12,7 @@ export function WhyChoose() {
     <section className="bg-light-bg py-20">
       <div className="layout-container">
         <div className="mb-12 flex items-start gap-4 md:mb-16 md:gap-5">
-          <Image
-            src="/assets/main_page_svgs/arrow-svg.svg"
-            alt=""
-            width={56}
-            height={56}
-            className="mt-1 h-10 w-10 shrink-0 md:h-12 md:w-12"
-            aria-hidden
-          />
+          
           <h2 className="font-general text-3xl font-medium leading-tight text-slate-900 md:text-5xl">
             Why Choose Edunautics Programs
           </h2>

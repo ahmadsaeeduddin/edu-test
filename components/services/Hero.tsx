@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { WhatWeOfferProgram } from '@/data/whatWeOffer';
 
 export function Hero({ program }: { program: WhatWeOfferProgram }) {
-  const heroImage = program.id === 'self-paced' ? '/selfpaced1.png' : program.cardImage;
   const heroAlt = `${program.title}: program overview`;
 
   return (
@@ -31,7 +30,7 @@ export function Hero({ program }: { program: WhatWeOfferProgram }) {
         <div className="relative mx-auto w-full max-w-md md:max-w-lg">
           <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
             <Image
-              src={heroImage}
+              src={program.heroImage}
               alt={heroAlt}
               fill
               className="object-contain object-center"

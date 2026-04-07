@@ -15,5 +15,5 @@ export function isServiceProgramSlug(value: string): value is ServiceProgramSlug
 export const serviceProgramNavItems: readonly { slug: ServiceProgramSlug; title: string }[] = [
   { slug: 'self-paced', title: 'Self-Paced Learning Programs' },
   { slug: 'in-person', title: 'In-Person Learning Programs' },
-  { slug: 'innovation-community', title: 'Innovation & Community Spaces' },
+  { slug: 'innovation-community', title: 'Innovation & Community' },
 ];

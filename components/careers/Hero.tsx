@@ -23,10 +23,16 @@ export default function Hero() {
           Help us redefine education through research, technology, and innovation.
         </p>
         <div className="flex space-x-4">
-          <Link href="#culture" className="rounded rounded-md bg-black px-8 py-3  font-medium font-general text-white transition-colors hover:bg-[#2f2f2f]">
+          <Link
+            href="#culture"
+            className="rounded-md border border-transparent bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
+          >
             Our Culture
           </Link>
-          <Link href="/apply" className="border border-white text-white px-8 py-3 rounded-md  font-general font-medium hover:bg-white hover:text-amber-600 transition">
+          <Link
+            href="/apply"
+            className="rounded-md border border-white px-8 py-3 font-general font-medium text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+          >
             Apply Now
           </Link>
         </div>

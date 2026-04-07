@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Mail, Phone, Globe, Linkedin, Instagram } from 'lucide-react';
 import { FaqFooterLink } from '@/components/shared/FaqFooterLink';
 import { FooterSubscribeButton } from '@/components/shared/FooterSubscribeButton';
+import { whatWeOfferPrograms } from '@/data/whatWeOffer';
 
 export function Footer() {
   return (
@@ -41,17 +42,13 @@ export function Footer() {
           <div>
             <h4 className="font-medium font-general text-lg mb-6">Our Programs</h4>
             <ul className="space-y-4 text-gray-400 text-md font-regular font-inter">
-              <li>
-                <Link href="/services" className="transition hover:text-white">
-                  Self-Paced Learning Programs
-                </Link>
-              </li>
-              <li>
-                <span className="text-gray-400">In-Person Learning Programs</span>
-              </li>
-              <li>
-                <span className="text-gray-400">Innovation &amp; Community Spaces</span>
-              </li>
+              {whatWeOfferPrograms.map((p) => (
+                <li key={p.id}>
+                  <Link href={`/services/${p.id}`} className="transition hover:text-white">
+                    {p.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>

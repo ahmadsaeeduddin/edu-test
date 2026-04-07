@@ -38,18 +38,14 @@ const values = [
   },
 ] as const;
 
-/** Slightly darker than --color-light-yellow (#fff7ea) for collapsed state */
-const CARD_BG_COLLAPSED = '#f2d48a';
-const CARD_BG_EXPANDED = '#fff7ea';
-
 const cardContainerVariants = {
   collapsed: {},
   expanded: {},
 } as const;
 
 const summaryLayerVariants = {
-  collapsed: { opacity: 1, y: 0 },
-  expanded: { opacity: 0, y: -8 },
+  collapsed: { opacity: 1 },
+  expanded: { opacity: 0 },
 } as const;
 
 const detailLayerVariants = {
@@ -58,8 +54,8 @@ const detailLayerVariants = {
 } as const;
 
 const cardBgVariants = {
-  collapsed: { backgroundColor: CARD_BG_COLLAPSED },
-  expanded: { backgroundColor: CARD_BG_EXPANDED },
+  collapsed: { backgroundColor: '#ffffff' },
+  expanded: { backgroundColor: 'var(--color-edu-gold)' },
 } as const;
 
 type ValueItem = (typeof values)[number];
@@ -100,17 +96,24 @@ function ValueCard({
         initial="collapsed"
         animate={isOpen ? 'expanded' : 'collapsed'}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="relative flex h-[300px] cursor-pointer flex-col overflow-hidden rounded-lg p-6 shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[320px] md:p-8"
+        // Added overflow-hidden to ensure the BG doesn't bleed, 
+        // and kept padding consistent (p-6 md:p-8)
+        className={`relative flex h-[340px] cursor-pointer flex-col overflow-hidden rounded-[4px] border-t-2 bg-transparent p-6 shadow-sm outline-none transition-[border-color] duration-300 focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[400px] md:p-8 ${
+          isOpen ? 'border-t-transparent' : 'border-t-[var(--color-edu-gold)]'
+        }`}
         onMouseEnter={() => onHoverIn(index)}
         onMouseLeave={() => onHoverOut(index)}
         onClick={() => onPin(index)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            onPin(index);
-          }
-        }}
       >
+        {/* BACKGROUND LAYER */}
+        <motion.div
+          variants={cardBgVariants}
+          className="absolute inset-0 rounded-[4px]"
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          aria-hidden
+        />
+
+        {/* CLOSE BUTTON - Absolute positioned so it floats OVER content */}
         {pinned && (
           <button
             type="button"
@@ -118,51 +121,59 @@ function ValueCard({
               e.stopPropagation();
               onUnpin(index);
             }}
-            className="absolute right-2 top-2 z-30 flex h-8 w-8 items-center justify-center rounded-md text-slate-600 transition-colors hover:bg-black/5 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold"
+            className="absolute right-4 top-4 z-30 flex h-8 w-8 items-center justify-center rounded-full text-black transition-colors hover:bg-white/20 focus:outline-none"
             aria-label="Close"
           >
-            <X className="h-4 w-4" strokeWidth={2} />
+            <X className="h-5 w-5" strokeWidth={2} />
           </button>
         )}
 
-        <motion.div
-          variants={cardBgVariants}
-          className="absolute inset-0 rounded-lg"
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          aria-hidden
-        />
-
+        {/* SUMMARY LAYER (Collapsed) */}
         <motion.div
           variants={summaryLayerVariants}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className={`relative z-10 flex flex-col items-start gap-4 text-left ${
+          aria-hidden={isOpen}
+          className={`relative z-10 flex h-full flex-col text-left ${
             isOpen ? 'pointer-events-none' : ''
           }`}
         >
-          <div className="flex w-full flex-col items-start gap-3 md:gap-4">
-            <div className="shrink-0 rounded-lg p-1 md:p-2">
-              <Image
-                src={item.icon}
-                alt=""
-                width={64}
-                height={64}
-                className="h-9 w-9 object-contain md:h-11 md:w-11"
-              />
-            </div>
-            <h4 className="min-w-0 max-w-full font-general text-base font-medium leading-snug text-slate-900 md:text-2xl">
+          <div className="shrink-0 mb-4">
+            <Image
+              src={item.icon}
+              alt=""
+              width={64}
+              height={64}
+              className="h-9 w-9 object-contain md:h-11 md:w-11"
+            />
+          </div>
+          {/* Aligned to bottom-left via mt-auto */}
+          <div className="mt-auto">
+            <h4 className="font-general text-base font-medium leading-snug text-slate-900 md:text-2xl w-[70%]">
               {item.title}
             </h4>
           </div>
         </motion.div>
 
+        {/* DETAIL LAYER (Expanded) */}
         <motion.div
           variants={detailLayerVariants}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className={`absolute inset-0 z-20 flex flex-col px-5 pb-6 pt-12 md:px-8 md:pb-8 md:pt-14 ${
-            isOpen ? 'pointer-events-auto overflow-y-auto' : 'pointer-events-none'
+          aria-hidden={!isOpen}
+          className={`absolute inset-0 z-20 flex flex-col items-start gap-4 p-6 text-left md:gap-5 md:p-8 ${
+            isOpen ? 'pointer-events-auto' : 'pointer-events-none'
           }`}
         >
-          <p className="font-inter text-base font-regular leading-relaxed text-slate-600 md:text-lg">{item.body}</p>
+          {/* Content starts from Top Left */}
+          <h4
+            className={`min-w-0 max-w-full font-general text-lg font-medium leading-tight text-white md:text-2xl ${
+              isOpen ? 'w-[70%]' : 'w-full'
+            }`}
+          >
+            {item.title}
+          </h4>
+          <p className="w-full font-inter text-md font-regular leading-snug text-white md:text-lg md:leading-relaxed">
+            {item.body}
+          </p>
         </motion.div>
       </motion.div>
     </motion.article>

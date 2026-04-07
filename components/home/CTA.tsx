@@ -12,7 +12,7 @@ export function CTA() {
           <p className="font-inter mb-6 max-w-xs font-regular text-black">Equip with the tools and skills essential for competitive success.</p>
           <button
             type="button"
-            className="cursor-pointer rounded-md bg-dark px-8 py-3 font-medium font-general text-white transition-colors hover:bg-[#2f2f2f]"
+            className="cursor-pointer rounded-md border border-transparent bg-dark px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
           >
             Let&apos;s Connect
           </button>
