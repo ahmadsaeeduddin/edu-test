@@ -7,7 +7,7 @@ import CTA from '@/components/about/CTA';
 
 export const metadata: Metadata = {
   title: 'About Us - Edunautics',
-  description: 'Equipping Research with Tools That Create Impact Beyond Classrooms',
+  description: 'Equipping Learners with Tools That Create Impact Beyond Classrooms',
 };
 
 export default function AboutPage() {
