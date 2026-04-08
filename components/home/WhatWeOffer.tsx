@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -65,11 +66,11 @@ function OfferCard({
   );
 }
 
-export function WhatWeOffer() {
+export const WhatWeOffer = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section className="py-24">
+    <section ref={ref} className="py-24">
       <div className="layout-container">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
+        <div className="mb-16 text-start">
           <h2 className="mb-6 font-general text-3xl font-medium md:text-5xl">{WHAT_WE_OFFER_SECTION_TITLE}</h2>
           <p className="font-inter text-lg font-regular text-gray-500">{WHAT_WE_OFFER_SECTION_INTRO}</p>
         </div>
@@ -86,4 +87,6 @@ export function WhatWeOffer() {
       </div>
     </section>
   );
-}
+});
+
+WhatWeOffer.displayName = 'WhatWeOffer';

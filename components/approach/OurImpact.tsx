@@ -65,17 +65,10 @@ export default function OurImpact() {
         <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
           <button
             type="button"
-            onClick={expandAll}
-            className="rounded-md bg-lightGray px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-200/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+            onClick={expanded.every((v) => v) ? collapseAll : expandAll}
+            className="bg-transparent px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:text-slate-600 focus:outline-none underline underline-offset-4"
           >
-            Expand all
-          </button>
-          <button
-            type="button"
-            onClick={collapseAll}
-            className="rounded-md border border-gray-200 bg-white px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
-          >
-            Collapse all
+            {expanded.every((v) => v) ? 'Collapse All' : 'Expand All'}
           </button>
         </div>
 
@@ -107,7 +100,7 @@ export default function OurImpact() {
                       className="h-8 w-8 shrink-0 object-contain"
                     />
                     <h3
-                      className={`font-general text-xl font-medium transition-colors duration-100 ${
+                      className={`font-general text-[22px] font-medium transition-colors duration-100 ${
                         isOpen ? 'text-edu-gold' : 'text-slate-700 group-hover:text-edu-gold-light'
                       }`}
                     >

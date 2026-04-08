@@ -33,7 +33,11 @@ export default async function ServiceProgramPage({ params }: PageProps) {
       <div className="flex-1">
         <div className="mx-auto w-full max-w-[1200px] px-6 md:px-12">
           <Hero program={program} />
-          <Features program={program} />
+        </div>
+        <div className="w-full bg-light-bg py-24 mb-32">
+          <div className="mx-auto w-full max-w-[1200px] px-6 md:px-12">
+            <Features program={program} />
+          </div>
         </div>
         <CTA />
       </div>

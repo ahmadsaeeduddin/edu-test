@@ -1,9 +1,28 @@
-export function Hero() {
+'use client';
+
+import { animate } from 'framer-motion';
+import { RefObject } from 'react';
+
+export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement | null> }) {
+  const handleScroll = () => {
+    if (whatWeOfferRef.current) {
+      const targetPosition = whatWeOfferRef.current.offsetTop - 10; // Offset for sticky header
+      const startPosition = window.scrollY;
+
+      animate(0, 1, {
+        duration: 0.7,
+        ease: [0.6, 0.05, 0.19, 1.0], // Custom smooth cubic-bezier ease
+        onUpdate: (latest) => {
+          window.scrollTo(0, startPosition + (targetPosition - startPosition) * latest);
+        },
+      });
+    }
+  };
+
   return (
-    <section className="home-hero-grid-bg text-white min-h-screen">
-      <div className="layout-container flex min-h-screen w-full flex-col justify-center">
-        <p className="text-orange-400 font-general font-medium mb-6 text-lg md:text-xl">The Challenge</p>
-        <h1 className="font-general font-medium text-3xl md:text-6xl leading-tight mb-10">
+    <section className="home-hero-grid-bg text-white min-h-[82vh]">
+      <div className="layout-container flex min-h-[82vh] w-full flex-col justify-center">
+        <h1 className="font-general font-medium text-3xl md:text-6xl leading-tight mb-6">
         Explore STEM, AI, Data <br/>
         Science, and Soft Skills <br/>
         </h1>
@@ -12,9 +31,10 @@ export function Hero() {
 
 
         </p>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 mb-8">
           <button
             type="button"
+            onClick={handleScroll}
             className="cursor-pointer rounded-md border-2 border-transparent bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 font-medium font-general text-darkText transition-all hover:border-edu-gold hover:from-white hover:to-white hover:text-edu-gold"
           >
             Explore Programs

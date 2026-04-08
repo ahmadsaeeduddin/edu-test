@@ -37,7 +37,7 @@ export function About() {
             <div className="flex flex-col items-stretch gap-7 lg:col-span-5 lg:items-end">
               <Link
                 href="/about"
-                className="inline-flex w-fit shrink-0 items-center justify-center self-start rounded-lg border border-[#000000] bg-white px-5 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-50 lg:self-end"
+                className="inline-flex w-fit shrink-0 items-center justify-center self-start rounded-md border bg-white px-7 py-3 font-inter text-base font-regular text-dark transition-colors hover:border-white hover:bg-dark hover:text-white lg:self-end"
               >
                 Learn More
               </Link>

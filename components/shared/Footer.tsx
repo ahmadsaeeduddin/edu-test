@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Mail, Phone, Globe, Linkedin, Instagram } from 'lucide-react';
-import { FaqFooterLink } from '@/components/shared/FaqFooterLink';
 import { FooterSubscribeButton } from '@/components/shared/FooterSubscribeButton';
 import { whatWeOfferPrograms } from '@/data/whatWeOffer';
 
@@ -35,7 +34,6 @@ export function Footer() {
                 </Link>
               </li>
               <li><Link href="/approach" className="hover:text-white transition">Our Approach</Link></li>
-              <FaqFooterLink />
               <li><Link href="/careers" className="hover:text-white transition">Careers</Link></li>
             </ul>
           </div>

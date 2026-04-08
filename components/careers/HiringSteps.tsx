@@ -1,4 +1,24 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const stepVariants = {
+  rest: {
+    scale: 1,
+    y: 0,
+  },
+  hover: {
+    scale: 1.001,
+    y: -2,
+  },
+} as const;
+
+const stepTransition = {
+  type: 'spring' as const,
+  stiffness: 500,
+  damping: 30,
+};
 
 const steps = [
   {
@@ -53,9 +73,13 @@ export default function HiringSteps() {
         {/* Mobile: vertical stack */}
         <div className="flex flex-col gap-6 md:hidden">
           {steps.map((step) => (
-            <div
+            <motion.div
               key={step.num}
-              className={`${step.cardClass} w-full rounded-2xl p-6 text-white shadow-lg`}
+              variants={stepVariants}
+              initial="rest"
+              whileHover="hover"
+              transition={stepTransition}
+              className={`${step.cardClass} w-full rounded-2xl p-6 text-white shadow-lg cursor-default`}
             >
               <span className="mb-3 block font-general text-sm font-medium opacity-70">STEP {step.num}</span>
               <div className="mb-4 flex items-center">
@@ -69,7 +93,7 @@ export default function HiringSteps() {
                 <h4 className="text-base font-bold">{step.title}</h4>
               </div>
               <p className={`text-sm leading-relaxed ${step.opacity}`}>{step.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -89,8 +113,12 @@ export default function HiringSteps() {
               const layout = desktopLayouts[index];
               return (
                 <div key={step.num} className={layout.row}>
-                  <div
-                    className={`${step.cardClass} w-xl rounded-2xl p-8 text-white shadow-lg ${layout.card}`}
+                  <motion.div
+                    variants={stepVariants}
+                    initial="rest"
+                    whileHover="hover"
+                    transition={stepTransition}
+                    className={`${step.cardClass} w-xl rounded-2xl p-8 text-white shadow-lg ${layout.card} cursor-default`}
                   >
                     <div className="mb-4 flex items-center">
                       <Image
@@ -103,7 +131,7 @@ export default function HiringSteps() {
                       <h4 className="text-lg md:text-xl font-medium font-general">{step.title}</h4>
                     </div>
                     <p className={`text-sm md:text-md font-inter font-regular ${step.opacity}`}>{step.desc}</p>
-                  </div>
+                  </motion.div>
                 </div>
               );
             })}

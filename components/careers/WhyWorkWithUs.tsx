@@ -12,9 +12,9 @@ const cardVariants = {
   },
   hover: {
     scale: 1.001,
-    y: -4,
+    y: -0.5,
     boxShadow:
-      '6px 7px 0 0 rgba(232, 160, 32, 0.16), 10px 14px 22px -6px rgba(17, 17, 16, 0.12)',
+      '3px 4px 0 0 rgba(232, 160, 32, 0.16), 10px 14px 22px -6px rgba(17, 17, 16, 0.12)',
   },
 } as const;
 

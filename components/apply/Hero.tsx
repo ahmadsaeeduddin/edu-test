@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <header className="mb-12">
       <h1 className="font-general text-2xl md:text-4xl font-general font-medium text-gray-900 mb-6">Apply Now Form</h1>
-      <p className="text-gray-600 font-inter font-regular leading-relaxed text-lg max-w-2xl">
+      <p className="text-gray-600 font-inter font-regular leading-relaxed text-lg max-w-[95%]">
         At Edunautics, we are building future-focused learning solutions that create real impact. If you&apos;re passionate about meaningful work and innovation, share your details and upload your resume below. We look forward to connecting with you.
       </p>
     </header>

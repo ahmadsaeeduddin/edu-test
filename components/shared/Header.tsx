@@ -8,8 +8,8 @@ import { useState, useEffect } from 'react';
 import { serviceProgramNavItems } from '@/data/serviceProgramRoutes';
 
 const navLinks = [
-  { href: '/about', label: 'About Us' },
   { href: '/approach', label: 'Our Approach' },
+  { href: '/about', label: 'About Us' },
   { href: '/careers', label: 'Careers' },
 ];
 
@@ -44,7 +44,7 @@ export function Header() {
 
   return (
     <>
-      <header className={`w-full sticky top-0 z-50 ${isHome ? 'bg-[#1a1a1a] text-white' : 'bg-white border-b border-gray-100 text-gray-900'}`}>
+      <header className={`w-full sticky top-0 z-50 ${isHome ? 'bg-[#121212] text-white' : 'bg-white border-b border-gray-100 text-gray-900'}`}>
         <nav className="layout-container flex h-20 w-full items-center justify-between">
           <Link href="/" className="relative h-30 w-50 block">
             <Image
@@ -58,7 +58,6 @@ export function Header() {
 
           {/* Desktop nav */}
           <div className="hidden items-center space-x-8 font-inter text-sm font-regular md:flex">
-            <Link href="/about" className={linkClass('/about')}>About Us</Link>
             <div className="relative group">
               <button
                 type="button"
@@ -89,6 +88,7 @@ export function Header() {
               </div>
             </div>
             <Link href="/approach" className={linkClass('/approach')}>Our Approach</Link>
+            <Link href="/about" className={linkClass('/about')}>About Us</Link>
             <Link href="/careers" className={linkClass('/careers')}>Careers</Link>
           </div>
 
@@ -138,8 +138,6 @@ export function Header() {
 
           {/* Sidebar links */}
           <div className="flex-1 overflow-y-auto px-6 py-8">
-            <Link href="/about" className={mobileLinkClass('/about')}>About Us</Link>
-
             <button
               type="button"
               className={`flex w-full items-center justify-between py-3 text-lg font-medium transition-colors ${pathname.startsWith('/services') ? 'text-orange-400' : 'text-gray-300 hover:text-white'}`}
@@ -166,8 +164,8 @@ export function Header() {
               })}
             </div>
 
-            {navLinks.slice(1).map((link) => (
-              <Link key={link.href} href={link.href} className={mobileLinkClass(link.href)}>
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className={mobileLinkClass(link.href)} onClick={() => setMobileOpen(false)}>
                 {link.label}
               </Link>
             ))}

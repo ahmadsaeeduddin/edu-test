@@ -21,7 +21,7 @@ export default function AboutPage() {
       </div>
 
       {/* Full viewport–width band; content stays aligned with max-w above */}
-      <div className="w-full bg-light-yellow">
+      <div className="w-full bg-white">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-24 px-6 py-24 md:px-12">
           <OurValues />
           <OurPromise />

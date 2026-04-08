@@ -54,8 +54,8 @@ const detailLayerVariants = {
 } as const;
 
 const cardBgVariants = {
-  collapsed: { backgroundColor: '#ffffff' },
-  expanded: { backgroundColor: 'var(--color-edu-gold)' },
+  collapsed: { backgroundColor: 'var(--color-light-bg)' },
+  expanded: { backgroundColor: '#ffffff' },
 } as const;
 
 type ValueItem = (typeof values)[number];
@@ -96,10 +96,8 @@ function ValueCard({
         initial="collapsed"
         animate={isOpen ? 'expanded' : 'collapsed'}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        // Added overflow-hidden to ensure the BG doesn't bleed, 
-        // and kept padding consistent (p-6 md:p-8)
-        className={`relative flex h-[340px] cursor-pointer flex-col overflow-hidden rounded-[4px] border-t-2 bg-transparent p-6 shadow-sm outline-none transition-[border-color] duration-300 focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[400px] md:p-8 ${
-          isOpen ? 'border-t-transparent' : 'border-t-[var(--color-edu-gold)]'
+        className={`relative flex h-[300px] cursor-pointer flex-col overflow-hidden rounded-[4px] border-t-4 bg-transparent p-6 shadow-sm outline-none transition-[border-color] duration-300 focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[360px] md:p-8 ${
+          isOpen ? 'border-t-[var(--color-edu-gold)]' : 'border-t-transparent'
         }`}
         onMouseEnter={() => onHoverIn(index)}
         onMouseLeave={() => onHoverOut(index)}
@@ -137,13 +135,13 @@ function ValueCard({
             isOpen ? 'pointer-events-none' : ''
           }`}
         >
-          <div className="shrink-0 mb-4">
+          <div className="shrink-0 mb-4 ">
             <Image
               src={item.icon}
               alt=""
               width={64}
               height={64}
-              className="h-9 w-9 object-contain md:h-11 md:w-11"
+              className="h-9 w-9 object-contain md:h-11 md:w-11 brightness-0"
             />
           </div>
           {/* Aligned to bottom-left via mt-auto */}
@@ -165,13 +163,13 @@ function ValueCard({
         >
           {/* Content starts from Top Left */}
           <h4
-            className={`min-w-0 max-w-full font-general text-lg font-medium leading-tight text-white md:text-2xl ${
+            className={`min-w-0 max-w-full font-general text-lg font-medium leading-tight text-slate-900 md:text-2xl ${
               isOpen ? 'w-[70%]' : 'w-full'
             }`}
           >
             {item.title}
           </h4>
-          <p className="w-full font-inter text-md font-regular leading-snug text-white md:text-lg md:leading-relaxed">
+          <p className="w-full font-inter text-md font-regular leading-snug text-slate-700 md:text-lg md:leading-relaxed">
             {item.body}
           </p>
         </motion.div>
@@ -235,17 +233,10 @@ export default function OurValues() {
         <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
           <button
             type="button"
-            onClick={expandAll}
-            className="rounded-md bg-lightGray px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-200/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
+            onClick={pinned.every((v) => v) ? collapseAll : expandAll}
+            className="bg-transparent px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:text-slate-600 focus:outline-none underline underline-offset-4"
           >
-            Expand all
-          </button>
-          <button
-            type="button"
-            onClick={collapseAll}
-            className="rounded-md border border-gray-200 bg-white px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2"
-          >
-            Collapse all
+            {pinned.every((v) => v) ? 'Collapse All' : 'Expand All'}
           </button>
         </div>
 
