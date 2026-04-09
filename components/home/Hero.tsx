@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { animate } from 'framer-motion';
 import { RefObject } from 'react';
 
@@ -39,12 +40,12 @@ export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement
           >
             Explore Programs
           </button>
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="cursor-pointer rounded-md border border-edu-gold px-6 py-3 font-medium font-general text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
           >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </section>
