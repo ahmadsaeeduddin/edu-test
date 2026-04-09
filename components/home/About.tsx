@@ -1,55 +1,46 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 
 export function About() {
   return (
     <section className="relative z-10 -mt-15 pb-20">
       <div className="layout-container">
-        <div className="bg-white p-6 shadow-sm md:p-12">
+        <div className="bg-white p-6 md:p-12">
           <h2 className="mb-8 flex w-full items-baseline gap-4 font-general text-3xl font-medium text-slate-900 md:mb-10 md:text-5xl">
             <span className="shrink-0">The Challenge</span>
             <span className="h-[1px] min-w-0 flex-1 bg-gray-300" aria-hidden />
           </h2>
 
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-            <div className="lg:col-span-7">
-              <div className="flex w-full max-w-2xl flex-col">
-                <h3 className="w-full font-general text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-[2.125rem] lg:leading-snug">
-                  <span className="text-slate-900">When Education Stops </span>
-                  <span className="text-slate-500">at</span>
-                  <span className="block text-slate-500">Classrooms, Innovation Stops Too</span>
-                </h3>
-                <div className="mt-6 w-full space-y-4 font-inter text-base font-regular leading-relaxed text-slate-600 md:text-lg max-w-xl">
-                  <p>
-                    Today&apos;s education system faces a critical gap. Students are trained to pass exams but rarely
-                    guided to question, research, and create. Research often ends in reports instead of real-world
-                    solutions. Meanwhile, industries evolve faster than academic curricula, leaving graduates
-                    underprepared for modern challenges.
-                  </p>
-                  <p>
-                    This disconnect between learning and application limits innovation, curiosity, and confidence — the
-                    very traits needed to thrive in a world driven by technology and change.
-                  </p>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <h3 className="w-full max-w-xl font-general text-2xl font-medium leading-relaxed  md:text-4xl">
+                <span className="block text-slate-900">When Education</span>
+                <span className="mt-2 block text-slate-900">Stops at Classrooms,</span>
+                <span className="mt-2 block text-[var(--color-edu-gold)]">Innovation Stops Too</span>
+              </h3>
             </div>
 
-            <div className="flex flex-col items-stretch gap-7 lg:col-span-5 lg:items-end">
+            <div className="max-w-2xl">
+              <div className="space-y-7 font-inter text-base font-regular leading-relaxed text-slate-600 text-lg md:text-xl mr-4">
+                <p className=" leading-relaxed ">
+                  Today&apos;s education system faces a critical gap. Students are trained to pass exams but rarely
+                  guided to question, research, and create. Research often ends in reports instead of real-world
+                  solutions. Meanwhile, industries evolve faster than academic curricula, leaving graduates underprepared
+                  for modern challenges.
+                </p>
+                <p className="leading-relaxed ">
+                  This disconnect between learning and application limits innovation, curiosity, and confidence - the
+                  very traits needed to thrive in a world driven by technology and change.
+                </p>
+              </div>
+
               <Link
                 href="/about"
-                className="inline-flex w-fit shrink-0 items-center justify-center self-start rounded-md border bg-white px-7 py-3 font-inter text-base font-regular text-dark transition-colors hover:border-white hover:bg-dark hover:text-white lg:self-end"
+                className="mt-8 inline-flex w-fit items-center justify-center gap-2 rounded-md border border-slate-700 bg-white px-6 py-3 font-general text-xl font-medium text-slate-900 transition-colors hover:border-white hover:bg-dark hover:text-white"
               >
-                Learn More
+                Know More About Edunautics
+                <ChevronRight className="h-5 w-5" />
               </Link>
-              <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-xl lg:ml-auto lg:max-w-none">
-                <Image
-                  src="/assets/main_page_svgs/why-choose-img.webp"
-                  alt="Students collaborating in a learning environment"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-              </div>
             </div>
           </div>
         </div>

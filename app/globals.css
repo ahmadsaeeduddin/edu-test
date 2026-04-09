@@ -71,6 +71,8 @@
   --color-edu-gold-dark: #E2930D;
   --color-lightBlack: #212121DE;
   --color-darkBlack: #0D0D0D;
+  --color-dark-text: #505050;
+  --color-grey-border: #C4C4C4;
 }
 
 /* One source of truth: same box as max-w-7xl + mx-auto + px-6 (avoids subtle flex/HMR mismatches) */

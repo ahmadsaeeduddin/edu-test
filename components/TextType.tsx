@@ -28,8 +28,8 @@ interface TextTypeProps extends React.HTMLAttributes<HTMLElement> {
 const TextType: React.FC<TextTypeProps> = ({
   text,
   as: Component = 'div',
-  typingSpeed = 50,
-  initialDelay = 0,
+  typingSpeed = 80,
+  initialDelay = 10,
   pauseDuration = 2000,
   deletingSpeed = 30,
   loop = true,

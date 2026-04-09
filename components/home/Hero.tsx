@@ -27,7 +27,7 @@ export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement
         Explore STEM, AI, Data <br/>
         Science, and Soft Skills <br/>
         </h1>
-        <p className="text-gray-400 text-xl mb-10 max-w-xl font-inter">
+        <p className="text-gray-400 text-xl mb-10 max-w-[50%] font-inter">
         Real world learning at your pace or in our learning hubs. Build the technical skills and ethical mindset needed to thrive in a world shaped by technology.
 
 

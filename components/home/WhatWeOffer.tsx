@@ -35,8 +35,10 @@ function OfferCard({
   );
 
   return (
-    <div
-      className={`group relative shrink-0 overflow-hidden rounded-[4px] ${className ?? ''}`}
+    <Link
+      href={detailHref}
+      className={`group relative shrink-0 overflow-hidden rounded-[4px] block ${className ?? ''}`}
+      aria-label={`Learn more about ${offer.title}`}
     >
       <Image
         alt={offer.title}
@@ -54,15 +56,9 @@ function OfferCard({
             {offer.desc}
           </p>
         </div>
-        <Link
-          href={detailHref}
-          className="shrink-0"
-          aria-label={`Learn more about ${offer.title}`}
-        >
-          {cta}
-        </Link>
+        <span className="shrink-0">{cta}</span>
       </div>
-    </div>
+    </Link>
   );
 }
 

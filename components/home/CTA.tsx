@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function CTA() {
   return (
     <section className="cta-radial-bg relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 border-b border-separator pb-16">
@@ -10,12 +12,12 @@ export function CTA() {
         </div>
         <div className="text-center md:text-left">
           <p className="font-inter mb-6 max-w-xs font-regular text-black">Equip with the tools and skills essential for competitive success.</p>
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="cursor-pointer rounded-md border border-transparent bg-dark px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
           >
             Let&apos;s Connect
-          </button>
+          </Link>
         </div>
       </div>
     </section>

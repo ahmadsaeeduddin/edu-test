@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ArrowRight, ChevronDown, Headphones, Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { serviceProgramNavItems } from '@/data/serviceProgramRoutes';
 
 const navLinks = [
@@ -18,16 +18,60 @@ export function Header() {
   const isHome = pathname === '/';
   const [mobileOpen, setMobileOpen] = useState(false);
   const [offerOpen, setOfferOpen] = useState(false);
+  const [desktopOfferOpen, setDesktopOfferOpen] = useState(false);
+  const [desktopOfferPinned, setDesktopOfferPinned] = useState(false);
+  const desktopOfferRef = useRef<HTMLDivElement>(null);
+  const desktopOfferCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setMobileOpen(false);
     setOfferOpen(false);
+    setDesktopOfferOpen(false);
+    setDesktopOfferPinned(false);
   }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    const onPointerDown = (event: MouseEvent) => {
+      if (!desktopOfferRef.current) return;
+      if (!desktopOfferRef.current.contains(event.target as Node)) {
+        setDesktopOfferOpen(false);
+        setDesktopOfferPinned(false);
+      }
+    };
+
+    document.addEventListener('mousedown', onPointerDown);
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (desktopOfferCloseTimer.current) {
+        clearTimeout(desktopOfferCloseTimer.current);
+      }
+    };
+  }, []);
+
+  const handleDesktopOfferMouseEnter = () => {
+    if (desktopOfferCloseTimer.current) {
+      clearTimeout(desktopOfferCloseTimer.current);
+      desktopOfferCloseTimer.current = null;
+    }
+    setDesktopOfferOpen(true);
+  };
+
+  const handleDesktopOfferMouseLeave = () => {
+    if (desktopOfferPinned) return;
+    desktopOfferCloseTimer.current = setTimeout(() => {
+      setDesktopOfferOpen(false);
+    }, 120);
+  };
 
   const linkClass = (href: string) => {
     const isActive = pathname === href;
@@ -58,9 +102,23 @@ export function Header() {
 
           {/* Desktop nav */}
           <div className="hidden items-center space-x-8 font-inter text-sm font-regular md:flex">
-            <div className="relative group">
+            <div
+              className="relative"
+              ref={desktopOfferRef}
+              onMouseEnter={handleDesktopOfferMouseEnter}
+              onMouseLeave={handleDesktopOfferMouseLeave}
+            >
               <button
                 type="button"
+                onClick={() => {
+                  if (desktopOfferPinned) {
+                    setDesktopOfferPinned(false);
+                    setDesktopOfferOpen(false);
+                    return;
+                  }
+                  setDesktopOfferPinned(true);
+                  setDesktopOfferOpen(true);
+                }}
                 className={`flex items-center transition-colors ${
                   pathname.startsWith('/services')
                     ? 'font-bold text-black'
@@ -68,24 +126,71 @@ export function Header() {
                       ? 'font-regular hover:text-orange-400'
                       : 'font-regular text-gray-600 hover:text-black'
                 }`}
+                aria-expanded={desktopOfferOpen}
+                aria-haspopup="menu"
               >
-                What We Offer <ChevronDown className="ml-1 h-4 w-4" />
+                What We Offer
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${desktopOfferOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className="absolute left-0 top-full z-50 mt-2 min-w-[260px] rounded-md border border-gray-100 bg-white py-2 font-inter text-sm shadow-lg opacity-0 invisible transition-all group-hover:visible group-hover:opacity-100">
-                {serviceProgramNavItems.map(({ slug, title }) => {
-                  const href = `/services/${slug}`;
-                  const active = pathname === href;
-                  return (
-                    <Link
-                      key={slug}
-                      href={href}
-                      className={`block px-4 py-2 transition-colors hover:bg-gray-50 ${active ? 'font-bold text-black' : 'font-regular text-gray-600 hover:text-black'}`}
-                    >
-                      {title}
-                    </Link>
-                  );
-                })}
-              </div>
+              {desktopOfferOpen ? (
+                <div className="absolute left-1/2 top-full z-50 mt-3 w-[1080px] -translate-x-1/2 rounded-md border border-gray-100 bg-white p-5 font-inter shadow-xl">
+                  <div className="grid grid-cols-12 gap-4 ">
+                    <div className="col-span-5 px-8 py-3 ">
+                      <h3 className="font-general text-[20px] font-medium leading-snug text-slate-900">
+                        <span className="font-regular text-slate-500">From Learning to Leadership - </span>
+                        Practical, Research-Driven, and Future-Ready
+                      </h3>
+                      <p className="mt-5 text-[16px] font-regular leading-relaxed text-slate-700">
+                        Whether you learn online or in person, every program is built to help you explore, innovate, and make an impact.
+                      </p>
+                    </div>
+
+                    <div className="col-span-7 grid grid-cols-3 gap-4">
+                      {serviceProgramNavItems.map(({ slug, title }, index) => {
+                        const href = `/services/${slug}`;
+                        const active = pathname === href;
+                        return (
+                          <Link
+                            key={slug}
+                            href={href}
+                            onClick={() => setDesktopOfferOpen(false)}
+                            className={`group rounded-md border bg-[var(--color-light-bg)] p-4 transition-colors hover:border-[var(--color-edu-gold)] hover:bg-white h-[124px] ${active ? 'border-[var(--color-edu-gold)]' : 'border-transparent'}`}
+                          >
+                            <div className="flex flex-col">
+                              {index === 0 ? (
+                                <Headphones className="h-5 w-5 text-slate-700" />
+                              ) : index === 1 ? (
+                                <Image
+                                  src="/assets/dropdown-svg/teacher-svg.svg"
+                                  alt=""
+                                  width={20}
+                                  height={20}
+                                  className="h-5 w-5"
+                                />
+                              ) : (
+                                <Image
+                                  src="/assets/dropdown-svg/book-svg.svg"
+                                  alt=""
+                                  width={20}
+                                  height={20}
+                                  className="h-5 w-5"
+                                />
+                              )}
+                              <div className="flex items-end justify-end gap-4">
+                                <p className="mt-6 max-w-full text-sm font-regular leading-snug text-slate-900">{title}</p>
+                                
+                                <span className={`inline-flex h-6 w-6 items-center justify-center  transition-colors group-hover:bg-[var(--color-edu-gold)] ${active ? 'bg-[var(--color-edu-gold)]' : 'bg-transparent'}`}>
+                                  <ArrowRight className={`h-4 w-4 transition-colors text-dark`} />
+                                </span>
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              ) : null}
             </div>
             <Link href="/approach" className={linkClass('/approach')}>Our Approach</Link>
             <Link href="/about" className={linkClass('/about')}>About Us</Link>

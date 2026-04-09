@@ -14,8 +14,11 @@ export default function AboutPage() {
   return (
     <div className="flex w-full flex-col overflow-x-clip">
       <div className="mx-auto w-full max-w-[1200px] px-6 pt-16 pb-24 md:px-12">
-        <div className="flex flex-col gap-24">
-          <Hero />
+        <Hero />
+      </div>
+
+      <div className="w-full bg-[var(--color-light-bg)]">
+        <div className="mx-auto w-full max-w-[1200px] px-6 py-24 md:px-12">
           <OurVision />
         </div>
       </div>

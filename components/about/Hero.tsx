@@ -9,7 +9,8 @@ const cardShell =
 function HeroIntroText({ className }: { className?: string }) {
   return (
     <p className={className}>
-      Edunautics is more than an EdTech platform — it&apos;s an initiative to reimagine education through research,
+      <span className="font-bold font-general text-darkBlack">Edunautics</span> is more than an EdTech platform — it&apos;s an
+      initiative to reimagine education through research,
       innovation, and industry collaboration. We prepare learners{' '}
       <span className="text-slate-500">
         not just to understand knowledge, but to apply it where it truly matters.
@@ -61,7 +62,7 @@ export default function Hero() {
           <div className={`${cardShell} bg-transparent py-6 md:py-0`}>
             <div className="flex min-h-0 flex-1 flex-col justify-center pl-0 pr-0 pt-0">
               <div className="mb-1 ml-1 flex min-h-0 flex-1 flex-col justify-center bg-white px-5 py-5 md:mb-1.5 md:ml-1.5 md:px-9 md:py-6 lg:px-10">
-                <HeroIntroText className="font-inter text-lg font-regular leading-relaxed tracking-wider text-slate-700 md:text-2xl md:overflow-y-auto" />
+                <HeroIntroText className="font-inter text-lg font-regular leading-relaxed tracking-wider text-dark-text md:text-2xl md:overflow-y-auto" />
               </div>
             </div>
           </div>
@@ -91,7 +92,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom: separator + two-column grid */}
-      <div className="flex flex-col gap-8 md:gap-10">
+      {/* <div className="flex flex-col gap-8 md:gap-10">
         <div className="h-px w-full bg-[#E5E5E5]" aria-hidden />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
           <p className="font-inter text-md font-regular leading-relaxed text-slate-600 md:text-lg">
@@ -109,7 +110,7 @@ export default function Hero() {
             help build it.
           </p>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -185,7 +185,7 @@ export default function CorePillars() {
   };
 
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white py-12">
 
       <div className="mx-auto w-full max-w-[1200px] px-6 md:px-12">
         <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
