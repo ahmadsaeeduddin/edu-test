@@ -58,7 +58,9 @@ export function FAQ() {
                     aria-controls={`faq-panel-${i}`}
                     id={`faq-trigger-${i}`}
                   >
-                    <span className="font-general font-medium text-base text-gray-900 md:text-[17px]">{faq.q}</span>
+                    <span className="min-w-0 flex-1 font-general font-medium text-base text-gray-900 md:text-[17px]">
+                      {faq.q}
+                    </span>
                     <span className="inline-flex shrink-0 text-gray-900" aria-hidden>
                       {isOpen ? <X className="h-5 w-5" strokeWidth={2} /> : <Plus className="h-5 w-5" strokeWidth={2} />}
                     </span>

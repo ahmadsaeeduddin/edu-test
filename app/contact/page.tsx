@@ -260,7 +260,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-edu-gold)] px-5 py-3 font-inter text-sm font-medium text-white transition-colors hover:bg-[var(--color-edu-gold-light)] disabled:cursor-not-allowed disabled:opacity-70"
+                    className={`inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-edu-gold)] px-5 py-3 font-inter text-sm font-medium text-white transition-colors hover:bg-[var(--color-edu-gold-light)] disabled:cursor-not-allowed disabled:opacity-70 ${!isSubmitting ? 'btn-dual-line' : ''}`}
                   >
                     {isSubmitting ? (
                       <>
@@ -268,7 +268,12 @@ export default function ContactPage() {
                         Sending...
                       </>
                     ) : (
-                      'Send message'
+                      <span className="btn-dual-line__viewport">
+                        <span className="btn-dual-line__stack">
+                          <span className="btn-dual-line__line">Send message</span>
+                          <span className="btn-dual-line__line">Send message</span>
+                        </span>
+                      </span>
                     )}
                   </button>
                 </form>

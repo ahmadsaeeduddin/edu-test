@@ -149,3 +149,60 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Dual-line slide hover: viewport is exactly one line tall; stack has two lines; hover slides -50% */
+.btn-dual-line__viewport {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  vertical-align: bottom;
+  height: 1.35em;
+  line-height: 1.35;
+}
+/* Long labels (e.g. hero CTAs): allow two wrapped lines; both duplicates wrap the same */
+.btn-dual-line__viewport--2 {
+  height: 2.7em;
+}
+.btn-dual-line__stack {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.btn-dual-line__line {
+  display: block;
+  flex-shrink: 0;
+  height: 1.35em;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Center 1–2 lines in the fixed height (webkit-box clamp top-aligns and sat high vs icons) */
+.btn-dual-line__viewport--2 .btn-dual-line__line {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  height: 2.7em;
+  line-height: 1.35;
+  max-height: 2.7em;
+  white-space: normal;
+  overflow: hidden;
+}
+.btn-dual-line:hover:not(:disabled) .btn-dual-line__viewport .btn-dual-line__stack,
+.btn-dual-line:focus-visible:not(:disabled) .btn-dual-line__viewport .btn-dual-line__stack {
+  transform: translateY(-50%);
+}
+.btn-dual-line:disabled .btn-dual-line__viewport .btn-dual-line__stack {
+  transform: none;
+}
+a.btn-dual-line:hover .btn-dual-line__viewport .btn-dual-line__stack,
+a.btn-dual-line:focus-visible .btn-dual-line__viewport .btn-dual-line__stack {
+  transform: translateY(-50%);
+}
+.btn-dual-line-group:hover:not(:disabled) .btn-dual-line__viewport .btn-dual-line__stack,
+.btn-dual-line-group:focus-visible:not(:disabled) .btn-dual-line__viewport .btn-dual-line__stack {
+  transform: translateY(-50%);
+}
+.btn-dual-line-group:disabled .btn-dual-line__viewport .btn-dual-line__stack {
+  transform: none;
+}

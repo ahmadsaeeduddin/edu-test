@@ -36,15 +36,25 @@ export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement
           <button
             type="button"
             onClick={handleScroll}
-            className="cursor-pointer rounded-md border-2 border-transparent bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 font-medium font-general text-darkText transition-all hover:border-edu-gold hover:from-white hover:to-white hover:text-edu-gold"
+            className="btn-dual-line inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-transparent bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 font-medium font-general text-darkText transition-all hover:border-edu-gold hover:from-white hover:to-white hover:text-edu-gold"
           >
-            Explore Programs
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Explore Programs</span>
+                <span className="btn-dual-line__line">Explore Programs</span>
+              </span>
+            </span>
           </button>
           <Link
             href="/contact"
-            className="cursor-pointer rounded-md border border-edu-gold px-6 py-3 font-medium font-general text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+            className="btn-dual-line inline-flex cursor-pointer items-center justify-center rounded-md border border-edu-gold px-6 py-3 font-medium font-general text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
           >
-            Get Started
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Get Started</span>
+                <span className="btn-dual-line__line">Get Started</span>
+              </span>
+            </span>
           </Link>
         </div>
       </div>

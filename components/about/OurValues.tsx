@@ -234,9 +234,18 @@ export default function OurValues() {
           <button
             type="button"
             onClick={pinned.every((v) => v) ? collapseAll : expandAll}
-            className="bg-transparent px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:text-slate-600 focus:outline-none underline underline-offset-4"
+            className="btn-dual-line-group bg-transparent px-4 py-2.5 font-inter text-sm font-medium text-slate-900 transition-colors hover:text-slate-600 focus:outline-none underline underline-offset-4"
           >
-            {pinned.every((v) => v) ? 'Collapse All' : 'Expand All'}
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">
+                  {pinned.every((v) => v) ? 'Collapse All' : 'Expand All'}
+                </span>
+                <span className="btn-dual-line__line">
+                  {pinned.every((v) => v) ? 'Collapse All' : 'Expand All'}
+                </span>
+              </span>
+            </span>
           </button>
         </div>
 

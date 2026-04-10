@@ -119,7 +119,7 @@ export function Header() {
                   setDesktopOfferPinned(true);
                   setDesktopOfferOpen(true);
                 }}
-                className={`flex items-center transition-colors ${
+                className={`btn-dual-line-group flex items-center transition-colors ${
                   pathname.startsWith('/services')
                     ? 'font-bold text-black'
                     : isHome
@@ -129,8 +129,13 @@ export function Header() {
                 aria-expanded={desktopOfferOpen}
                 aria-haspopup="menu"
               >
-                What We Offer
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${desktopOfferOpen ? 'rotate-180' : ''}`} />
+                <span className="btn-dual-line__viewport">
+                  <span className="btn-dual-line__stack">
+                    <span className="btn-dual-line__line">What We Offer</span>
+                    <span className="btn-dual-line__line">What We Offer</span>
+                  </span>
+                </span>
+                <ChevronDown className={`ml-1 h-4 w-4 shrink-0 transition-transform duration-200 ${desktopOfferOpen ? 'rotate-180' : ''}`} />
               </button>
               {desktopOfferOpen ? (
                 <div className="absolute left-1/2 top-full z-50 mt-3 w-[1080px] -translate-x-1/2 rounded-md border border-gray-100 bg-white p-5 font-inter shadow-xl">
@@ -179,8 +184,10 @@ export function Header() {
                               <div className="flex items-end justify-end gap-4">
                                 <p className="mt-6 max-w-full text-sm font-regular leading-snug text-slate-900">{title}</p>
                                 
-                                <span className={`inline-flex h-6 w-6 items-center justify-center  transition-colors group-hover:bg-[var(--color-edu-gold)] ${active ? 'bg-[var(--color-edu-gold)]' : 'bg-transparent'}`}>
-                                  <ArrowRight className={`h-4 w-4 transition-colors text-dark`} />
+                                <span
+                                  className={`inline-flex size-4 shrink-0 items-center justify-center rounded-[1px] transition-colors group-hover:bg-[var(--color-edu-gold)] ${active ? 'bg-[var(--color-edu-gold)]' : 'bg-transparent'}`}
+                                >
+                                  <ArrowRight className="h-4 w-4 shrink-0 text-dark transition-colors" />
                                 </span>
                               </div>
                             </div>
@@ -200,9 +207,14 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/apply"
-              className={`hidden rounded-md px-6 py-2.5 font-inter text-sm transition-colors md:inline-block ${pathname === '/apply' ? 'font-bold' : 'font-regular'} ${isHome ? 'border border-white/30 text-white hover:border-slate-900 hover:bg-white hover:text-slate-900' : 'border border-transparent bg-black text-white hover:border-slate-900 hover:bg-white hover:text-slate-900'}`}
+              className={`btn-dual-line hidden rounded-md px-6 py-2.5 font-inter text-sm transition-colors md:inline-flex md:items-center md:justify-center ${pathname === '/apply' ? 'font-bold' : 'font-regular'} ${isHome ? 'border border-white/30 text-white hover:border-slate-900 hover:bg-white hover:text-slate-900' : 'border border-transparent bg-black text-white hover:border-slate-900 hover:bg-white hover:text-slate-900'}`}
             >
-              Start Learning
+              <span className="btn-dual-line__viewport">
+                <span className="btn-dual-line__stack">
+                  <span className="btn-dual-line__line">Start Learning</span>
+                  <span className="btn-dual-line__line">Start Learning</span>
+                </span>
+              </span>
             </Link>
 
             {/* Hamburger button — mobile only */}
@@ -245,11 +257,16 @@ export function Header() {
           <div className="flex-1 overflow-y-auto px-6 py-8">
             <button
               type="button"
-              className={`flex w-full items-center justify-between py-3 text-lg font-medium transition-colors ${pathname.startsWith('/services') ? 'text-orange-400' : 'text-gray-300 hover:text-white'}`}
+              className={`btn-dual-line-group flex w-full items-center justify-between py-3 text-lg font-medium transition-colors ${pathname.startsWith('/services') ? 'text-orange-400' : 'text-gray-300 hover:text-white'}`}
               onClick={() => setOfferOpen(!offerOpen)}
             >
-              What We Offer
-              <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${offerOpen ? 'rotate-180' : ''}`} />
+              <span className="btn-dual-line__viewport min-w-0 max-w-full text-left">
+                <span className="btn-dual-line__stack">
+                  <span className="btn-dual-line__line">What We Offer</span>
+                  <span className="btn-dual-line__line">What We Offer</span>
+                </span>
+              </span>
+              <ChevronDown className={`h-5 w-5 shrink-0 transition-transform duration-200 ${offerOpen ? 'rotate-180' : ''}`} />
             </button>
             <div
               className={`overflow-hidden transition-all duration-200 ${offerOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
@@ -280,10 +297,15 @@ export function Header() {
           <div className="px-6 pb-8">
             <Link
               href="/apply"
-              className="block w-full rounded-md border border-transparent bg-black py-3 text-center text-sm font-semibold text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
+              className="btn-dual-line flex w-full items-center justify-center rounded-md border border-transparent bg-black py-3 text-center text-sm font-semibold text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
               onClick={() => setMobileOpen(false)}
             >
-              Start Learning
+              <span className="btn-dual-line__viewport">
+                <span className="btn-dual-line__stack">
+                  <span className="btn-dual-line__line">Start Learning</span>
+                  <span className="btn-dual-line__line">Start Learning</span>
+                </span>
+              </span>
             </Link>
           </div>
         </div>

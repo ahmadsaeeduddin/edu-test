@@ -24,13 +24,8 @@ function OfferCard({
 }) {
   const detailHref = `/services/${offer.id}`;
   const cta = (
-    <span
-      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition duration-300 ease-out group-hover:scale-[1.06] group-hover:shadow-md group-hover:ring-1 group-hover:ring-black/5 hover:bg-slate-50"
-    >
-      <ArrowRight
-        className="h-4 w-4 text-slate-900 transition-transform duration-300 ease-out group-hover:translate-x-0.5"
-        strokeWidth={2}
-      />
+    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-white text-slate-900 shadow-sm transition-colors duration-200 ease-out group-hover:bg-edu-gold">
+      <ArrowRight className="h-4 w-4 text-slate-900 " strokeWidth={2} />
     </span>
   );
 

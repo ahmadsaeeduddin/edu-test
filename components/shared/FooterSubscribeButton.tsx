@@ -15,17 +15,16 @@ export function FooterSubscribeButton() {
     <motion.button
       type="button"
       variants={buttonVariants}
-      className="inline-flex items-center justify-center gap-2 border-y border-r border-edu-gold border-l-0 bg-edu-gold px-8 py-3 font-bold whitespace-nowrap text-darkText transition-colors hover:border-l hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+      className="btn-dual-line-group inline-flex items-center justify-center gap-2 border-y border-r border-edu-gold border-l-0 bg-edu-gold px-8 py-3 font-bold whitespace-nowrap text-darkText transition-colors hover:border-l hover:border-edu-gold hover:bg-white hover:text-edu-gold"
       initial="rest"
       whileHover="hover"
     >
-      <motion.span
-        variants={{ rest: { x: 0 }, hover: { x: -5 } }}
-        transition={transition}
-        className="inline-block"
-      >
-        Subscribe Now
-      </motion.span>
+      <span className="btn-dual-line__viewport">
+        <span className="btn-dual-line__stack">
+          <span className="btn-dual-line__line">Subscribe Now</span>
+          <span className="btn-dual-line__line">Subscribe Now</span>
+        </span>
+      </span>
       <motion.span
         variants={{ rest: { x: 0 }, hover: { x: 5 } }}
         transition={transition}

@@ -7,9 +7,14 @@ export function CtaBand() {
         <h2 className="font-general text-[36px] md:text-[42px] text-[#111110] tracking-[-0.3px]">Build the Future with Edunautics</h2>
         <Link
           href="/apply"
-          className="whitespace-nowrap rounded-md border-2 border-transparent bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-3.5 font-inter text-[15px] font-medium text-white transition-all hover:border-edu-gold hover:from-white hover:to-white hover:text-edu-gold"
+          className="btn-dual-line inline-flex items-center justify-center whitespace-nowrap rounded-md border-2 border-transparent bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-3.5 font-inter text-[15px] font-medium text-white transition-all hover:border-edu-gold hover:from-white hover:to-white hover:text-edu-gold"
         >
-          Get In Touch
+          <span className="btn-dual-line__viewport">
+            <span className="btn-dual-line__stack">
+              <span className="btn-dual-line__line">Get In Touch</span>
+              <span className="btn-dual-line__line">Get In Touch</span>
+            </span>
+          </span>
         </Link>
       </div>
     </div>

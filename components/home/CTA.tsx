@@ -14,9 +14,14 @@ export function CTA() {
           <p className="font-inter mb-6 max-w-xs font-regular text-black">Equip with the tools and skills essential for competitive success.</p>
           <Link
             href="/contact"
-            className="cursor-pointer rounded-md border border-transparent bg-dark px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
+            className="btn-dual-line inline-flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-dark px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
           >
-            Let&apos;s Connect
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Let&apos;s Connect</span>
+                <span className="btn-dual-line__line">Let&apos;s Connect</span>
+              </span>
+            </span>
           </Link>
         </div>
       </div>

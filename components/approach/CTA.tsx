@@ -8,9 +8,14 @@ export default function CTA() {
           <h2 className="font-general text-2xl font-medium tracking-tight md:text-4xl">Build the Future with Edunautics</h2>
           <Link
             href="/contact"
-            className="cursor-pointer whitespace-nowrap rounded-md border border-transparent bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
+            className="btn-dual-line inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
           >
-            Get in Touch
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Get in Touch</span>
+                <span className="btn-dual-line__line">Get in Touch</span>
+              </span>
+            </span>
           </Link>
         </div>
         <div className="h-[0.5px] w-full bg-[#727272]" aria-hidden />

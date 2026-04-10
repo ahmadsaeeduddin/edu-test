@@ -25,15 +25,25 @@ export default function Hero() {
         <div className="flex space-x-4">
           <Link
             href="#culture"
-            className="rounded-md border border-transparent bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
+            className="btn-dual-line inline-flex items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 font-medium font-general text-white transition-colors hover:border-slate-900 hover:bg-white hover:text-slate-900"
           >
-            Our Culture
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Our Culture</span>
+                <span className="btn-dual-line__line">Our Culture</span>
+              </span>
+            </span>
           </Link>
           <Link
             href="/apply"
-            className="rounded-md border border-white px-8 py-3 font-general font-medium text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+            className="btn-dual-line inline-flex items-center justify-center rounded-md border border-white px-8 py-3 font-general font-medium text-white transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
           >
-            Apply Now
+            <span className="btn-dual-line__viewport">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Apply Now</span>
+                <span className="btn-dual-line__line">Apply Now</span>
+              </span>
+            </span>
           </Link>
         </div>
       </div>

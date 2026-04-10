@@ -121,9 +121,14 @@ export function ApplicationForm() {
         <button
           type="button"
           onClick={handleSubmitAnother}
-          className="rounded-md border border-slate-800 bg-gray-200 px-7 py-3 text-sm font-medium text-slate-900 transition hover:bg-gray-300 hover:shadow-md"
+          className="btn-dual-line inline-flex items-center justify-center rounded-md border border-slate-800 bg-gray-200 px-7 py-3 text-sm font-medium text-slate-900 transition hover:bg-gray-300 hover:shadow-md"
         >
-          Submit Another Application
+          <span className="btn-dual-line__viewport btn-dual-line__viewport--2 max-w-[14rem] sm:max-w-none">
+            <span className="btn-dual-line__stack">
+              <span className="btn-dual-line__line">Submit Another Application</span>
+              <span className="btn-dual-line__line">Submit Another Application</span>
+            </span>
+          </span>
         </button>
       </div>
     );
@@ -145,9 +150,16 @@ export function ApplicationForm() {
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50"
+            className="btn-dual-line inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50"
           >
-            Choose File <span className="ml-1 text-gray-700">+</span>
+            <span className="btn-dual-line__stack">
+              <span className="btn-dual-line__line">
+                Choose File <span className="text-gray-700">+</span>
+              </span>
+              <span className="btn-dual-line__line">
+                Choose File <span className="text-gray-700">+</span>
+              </span>
+            </span>
           </button>
           <input
             type="file"
@@ -295,9 +307,14 @@ export function ApplicationForm() {
       <div>
         <button
           type="submit"
-          className="rounded-md border border-edu-gold bg-edu-gold px-8 py-3 text-sm font-medium font-general text-white shadow-sm transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+          className="btn-dual-line inline-flex items-center justify-center rounded-md border border-edu-gold bg-edu-gold px-8 py-3 text-sm font-medium font-general text-white shadow-sm transition-colors hover:border-edu-gold hover:bg-white hover:text-edu-gold"
         >
-          Submit Application
+          <span className="btn-dual-line__viewport">
+            <span className="btn-dual-line__stack">
+              <span className="btn-dual-line__line">Submit Application</span>
+              <span className="btn-dual-line__line">Submit Application</span>
+            </span>
+          </span>
         </button>
       </div>
     </form>

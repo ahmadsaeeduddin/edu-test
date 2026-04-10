@@ -26,10 +26,15 @@ export default function ApplicationReceivedPage() {
         </p>
         <div className="flex justify-center">
           <Link
-            className="inline-block border border-gray-300 bg-white text-sm font-medium text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors shadow-sm"
+            className="btn-dual-line inline-flex items-center justify-center border border-gray-300 bg-white text-sm font-medium text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors shadow-sm"
             href="/apply"
           >
-            Submit Another Application
+            <span className="btn-dual-line__viewport btn-dual-line__viewport--2 max-w-[16rem] sm:max-w-none">
+              <span className="btn-dual-line__stack">
+                <span className="btn-dual-line__line">Submit Another Application</span>
+                <span className="btn-dual-line__line">Submit Another Application</span>
+              </span>
+            </span>
           </Link>
         </div>
       </div>

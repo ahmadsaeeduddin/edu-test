@@ -36,10 +36,15 @@ export function About() {
 
               <Link
                 href="/about"
-                className="mt-8 inline-flex w-fit items-center justify-center gap-2 rounded-md border border-slate-700 bg-white px-6 py-3 font-general text-xl font-medium text-slate-900 transition-colors hover:border-white hover:bg-dark hover:text-white"
+                className="btn-dual-line mt-8 inline-flex w-fit items-center justify-center gap-2 rounded-md border border-slate-700 bg-white px-6 py-3 font-general text-xl font-medium text-slate-900 transition-colors hover:border-white hover:bg-dark hover:text-white"
               >
-                Know More About Edunautics
-                <ChevronRight className="h-5 w-5" />
+                <span className="btn-dual-line__viewport btn-dual-line__viewport--2 max-w-[min(100%,18rem)] text-center md:max-w-[20rem]">
+                  <span className="btn-dual-line__stack">
+                    <span className="btn-dual-line__line">Know More About Edunautics</span>
+                    <span className="btn-dual-line__line">Know More About Edunautics</span>
+                  </span>
+                </span>
+                <ChevronRight className="h-5 w-5 shrink-0" />
               </Link>
             </div>
           </div>
