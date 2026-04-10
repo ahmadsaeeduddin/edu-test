@@ -10,7 +10,7 @@ export function Testimonials() {
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAAZTbWmypo4hUgi63c09uu3iE3_Xjz5QOAsuQrcDva-XsCcWCQTuoe5_sGwkxdvWxVCJD1mV5dqEJcPLwHGox-wRj2YKIXQq2et3qCGJsof6lA8_-yYa0gA-XU96lOreSnqq1ikl4o85_lOYIiasjEGccOxN8-eVVMBEhLoR_cKetOqm1cUggZrR3GoMsO6LyCn4A-B4smFFMJJi_kDAqVNBlhfGy-lMdENW0y20-zFWDxVVRmFh-6an3bkzr9O7x1CWzeQR_iJHk"
     },
     {
-      quote: "What impressed us most was the hands-on approach. Our students aren't just learning theory — they're building real-world solutions.",
+      quote: "What impressed us most was the hands-on approach. Our learners aren't just learning theory: they're building real-world solutions.",
       name: "James Carter",
       title: "Director of Academic Innovation",
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCagxii3m8pmJz7PpA5soBuhpe7d-7zJhOMpfIEyI9y4b6HKPchc-CnWzEptYVENFqUMOhhJS402oRKPZOXQVVYyHr4DaVCeuRltJWtpVJch9ry73uo-qa5ExXYOsrUvP0bqCDG3QxzPCKbSQe-2U6ES8fU8SGH53lFtmPr39MelK4giSJJ3OMTRe55xKbZKDROM_FKuIoFJMTQTCbRydmDikiX7G2wiqLrTdrYBul4-ETEKUKtmxwu6BIK8Xi0AkkC5RITUoIQOB0"

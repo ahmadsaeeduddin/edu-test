@@ -14,12 +14,12 @@ const values = [
   {
     icon: '/assets/about_us-page_svgs/2.svg',
     title: 'Research-Driven Growth',
-    body: 'Every program and workshop is research-backed. We emphasize evidence-based learning that connects theory with real outcomes and prepares students to lead innovation.',
+    body: 'Every program and workshop is research-backed. We emphasize evidence-based learning that connects theory with real outcomes and prepares learners to lead innovation.',
   },
   {
     icon: '/assets/about_us-page_svgs/3.svg',
     title: 'Ethical Use of AI and Technology',
-    body: 'We see AI as a tool for discovery, not a shortcut. Learners understand ethics, responsibility, and social impact — building innovators who create with purpose.',
+    body: 'We see AI as a tool for discovery, not a shortcut. Learners understand ethics, responsibility, and social impact: building innovators who create with purpose.',
   },
   {
     icon: '/assets/about_us-page_svgs/4.svg',
@@ -34,7 +34,7 @@ const values = [
   {
     icon: '/assets/about_us-page_svgs/6.svg',
     title: 'Lifelong Learning Mindset',
-    body: 'The world evolves, and so do we. We nurture adaptability, resilience, and a drive to learn and grow — essential for future leaders.',
+    body: 'The world evolves, and so do we. We nurture adaptability, resilience, and a drive to learn and grow: essential for future leaders.',
   },
 ] as const;
 
@@ -113,7 +113,7 @@ function ValueCard({
           aria-hidden
         />
 
-        {/* CLOSE BUTTON - Absolute positioned so it floats OVER content */}
+        {/* CLOSE BUTTON: Absolute positioned so it floats OVER content */}
         {pinned && (
           <button
             type="button"
@@ -226,7 +226,7 @@ export default function OurValues() {
         </h3>
         <p className="max-w-5xl font-inter text-md font-regular text-slate-600 md:text-lg">
           At Edunautics, our values are the compass guiding how we teach, learn, and innovate. They shape our culture,
-          our programs, and every collaboration - ensuring that learning isn&apos;t just about growth, but about impact
+          our programs, and every collaboration: ensuring that learning isn&apos;t just about growth, but about impact
           with integrity.
         </p>
       </div>

@@ -7,7 +7,7 @@ import { isServiceProgramSlug, type ServiceProgramSlug } from '@/data/servicePro
 export const WHAT_WE_OFFER_SECTION_TITLE = 'What We Offer' as const;
 
 export const WHAT_WE_OFFER_SECTION_INTRO =
-  'At Edunautics, we design experiences that go beyond courses — connecting curiosity with capability and research with real-world application.';
+  'At Edunautics, we design experiences that go beyond courses: connecting curiosity with capability and research with real-world application.';
 
 export type WhatWeOfferHighlight = {
   heading: string;
@@ -56,7 +56,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
       },
       {
         heading: 'Focused Capsules  ',
-        body: 'Short, specialized courses designed with input from industry experts to sharpen targeted skills — helping you stay current with evolving tools, trends, and technologies that organizations are actively using today.',
+        body: 'Short, specialized courses designed with input from industry experts to sharpen targeted skills: helping you stay current with evolving tools, trends, and technologies that organizations are actively using today.',
       },
     ],
   },
@@ -73,7 +73,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     highlights: [
       {
         heading: 'Hands-on experiences that connect theory with reality',
-        body: 'On-campus, collaborative programs where students don’t just learn — they experience how the industry operates.',
+        body: 'On-campus, collaborative programs where learners don’t just learn: they experience how the industry operates.',
       },
       {
         heading: 'Community-Based Learning',
@@ -81,7 +81,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
       },
       {
         heading: 'Partner Learning',
-        body: 'Programs co-created with universities, research institutes, and industry leaders. Gain direct exposure to corporate projects, internships, and tools used by top companies — preparing you for seamless industry entry.',
+        body: 'Programs co-created with universities, research institutes, and industry leaders. Gain direct exposure to corporate projects, internships, and tools used by top companies: preparing you for seamless industry entry.',
       },
       {
         heading: 'STEM & AI Workshops',
@@ -102,7 +102,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     highlights: [
       {
         heading: 'Where ideas turn into impact.',
-        body: 'Edunautics goes beyond courses — building ecosystems that connect learners, innovators, and industries to create measurable change.',
+        body: 'Edunautics goes beyond courses: building ecosystems that connect learners, innovators, and industries to create measurable change.',
       },
       {
         heading: 'Capstone Projects & Innovation Labs',
@@ -110,7 +110,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
       },
       {
         heading: 'Open Learning Circles',
-        body: 'Peer-driven, industry-informed sessions that encourage research sharing, trend exploration, and collaborative problem-solving — inspired by real-world demands.',
+        body: 'Peer-driven, industry-informed sessions that encourage research sharing, trend exploration, and collaborative problem-solving: inspired by real-world demands.',
       },
       {
         heading: 'Networking & Innovation Circles',
@@ -137,5 +137,5 @@ export function getWhatWeOfferProgramBySlug(slug: string): WhatWeOfferProgram | 
   return whatWeOfferById[slug];
 }
 
-/** For `generateStaticParams` — order matches `whatWeOfferPrograms` */
+/** For `generateStaticParams`: order matches `whatWeOfferPrograms` */
 export const whatWeOfferSlugs: WhatWeOfferSlug[] = whatWeOfferPrograms.map((p) => p.id);

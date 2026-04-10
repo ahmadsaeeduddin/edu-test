@@ -12,9 +12,9 @@ export function Footer() {
           <div className="max-w-md mb-8 md:mb-0">
             <h2 className="font-general text-2xl md:text-4xl font-medium leading-tight">Subscribe for Insights</h2>
           </div>
-          <div className="w-full md:w-auto flex items-center">
+          <div className="flex w-full items-stretch md:w-auto">
             <input
-              className="w-full border-y border-l border-white border-r-0 bg-transparent px-4 py-3 text-white focus:border-y-amber-500 focus:border-l-amber-500 focus:outline-none md:w-80"
+              className="box-border flex h-14 min-h-14 w-full items-center border-b border-l border-t border-white border-r-0 bg-transparent px-4 py-0 text-base text-white placeholder:text-gray-400 focus:border-b-amber-500 focus:border-l-amber-500 focus:border-t-amber-500 focus:outline-none md:w-80"
               placeholder="Enter email address"
               type="email"
             />

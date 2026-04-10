@@ -7,11 +7,11 @@ import { Plus, X } from 'lucide-react';
 const faqs = [
   {
     q: 'Can institutions customize the program?',
-    a: 'Yes, institutions can tailor the program to fit their curriculum, goals, and student needs. We offer flexible modules and collaborative planning to ensure the program aligns with your requirements.',
+    a: 'Yes, institutions can tailor the program to fit their curriculum, goals, and learner needs. We offer flexible modules and collaborative planning to ensure the program aligns with your requirements.',
   },
   {
     q: 'How is this different from traditional learning?',
-    a: 'Our approach focuses on practical, real-world learning rather than just theory. Students engage in hands-on projects, industry-based tasks, and collaborative experiences that prepare them for real challenges.',
+    a: 'Our approach focuses on practical, real-world learning rather than just theory. Learners engage in hands-on projects, industry-based tasks, and collaborative experiences that prepare them for real challenges.',
   },
   {
     q: 'Do you provide mentor support?',
@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     q: 'Who is this platform designed for?',
-    a: 'The platform is designed for educational institutions, students, and organizations looking to enhance learning through practical and industry-relevant experiences.',
+    a: 'The platform is designed for educational institutions, learners, and organizations looking to enhance learning through practical and industry-relevant experiences.',
   },
   {
     q: 'How can we get started?',
-    a: "Getting started is simple—reach out to our team, share your requirements, and we'll guide you through onboarding and program setup.",
+    a: "Getting started is simple: reach out to our team, share your requirements, and we'll guide you through onboarding and program setup.",
   },
 ];
 

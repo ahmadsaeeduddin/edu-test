@@ -5,7 +5,10 @@ import Image from 'next/image';
 import { ArrowRight, ChevronDown, Headphones, Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { serviceProgramNavItems } from '@/data/serviceProgramRoutes';
+
+const MotionServiceCardLink = motion.create(Link);
 
 const navLinks = [
   { href: '/approach', label: 'Our Approach' },
@@ -19,15 +22,12 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [offerOpen, setOfferOpen] = useState(false);
   const [desktopOfferOpen, setDesktopOfferOpen] = useState(false);
-  const [desktopOfferPinned, setDesktopOfferPinned] = useState(false);
   const desktopOfferRef = useRef<HTMLDivElement>(null);
-  const desktopOfferCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setMobileOpen(false);
     setOfferOpen(false);
     setDesktopOfferOpen(false);
-    setDesktopOfferPinned(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -36,11 +36,12 @@ export function Header() {
   }, [mobileOpen]);
 
   useEffect(() => {
+    if (!desktopOfferOpen) return;
+
     const onPointerDown = (event: MouseEvent) => {
       if (!desktopOfferRef.current) return;
       if (!desktopOfferRef.current.contains(event.target as Node)) {
         setDesktopOfferOpen(false);
-        setDesktopOfferPinned(false);
       }
     };
 
@@ -48,29 +49,10 @@ export function Header() {
     return () => {
       document.removeEventListener('mousedown', onPointerDown);
     };
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      if (desktopOfferCloseTimer.current) {
-        clearTimeout(desktopOfferCloseTimer.current);
-      }
-    };
-  }, []);
+  }, [desktopOfferOpen]);
 
   const handleDesktopOfferMouseEnter = () => {
-    if (desktopOfferCloseTimer.current) {
-      clearTimeout(desktopOfferCloseTimer.current);
-      desktopOfferCloseTimer.current = null;
-    }
     setDesktopOfferOpen(true);
-  };
-
-  const handleDesktopOfferMouseLeave = () => {
-    if (desktopOfferPinned) return;
-    desktopOfferCloseTimer.current = setTimeout(() => {
-      setDesktopOfferOpen(false);
-    }, 120);
   };
 
   const linkClass = (href: string) => {
@@ -106,19 +88,9 @@ export function Header() {
               className="relative"
               ref={desktopOfferRef}
               onMouseEnter={handleDesktopOfferMouseEnter}
-              onMouseLeave={handleDesktopOfferMouseLeave}
             >
               <button
                 type="button"
-                onClick={() => {
-                  if (desktopOfferPinned) {
-                    setDesktopOfferPinned(false);
-                    setDesktopOfferOpen(false);
-                    return;
-                  }
-                  setDesktopOfferPinned(true);
-                  setDesktopOfferOpen(true);
-                }}
                 className={`btn-dual-line-group flex items-center transition-colors ${
                   pathname.startsWith('/services')
                     ? 'font-bold text-black'
@@ -142,7 +114,7 @@ export function Header() {
                   <div className="grid grid-cols-12 gap-4 ">
                     <div className="col-span-5 px-8 py-3 ">
                       <h3 className="font-general text-[20px] font-medium leading-snug text-slate-900">
-                        <span className="font-regular text-slate-500">From Learning to Leadership - </span>
+                        <span className="font-regular text-edu-gold">From Learning to Leadership: </span>
                         Practical, Research-Driven, and Future-Ready
                       </h3>
                       <p className="mt-5 text-[16px] font-regular leading-relaxed text-slate-700">
@@ -155,11 +127,18 @@ export function Header() {
                         const href = `/services/${slug}`;
                         const active = pathname === href;
                         return (
-                          <Link
+                          <MotionServiceCardLink
                             key={slug}
                             href={href}
                             onClick={() => setDesktopOfferOpen(false)}
-                            className={`group rounded-md border bg-[var(--color-light-bg)] p-4 transition-colors hover:border-[var(--color-edu-gold)] hover:bg-white h-[124px] ${active ? 'border-[var(--color-edu-gold)]' : 'border-transparent'}`}
+                            className={`group block h-[124px] rounded-md border bg-[var(--color-light-bg)] p-4 transition-colors hover:border-[var(--color-edu-gold)] hover:bg-white ${active ? 'border-[var(--color-edu-gold)]' : 'border-transparent'}`}
+                            initial={{ y: 0, boxShadow: '0 1px 2px rgba(15, 23, 42, 0.06)' }}
+                            whileHover={{
+                              y: -2,
+                              boxShadow: '0 14px 34px -10px rgba(15, 23, 42, 0.14)',
+                            }}
+                            whileTap={{ scale: 0.99 }}
+                            transition={{ type: 'spring', stiffness: 420, damping: 30 }}
                           >
                             <div className="flex flex-col">
                               {index === 0 ? (
@@ -191,7 +170,7 @@ export function Header() {
                                 </span>
                               </div>
                             </div>
-                          </Link>
+                          </MotionServiceCardLink>
                         );
                       })}
                     </div>
@@ -217,7 +196,7 @@ export function Header() {
               </span>
             </Link>
 
-            {/* Hamburger button — mobile only */}
+            {/* Hamburger button: mobile only */}
             <button
               className="md:hidden -mr-2 rounded-lg bg-edu-gold p-2.5 text-white shadow-md transition-colors hover:bg-white hover:text-edu-gold"
               onClick={() => setMobileOpen(true)}

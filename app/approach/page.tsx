@@ -7,7 +7,7 @@ import ImpactInNumbers from '@/components/approach/ImpactInNumbers';
 import CTA from '@/components/approach/CTA';
 
 export const metadata: Metadata = {
-  title: 'Our Approach - Edunautics',
+  title: 'Our Approach: Edunautics',
   description: 'Bridging Curiosity, Research, and Real-World Impact',
 };
 
@@ -19,7 +19,7 @@ export default function ApproachPage() {
       </div>
       <CorePillars />
       <WhyItWorks />
-      {/* Full viewport–width band; content aligned with max-w above (same as About OurValues / OurPromise) */}
+      {/* Full viewport-width band; content aligned with max-w above (same as About OurValues / OurPromise) */}
       <div className="w-full bg-light-yellow">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col px-6 py-24 md:px-12">
           <OurImpact />

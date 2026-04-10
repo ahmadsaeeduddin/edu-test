@@ -1,4 +1,4 @@
- 'use client';
+'use client';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -8,27 +8,27 @@ const pillars = [
   {
     number: '01',
     title: 'Research at the Core',
-    body: 'We begin with curiosity. Our programs are built on research-based learning where students question deeply, experiment confidently, and transform insights into real innovation.',
+    body: 'We begin with curiosity. Our programs are built on research-based learning where learners question deeply, experiment confidently, and transform insights into real innovation.',
   },
   {
     number: '02',
     title: 'AI as an Enabler',
-    body: 'AI is more than a subject — it’s a tool for discovery. We use it to foster critical thinking, creative automation, and new possibilities beyond traditional education.',
+    body: 'AI is more than a subject: it’s a tool for discovery. We use it to foster critical thinking, creative automation, and new possibilities beyond traditional education.',
   },
   {
     number: '03',
     title: 'Industry-Relevant Learning',
-    body: 'Through partnerships with universities, research labs and companies, students gain access to advanced tools, expert mentors, and hands-on experience aligned with global standards.',
+    body: 'Through partnerships with universities, research labs and companies, learners gain access to advanced tools, expert mentors, and hands-on experience aligned with global standards.',
   },
   {
     number: '04',
     title: 'From Classroom to Impact',
-    body: 'Learning extends beyond lectures. Students apply ideas in innovation labs, community projects, and industry collaborations — turning theory into meaningful outcomes.',
+    body: 'Learning extends beyond lectures. Learners apply ideas in innovation labs, community projects, and industry collaborations: turning theory into meaningful outcomes.',
   },
   {
     number: '05',
     title: 'Skills for the Future',
-    body: 'We combine STEM, AI, and data science with communication, leadership, and problem-solving skills — preparing learners not just for exams, but for long-term success.',
+    body: 'We combine STEM, AI, and data science with communication, leadership, and problem-solving skills: preparing learners not just for exams, but for long-term success.',
   },
 ] as const;
 
@@ -74,7 +74,7 @@ function PillarCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.4, delay: 0.06 * index, ease: [0.4, 0, 0.2, 1] }}
-      className="relative w-full"
+      className="relative flex h-[300px] w-full shrink-0 md:h-[340px]"
     >
       <motion.div
         role="button"
@@ -86,7 +86,7 @@ function PillarCard({
         animate={isOpen ? 'expanded' : 'collapsed'}
         transition={{ duration: 0.25, ease: 'easeInOut' }}
         className={[
-          'relative flex h-[260px] cursor-pointer flex-col overflow-hidden rounded-[4px] bg-[var(--color-light-bg)] p-7 shadow-sm outline-none md:h-[290px] md:p-8',
+          'relative box-border flex h-full min-h-0 w-full cursor-pointer flex-col overflow-hidden rounded-[4px] bg-[var(--color-light-bg)] p-7 shadow-sm outline-none md:p-8',
           'border-l-4 transition-[border-color] duration-300 focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2',
           isOpen ? 'border-l-[var(--color-edu-gold)]' : 'border-l-transparent',
         ].join(' ')}

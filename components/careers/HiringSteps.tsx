@@ -97,7 +97,7 @@ export default function HiringSteps() {
           ))}
         </div>
 
-        {/* Desktop: staggered layout — vertical guide under each step number */}
+        {/* Desktop: staggered layout; vertical guide under each step number */}
         <div className="relative hidden min-h-[600px] md:block">
           <div className="pointer-events-none absolute inset-0 grid grid-cols-4">
             {steps.map((step) => (

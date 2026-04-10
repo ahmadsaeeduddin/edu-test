@@ -65,7 +65,7 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      // No POST yet — mimic a real submission for UX.
+      // No POST yet: mimic a real submission for UX.
       await new Promise((r) => setTimeout(r, 700));
       setFormData({
         name: '',

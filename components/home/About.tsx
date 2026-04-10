@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 
 export function About() {
   return (
-    <section className="relative z-10 -mt-15 pb-20">
+    <section className="relative z-10 -mt-20 pb-20">
       <div className="layout-container">
         <div className="bg-white p-6 md:p-12">
           <h2 className="mb-8 flex w-full items-baseline gap-4 font-general text-3xl font-medium text-slate-900 md:mb-10 md:text-5xl">
@@ -23,13 +23,13 @@ export function About() {
             <div className="max-w-2xl">
               <div className="space-y-7 font-inter text-base font-regular leading-relaxed text-slate-600 text-lg md:text-xl mr-4">
                 <p className=" leading-relaxed ">
-                  Today&apos;s education system faces a critical gap. Students are trained to pass exams but rarely
+                  Today&apos;s education system faces a critical gap. Learners are trained to pass exams but rarely
                   guided to question, research, and create. Research often ends in reports instead of real-world
                   solutions. Meanwhile, industries evolve faster than academic curricula, leaving graduates underprepared
                   for modern challenges.
                 </p>
                 <p className="leading-relaxed ">
-                  This disconnect between learning and application limits innovation, curiosity, and confidence - the
+                  This disconnect between learning and application limits innovation, curiosity, and confidence: the
                   very traits needed to thrive in a world driven by technology and change.
                 </p>
               </div>

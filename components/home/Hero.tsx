@@ -7,7 +7,7 @@ import { RefObject } from 'react';
 export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement | null> }) {
   const handleScroll = () => {
     if (whatWeOfferRef.current) {
-      const targetPosition = whatWeOfferRef.current.offsetTop - 10; // Offset for sticky header
+      const targetPosition = whatWeOfferRef.current.offsetTop - 50; // Offset for sticky header
       const startPosition = window.scrollY;
 
       animate(0, 1, {

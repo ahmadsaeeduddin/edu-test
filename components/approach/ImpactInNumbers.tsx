@@ -25,9 +25,9 @@ const cardTransition = {
 };
 
 const impactItems = [
-  '500+ students trained through AI and STEM bootcamps',
+  '500+ learners trained through AI and STEM bootcamps',
   "Our growth reflects the real change we're creating in education and innovation.",
-  'Dozens of student-led projects turned into real-world prototypes',
+  'Dozens of learner-led projects turned into real-world prototypes',
   'A growing network of mentors and collaborators from academia and industry',
 ] as const;
 

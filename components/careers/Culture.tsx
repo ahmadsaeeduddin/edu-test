@@ -18,7 +18,7 @@ export default function Culture() {
     {
       num: "04",
       title: "PURPOSE-DRIVEN WORK",
-      desc: "Everything we build aims to create measurable impact - for students, institutions, and the future workforce."
+      desc: "Everything we build aims to create measurable impact: for learners, institutions, and the future workforce."
     }
   ];
 

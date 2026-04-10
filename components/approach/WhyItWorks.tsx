@@ -74,7 +74,7 @@ export default function WhyItWorks() {
         <div className="mx-auto mt-24 max-w-4xl text-center">
           <p className="font-inter text-xl font-regular leading-tight text-slate-700 md:text-2xl">
             At Edunautics, learning is not{' '}
-            <span className="font-medium">just preparation for the future - it creates the future.</span>
+            <span className="font-medium">just preparation for the future: it creates the future.</span>
           </p>
         </div>
       </div>

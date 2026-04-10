@@ -50,14 +50,14 @@ export default function Hero() {
             <div className="relative bg-white px-8 py-8 border-r-12 border-b-12 border-edu-gold md:px-10 md:py-10">
               <p className="font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-2xl">
                 <span className="text-dark font-medium font-general">
-                  At Edunautics, our approach to learning goes beyond courses&mdash;it&apos;s about cultivating
+                  At Edunautics, our approach to learning goes beyond courses: it&apos;s about cultivating
                 </span>{' '}
                 a mindset of discovery. We believe education should not stop at understanding concepts but evolve into
                 creating solutions that make a difference.
               </p>
               <p className="mt-6 font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-2xl">
                 Our model integrates academic excellence, industry collaboration, and AI-driven exploration to ensure
-                students don&apos;t just learn - they lead the change.
+                learners don&apos;t just learn: they lead the change.
               </p>
             </div>
           </div>
@@ -78,13 +78,13 @@ export default function Hero() {
         <div className="relative z-10 -mt-6 flex w-full justify-start sm:-mt-8 md:hidden">
           <div className="w-full bg-white border-r-4 border-b-4 border-edu-gold px-5 py-6">
             <p className="font-inter text-lg font-regular leading-relaxed text-slate-700">
-              At Edunautics, our approach to learning goes beyond courses&mdash;it&apos;s about cultivating a mindset of
+              At Edunautics, our approach to learning goes beyond courses: it&apos;s about cultivating a mindset of
               discovery. We believe education should not stop at understanding concepts but evolve into creating solutions
               that make a difference.
             </p>
             <p className="mt-5 font-inter text-lg font-regular leading-relaxed text-slate-700">
-              Our model integrates academic excellence, industry collaboration, and AI-driven exploration to ensure students
-              don&apos;t just learn - they lead the change.
+              Our model integrates academic excellence, industry collaboration, and AI-driven exploration to ensure learners
+              don&apos;t just learn: they lead the change.
             </p>
           </div>
         </div>

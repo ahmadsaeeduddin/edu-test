@@ -9,7 +9,7 @@ const cardShell =
 function HeroIntroText({ className }: { className?: string }) {
   return (
     <p className={className}>
-      <span className="font-medium font-general text-darkBlack">Edunautics</span> is more than an EdTech platform — it&apos;s an
+      <span className="font-medium font-general text-darkBlack">Edunautics</span> is more than an EdTech platform: it&apos;s an
       initiative to reimagine education through research,
       innovation, and industry collaboration. We prepare learners{' '}
       <span className="text-slate-500">
@@ -30,7 +30,7 @@ export default function Hero() {
         </h1>
         <div className="min-w-0 w-full max-w-full md:justify-self-end">
           <p className="w-full min-w-0 max-w-full font-general text-2xl font-medium leading-snug text-slate-900 md:text-right md:text-4xl md:leading-[1.15] lg:leading-snug">
-            {/* Mobile: dark line then gray copy — wrap inside content width (no nowrap; min-w-0 fixes grid overflow) */}
+            {/* Mobile: dark line then gray copy; wrap inside content width (no nowrap; min-w-0 fixes grid overflow) */}
             <span className="flex w-full min-w-0 max-w-full flex-col items-stretch gap-1 md:hidden">
               <span className="max-w-full text-pretty text-slate-900">Equipping Learners with Tools</span>
               <span className="max-w-full text-pretty text-slate-500 [overflow-wrap:anywhere]">
@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Middle (md+): same layering as OurVision — text (z-30) → image (z-20) → ghost (z-10); ghost is border-only + translate */}
+      {/* Middle (md+): same layering as OurVision; text (z-30), image (z-20), ghost (z-10); ghost is border-only + translate */}
       <div className="relative isolate w-full md:h-[620px]">
         {/* 1) Text card */}
         <div className={`${columnShell} z-30`}>
@@ -117,7 +117,7 @@ export default function Hero() {
           </p>
           <p className="font-inter text-md font-regular leading-relaxed text-slate-600 md:text-lg">
             With modern interactive tools, hands-on projects, and real-world mentorship, Edunautics transforms classrooms
-            into ecosystems of discovery and innovation — where students don&apos;t just learn about the future; they
+            into ecosystems of discovery and innovation: where learners don&apos;t just learn about the future; they
             help build it.
           </p>
         </div>

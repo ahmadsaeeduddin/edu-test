@@ -8,8 +8,8 @@ import { Plus, Minus } from 'lucide-react';
 const impactItems = [
   {
     icon: '/assets/our_impact-svgs/1-student.svg',
-    title: 'Empowering Students as Innovators',
-    body: "Through our workshops, bootcamps, and research labs, learners don't just study emerging technologies - they use them to create. From building AI-powered prototypes to developing community-focused projects, our students turn ideas into solutions with measurable social and industrial value.",
+    title: 'Empowering Learners as Innovators',
+    body: "Through our workshops, bootcamps, and research labs, learners don't just study emerging technologies: they use them to create. From building AI-powered prototypes to developing community-focused projects, our learners turn ideas into solutions with measurable social and industrial value.",
   },
   {
     icon: '/assets/our_impact-svgs/2-building.svg',
@@ -19,12 +19,12 @@ const impactItems = [
   {
     icon: '/assets/our_impact-svgs/3-search.svg',
     title: 'Research with Purpose',
-    body: 'We champion research that drives transformation — AI models improving education systems, STEM solutions tackling sustainability challenges, and data-driven innovations reimagining how learning happens. Each project at Edunautics is a step toward building a smarter, more inclusive future.',
+    body: 'We champion research that drives transformation; AI models improving education systems, STEM solutions tackling sustainability challenges, and data-driven innovations reimagining how learning happens. Each project at Edunautics is a step toward building a smarter, more inclusive future.',
   },
   {
     icon: '/assets/our_impact-svgs/4-framework.svg',
     title: 'Community and Collaboration',
-    body: 'Our open learning circles and peer-driven communities foster collaboration, creativity, and confidence. By connecting students, mentors, and organizations, we build networks that last well beyond graduation.',
+    body: 'Our open learning circles and peer-driven communities foster collaboration, creativity, and confidence. By connecting learners, mentors, and organizations, we build networks that last well beyond graduation.',
   },
 ] as const;
 
@@ -57,7 +57,7 @@ export default function OurImpact() {
           Principles That Power Every Learner&apos;s Journey
         </p>
         <p className="max-w-4xl font-inter font-regular leading-relaxed text-slate-600 md:text-lg">
-          At Edunautics, impact is not a buzzword &mdash; it&apos;s our benchmark. Every program, partnership, and research initiative is designed to create meaningful outcomes that extend far beyond classrooms. We measure our success not just by what students learn, but by how they apply it to solve real problems, shape industries, and inspire others.
+          At Edunautics, impact is not a buzzword: it&apos;s our benchmark. Every program, partnership, and research initiative is designed to create meaningful outcomes that extend far beyond classrooms. We measure our success not just by what learners learn, but by how they apply it to solve real problems, shape industries, and inspire others.
         </p>
       </div>
 

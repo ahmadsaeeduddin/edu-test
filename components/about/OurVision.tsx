@@ -20,7 +20,7 @@ export default function OurVision() {
               </p>
               <p className="mt-5 font-inter text-lg font-regular leading-relaxed text-slate-600 md:text-xl">
                 With modern interactive tools, hands-on projects, and real-world mentorship, Edunautics transforms
-                classrooms into ecosystems of discovery and innovation - where students don&apos;t just learn about the
+                classrooms into ecosystems of discovery and innovation: where learners don&apos;t just learn about the
                 future; they help build it.
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function OurVision() {
       Our Vision
     </h2>
     <p className="mt-4 max-w-4xl font-inter text-lg md:text-xl leading-relaxed font-regular text-slate-600">
-      To bridge the gap between education and industry by empowering learners to turn ideas into impact - through
+      To bridge the gap between education and industry by empowering learners to turn ideas into impact: through
       curiosity, research, and technology.
     </p>
   </div>

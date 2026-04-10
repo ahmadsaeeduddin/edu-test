@@ -6,7 +6,7 @@ import OurPromise from '@/components/about/OurPromise';
 import CTA from '@/components/about/CTA';
 
 export const metadata: Metadata = {
-  title: 'About Us - Edunautics',
+  title: 'About Us: Edunautics',
   description: 'Equipping Learners with Tools That Create Impact Beyond Classrooms',
 };
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Full viewport–width band; content stays aligned with max-w above */}
+      {/* Full viewport-width band; content stays aligned with max-w above */}
       <div className="w-full bg-white">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-24 px-6 py-24 md:px-12">
           <OurValues />

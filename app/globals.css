@@ -177,7 +177,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* Center 1–2 lines in the fixed height (webkit-box clamp top-aligns and sat high vs icons) */
+/* Center 1-2 lines in the fixed height (webkit-box clamp top-aligns and sat high vs icons) */
 .btn-dual-line__viewport--2 .btn-dual-line__line {
   display: grid;
   place-content: center;

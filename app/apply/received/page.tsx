@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Application Received - Edunautics',
+  title: 'Application Received: Edunautics',
   description: 'Thank you for applying to Edunautics.',
 };
 

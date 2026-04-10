@@ -15,7 +15,7 @@ export function FooterSubscribeButton() {
     <motion.button
       type="button"
       variants={buttonVariants}
-      className="btn-dual-line-group inline-flex items-center justify-center gap-2 border-y border-r border-edu-gold border-l-0 bg-edu-gold px-8 py-3 font-bold whitespace-nowrap text-darkText transition-colors hover:border-l hover:border-edu-gold hover:bg-white hover:text-edu-gold"
+      className="btn-dual-line-group box-border inline-flex h-14 min-h-14 shrink-0 items-center justify-center gap-2 self-stretch border-b border-l-0 border-r border-t border-[var(--color-edu-gold)] bg-edu-gold px-8 py-0 text-base font-bold whitespace-nowrap text-darkText transition-colors hover:border-l hover:border-[var(--color-edu-gold)] hover:bg-white hover:text-edu-gold"
       initial="rest"
       whileHover="hover"
     >

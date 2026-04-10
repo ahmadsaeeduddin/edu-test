@@ -19,7 +19,7 @@ export function WhyChoose() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2 md:gap-6">
-          {/* Row 1, Col 1 — Industry-Aligned */}
+          {/* Row 1, Col 1: Industry-Aligned */}
           <div className={`${cardShell} bg-[#F5B959] md:row-start-1 md:col-start-1`}>
             <Image
               src="/assets/main_page_svgs/Target_svg.svg"
@@ -36,7 +36,7 @@ export function WhyChoose() {
             </div>
           </div>
 
-          {/* Row 1, Col 2 — Mentor-Guided */}
+          {/* Row 1, Col 2: Mentor-Guided */}
           <div
             className={`${cardShell} bg-[#212121] text-white md:row-start-1 md:col-start-2 md:min-h-[280px]`}
           >
@@ -55,7 +55,7 @@ export function WhyChoose() {
             </div>
           </div>
 
-          {/* Col 3, spans rows 1–2 — Flexible Pathways */}
+          {/* Col 3, spans rows 1-2: Flexible Pathways */}
           <div
             className={`${cardShell} bg-[#F5B959] md:col-start-3 md:row-span-2 md:row-start-1 md:h-full md:min-h-0`}
           >
@@ -69,12 +69,12 @@ export function WhyChoose() {
             <div className={cardBody}>
               <h3 className={`${cardTitle} text-slate-900`}>Flexible Pathways</h3>
               <p className={`${cardDesc} text-slate-900`}>
-                Choose your mode — online, in-person, or hybrid — and connect learning with impact, wherever you are.
+                Choose your mode: online, in-person, or hybrid, and connect learning with impact, wherever you are.
               </p>
             </div>
           </div>
 
-          {/* Row 2, Cols 1–2 — Hands-On Practice */}
+          {/* Row 2, Cols 1-2: Hands-On Practice */}
           <div
             className={`${cardShell} bg-[#E0E0E0] md:col-span-2 md:col-start-1 md:row-start-2`}
           >

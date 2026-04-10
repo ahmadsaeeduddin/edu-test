@@ -3,7 +3,7 @@ import { Hero } from '@/components/apply/Hero';
 import { ApplicationForm } from '@/components/apply/ApplicationForm';
 
 export const metadata: Metadata = {
-  title: 'Apply Now - Edunautics',
+  title: 'Apply Now: Edunautics',
   description: 'Apply now to join Edunautics',
 };
 
