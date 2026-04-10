@@ -47,9 +47,9 @@ export default function Hero() {
               aria-hidden
             />
 
-            <div className="relative bg-white px-8 py-8 border-r-4 border-b-4 border-edu-gold md:px-10 md:py-10">
+            <div className="relative bg-white px-8 py-8 border-r-12 border-b-12 border-edu-gold md:px-10 md:py-10">
               <p className="font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-2xl">
-                <span className="text-slate-900">
+                <span className="text-dark font-medium font-general">
                   At Edunautics, our approach to learning goes beyond courses&mdash;it&apos;s about cultivating
                 </span>{' '}
                 a mindset of discovery. We believe education should not stop at understanding concepts but evolve into

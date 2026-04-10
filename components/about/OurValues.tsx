@@ -96,8 +96,10 @@ function ValueCard({
         initial="collapsed"
         animate={isOpen ? 'expanded' : 'collapsed'}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className={`relative flex h-[300px] cursor-pointer flex-col overflow-hidden rounded-[4px] border-t-4 bg-transparent p-6 shadow-sm outline-none transition-[border-color] duration-300 focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[360px] md:p-8 ${
-          isOpen ? 'border-t-[var(--color-edu-gold)]' : 'border-t-transparent'
+        className={`relative flex h-[300px] cursor-pointer flex-col overflow-hidden rounded-[4px] border-t-4 bg-transparent p-6 outline-none transition-[border-color,box-shadow] duration-300 focus-visible:ring-2 focus-visible:ring-edu-gold focus-visible:ring-offset-2 md:h-[360px] md:p-8 ${
+          isOpen
+            ? 'border-t-[var(--color-edu-gold)] shadow-[0_10px_28px_-8px_rgba(15,23,42,0.1)]'
+            : 'border-t-transparent shadow-sm focus-visible:shadow-[0_10px_28px_-8px_rgba(15,23,42,0.1)]'
         }`}
         onMouseEnter={() => onHoverIn(index)}
         onMouseLeave={() => onHoverOut(index)}

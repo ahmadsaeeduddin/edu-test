@@ -10,7 +10,7 @@ export default function OurVision() {
           {/* 1) Text block at top */}
           <div className="absolute inset-x-0 top-0 z-30 flex justify-end">
             <div className="h-[420px] w-[78%] bg-white px-8 py-8 md:px-10 md:py-10">
-              <p className="font-inter text-lg font-medium leading-relaxed text-slate-900 md:text-xl">
+              <p className="font-inter text-xl font-medium leading-relaxed text-slate-900 md:text-2xl">
                 Our programs integrate STEM foundations, AI, data science, and automation tools with essential soft skills
                 like teamwork, creativity, and critical thinking.
               </p>
@@ -27,8 +27,8 @@ export default function OurVision() {
           </div>
 
           {/* 2) Image block with bottom aligned to text block */}
-          <div className="absolute inset-x-0  z-20 -top-12">
-            <div className="relative h-[468px] w-[68%] overflow-hidden rounded-md">
+          <div className="absolute inset-x-0  z-20 -top-18">
+            <div className="relative h-[490px] w-[68%] overflow-hidden rounded-md">
               <Image
                 src="/assets/about-us-bg-2.webp"
                 alt="Warm abstract background"
@@ -41,7 +41,7 @@ export default function OurVision() {
 
           {/* 3) Ghost frame (narrower than text block) */}
           <div className="absolute inset-x-0 top-0 z-10 flex justify-end">
-            <div className="h-[420px] w-[70%] translate-x-1 translate-y-1 border-r-4 border-b-4 border-edu-gold" />
+            <div className="h-[420px] w-[70%] translate-x-3 translate-y-3 border-r-12 border-b-12 border-edu-gold" />
           </div>
         </div>
 
@@ -65,20 +65,20 @@ export default function OurVision() {
       </div>
 
       <div className="relative w-full max-w-6xl">
-  {/* Top Left Accent - Adjusted to start exactly where the white box starts */}
+  {/* Top-left gold L: inner corner at (8,8) to match white outer corner (mx-2 my-2); box grown +8px vs border-4 so arms stay similar */}
   <div
-    className="pointer-events-none absolute left-0 top-0 h-[74px] w-[90px] border-l-4 border-t-4 border-edu-gold z-10"
-    aria-hidden
-  />
-  
-  {/* Bottom Right Accent - Adjusted to overlap the white box */}
-  <div
-    className="pointer-events-none absolute bottom-0 right-0 h-[72px] w-[74px] border-b-4 border-r-4 border-[#B2B2B2] z-10"
+    className="pointer-events-none absolute left-0 top-0 z-10 h-[82px] w-[98px] border-l-8 border-t-8 border-edu-gold"
     aria-hidden
   />
 
-  {/* Main Content Box - Added margins to allow the "ghost" borders to peak out */}
-  <div className="relative bg-white mx-1 my-1 px-8 py-8 md:px-10 md:py-9 shadow-sm">
+  {/* Bottom-right gray L: inner corner aligns with white outer BR; mirrored sizing */}
+  <div
+    className="pointer-events-none absolute bottom-0 right-0 z-10 h-[80px] w-[82px] border-b-8 border-r-8 border-[#B2B2B2]"
+    aria-hidden
+  />
+
+  {/* Main box: 8px inset matches border-8 so accent inner corners line up with this card’s edges */}
+  <div className="relative z-20 mx-2 my-2 bg-white px-8 py-8 shadow-sm md:px-10 md:py-9">
     <h2 className="font-general text-3xl md:text-4xl font-medium tracking-tight text-slate-900">
       Our Vision
     </h2>
