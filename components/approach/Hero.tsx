@@ -47,17 +47,17 @@ export default function Hero() {
               aria-hidden
             />
 
-            <div className="relative bg-white px-8 py-8 border-r-12 border-b-12 border-edu-gold md:px-10 md:py-10">
-              <p className="font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-2xl">
+            <div className="relative bg-white px-8 py-8 border-r-12 border-b-12 border-edu-gold md:px-12 md:py-12 md:min-h-[480px] flex flex-col justify-center">
+              <p className="font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-[22px]">
                 <span className="text-dark font-medium font-general">
-                  At Edunautics, our approach to learning goes beyond courses: it&apos;s about cultivating
+                  At Edunautics, our approach to learning goes beyond courses—it&apos;s about cultivating
                 </span>{' '}
                 a mindset of discovery. We believe education should not stop at understanding concepts but evolve into
                 creating solutions that make a difference.
               </p>
-              <p className="mt-6 font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-2xl">
+              <p className="mt-8 font-inter text-lg font-regular leading-relaxed text-slate-700 md:text-[22px]">
                 Our model integrates academic excellence, industry collaboration, and AI-driven exploration to ensure
-                learners don&apos;t just learn: they lead the change.
+                learners don&apos;t just learn - they lead the change.
               </p>
             </div>
           </div>

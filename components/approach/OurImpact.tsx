@@ -56,7 +56,7 @@ export default function OurImpact() {
         <p className="mb-6 font-inter text-xl font-regular text-slate-800 md:text-2xl">
           Principles That Power Every Learner&apos;s Journey
         </p>
-        <p className="max-w-4xl font-inter font-regular leading-relaxed text-slate-600 md:text-lg">
+        <p className="max-w-full font-inter font-regular leading-relaxed text-slate-600 md:text-lg">
           At Edunautics, impact is not a buzzword: it&apos;s our benchmark. Every program, partnership, and research initiative is designed to create meaningful outcomes that extend far beyond classrooms. We measure our success not just by what learners learn, but by how they apply it to solve real problems, shape industries, and inspire others.
         </p>
       </div>

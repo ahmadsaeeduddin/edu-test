@@ -2,14 +2,14 @@ import Image from 'next/image';
 
 export default function OurVision() {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-15 md:gap-24 py-9 md:py-15">
       {/* Top: layered image + text card */}
-      <div className="relative isolate w-full md:h-[560px]">
+      <div className="relative isolate layout-container md:h-[500px]">
         {/* Desktop: 3-layer composition */}
         <div className="hidden md:block">
           {/* 1) Text block at top */}
-          <div className="absolute inset-x-0 top-0 z-30 flex justify-end">
-            <div className="h-[420px] w-[78%] bg-white px-8 py-8 md:px-10 md:py-10">
+          <div className="absolute inset-x-0 top-0 z-30 flex justify-start">
+            <div className="h-[500px] w-[70%] ml-[25%] bg-white px-8 py-8 md:px-10 md:py-10 flex flex-col justify-center">
               <p className="font-inter text-xl font-medium leading-relaxed text-slate-900 md:text-2xl">
                 Our programs integrate STEM foundations, AI, data science, and automation tools with essential soft skills
                 like teamwork, creativity, and critical thinking.
@@ -26,9 +26,9 @@ export default function OurVision() {
             </div>
           </div>
 
-          {/* 2) Image block with bottom aligned to text block */}
-          <div className="absolute inset-x-0  z-20 -top-18">
-            <div className="relative h-[490px] w-[68%] overflow-hidden rounded-md">
+          {/* 2) Image: bottom edge aligned with text card bottom (500px from top) */}
+          <div className="absolute inset-x-0 bottom-[calc(100%-500px)] z-20">
+            <div className="relative h-[580px] w-[70%] overflow-hidden rounded-md">
               <Image
                 src="/assets/about-us-bg-2.webp"
                 alt="Warm abstract background"
@@ -40,8 +40,8 @@ export default function OurVision() {
           </div>
 
           {/* 3) Ghost frame (narrower than text block) */}
-          <div className="absolute inset-x-0 top-0 z-10 flex justify-end">
-            <div className="h-[420px] w-[70%] translate-x-3 translate-y-3 border-r-12 border-b-12 border-edu-gold" />
+          <div className="absolute inset-x-0 top-0 z-10 flex justify-start">
+            <div className="h-[500px] w-[63%] ml-[32%] translate-x-3 translate-y-3 border-r-12 border-b-12 border-edu-gold" />
           </div>
         </div>
 

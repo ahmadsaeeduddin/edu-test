@@ -224,7 +224,7 @@ export default function OurValues() {
         <h3 className="font-inter text-xl font-regular text-slate-800 md:text-2xl">
           Principles That Power Every Learner&apos;s Journey
         </h3>
-        <p className="max-w-5xl font-inter text-md font-regular text-slate-600 md:text-lg">
+        <p className="max-w-[96%] font-inter text-md font-regular text-slate-600 md:text-lg">
           At Edunautics, our values are the compass guiding how we teach, learn, and innovate. They shape our culture,
           our programs, and every collaboration: ensuring that learning isn&apos;t just about growth, but about impact
           with integrity.

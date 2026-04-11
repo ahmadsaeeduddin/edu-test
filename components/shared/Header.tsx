@@ -160,11 +160,11 @@ export function Header() {
                                   className="h-5 w-5"
                                 />
                               )}
-                              <div className="flex items-end justify-end gap-4">
+                              <div className="flex items-end justify-end gap-2">
                                 <p className="mt-6 max-w-full text-sm font-regular leading-snug text-slate-900">{title}</p>
                                 
                                 <span
-                                  className={`inline-flex size-4 shrink-0 items-center justify-center rounded-[1px] transition-colors group-hover:bg-[var(--color-edu-gold)] ${active ? 'bg-[var(--color-edu-gold)]' : 'bg-transparent'}`}
+                                  className={`inline-flex size-5 shrink-0 items-center justify-center rounded-full transition-colors group-hover:bg-[var(--color-edu-gold)] ${active ? 'bg-[var(--color-edu-gold)]' : 'bg-transparent'}`}
                                 >
                                   <ArrowRight className="h-4 w-4 shrink-0 text-dark transition-colors" />
                                 </span>

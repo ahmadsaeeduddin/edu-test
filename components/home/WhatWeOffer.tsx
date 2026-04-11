@@ -39,7 +39,7 @@ function OfferCard({
         alt={offer.title}
         src={offer.img}
         fill
-        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        className="object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.12]"
         sizes="(max-width: 768px) 280px, 33vw"
       />
       <div className="absolute bottom-2 left-2 right-2 box-border flex h-[98px] min-h-[98px] max-h-[98px] shrink-0 items-start justify-between gap-2 overflow-hidden rounded-[4px] bg-white/60 px-3 py-2 shadow-sm backdrop-blur-md">
