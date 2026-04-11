@@ -3,16 +3,16 @@ import { ChevronRight } from 'lucide-react';
 
 export function About() {
   return (
-    <section className="relative z-10 -mt-20 pb-20">
+    <section className="relative z-10 -mt-[clamp(7.5rem,13.5svh,11rem)] pb-20 md:-mt-[clamp(8.5rem,12.5vh,10.5rem)] lg:-mt-[clamp(9.25rem,13.5vh,11.5rem)]">
       <div className="layout-container">
         <div className="bg-white p-6 md:p-12">
-          <h2 className="mb-8 flex w-full items-baseline gap-4 font-general text-3xl font-medium text-slate-900 md:mb-10 md:text-5xl">
+          <h2 className="mb-6 flex w-full items-baseline gap-4 font-general text-3xl font-medium text-slate-900 sm:mb-8 md:mb-10 md:text-5xl">
             <span className="shrink-0">The Challenge</span>
             <span className="h-[1px] min-w-0 flex-1 bg-gray-300" aria-hidden />
           </h2>
 
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
+          <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="order-2 lg:order-1">
               <h3 className="w-full max-w-xl font-general text-2xl font-medium leading-relaxed  md:text-4xl">
                 <span className="block text-slate-900">When Education</span>
                 <span className="mt-2 block text-slate-900">Stops at Classrooms,</span>
@@ -20,7 +20,7 @@ export function About() {
               </h3>
             </div>
 
-            <div className="max-w-2xl">
+            <div className="order-1 max-w-2xl lg:order-2">
               <div className="space-y-7 font-inter text-base font-regular leading-relaxed text-slate-600 text-lg md:text-xl mr-4">
                 <p className=" leading-relaxed ">
                   Today&apos;s education system faces a critical gap. Learners are trained to pass exams but rarely

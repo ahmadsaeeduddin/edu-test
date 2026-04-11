@@ -21,18 +21,23 @@ export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement
   };
 
   return (
-    <section className="home-hero-grid-bg text-white min-h-[82vh]">
-      <div className="layout-container flex min-h-[82vh] w-full flex-col justify-center">
-        <h1 className="font-general font-medium text-3xl md:text-6xl leading-tight mb-6">
-        Explore STEM, AI, Data <br/>
-        Science, and Soft Skills <br/>
-        </h1>
-        <p className="text-gray-400 text-xl mb-10 max-w-[50%] font-inter">
-        Real world learning at your pace or in our learning hubs. Build the technical skills and ethical mindset needed to thrive in a world shaped by technology.
-
-
-        </p>
-        <div className="flex flex-wrap gap-4 mb-8">
+    <section className="home-hero-grid-bg flex min-h-[68svh] flex-col text-white sm:min-h-[74svh] md:min-h-[78vh] lg:min-h-[82vh]">
+      {/*
+        Fold strategy: reserve bottom pb clamp for About overlap. Spacer (flex-1) fills below CTAs so they stay
+        above that band while sitting close to the paragraph (tight mt on the button row).
+      */}
+      <div className="layout-container flex w-full flex-1 flex-col pt-10 pb-[clamp(6.5rem,14svh,11rem)] md:pt-11 md:pb-[clamp(7rem,12vh,10rem)] lg:pb-[clamp(8rem,12vh,10rem)]">
+        <div>
+          <h1 className="mb-3 font-general text-3xl font-medium leading-tight md:text-6xl">
+            Explore STEM, AI, Data <br />
+            Science, and Soft Skills <br />
+          </h1>
+          <p className="max-w-full font-inter text-xl text-gray-400 sm:max-w-[50%]">
+            Real world learning at your pace or in our learning hubs. Build the technical skills and ethical mindset
+            needed to thrive in a world shaped by technology.
+          </p>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-4 md:mt-5">
           <button
             type="button"
             onClick={handleScroll}
@@ -57,6 +62,7 @@ export function Hero({ whatWeOfferRef }: { whatWeOfferRef: RefObject<HTMLElement
             </span>
           </Link>
         </div>
+        <div className="min-h-0 flex-1" aria-hidden />
       </div>
     </section>
   );
