@@ -134,11 +134,11 @@ export function Header() {
                             className={`group block h-[124px] rounded-md border bg-[var(--color-light-bg)] p-4 transition-colors hover:border-[var(--color-edu-gold)] hover:bg-white ${active ? 'border-[var(--color-edu-gold)]' : 'border-transparent'}`}
                             initial={{ y: 0, boxShadow: '0 1px 2px rgba(15, 23, 42, 0.06)' }}
                             whileHover={{
-                              y: -2,
-                              boxShadow: '0 14px 34px -10px rgba(15, 23, 42, 0.14)',
+                              y: -1,
+                              boxShadow: '0 8px 20px -8px rgba(15, 23, 42, 0.1)',
                             }}
-                            whileTap={{ scale: 0.99 }}
-                            transition={{ type: 'spring', stiffness: 420, damping: 30 }}
+                            whileTap={{ scale: 0.995 }}
+                            transition={{ type: 'spring', stiffness: 520, damping: 38 }}
                           >
                             <div className="flex flex-col">
                               {index === 0 ? (

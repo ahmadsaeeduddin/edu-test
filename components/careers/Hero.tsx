@@ -1,18 +1,12 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative text-white pt-32 pb-48 overflow-hidden">
-      <Image
-        src="/Career.jpg"
-        alt="Careers at Edunautics"
-        fill
-        className="object-cover object-[70%_100%]"
-        priority
+    <section className="relative overflow-hidden pt-32 pb-48 text-white">
+      <div
+        className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-darkBlack),var(--color-edu-gold))]"
+        aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/80 via-amber-600/70 to-amber-700/80" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.2)_0%,transparent_60%)]" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <p className="font-general font-medium mb-6 text-lg md:text-xl ">Careers</p>

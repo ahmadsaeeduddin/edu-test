@@ -31,7 +31,7 @@ const applicationFormSchema = z.object({
       /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/,
       'Invalid phone number'
     ),
-  position: z.string().min(1, 'Please select a position'),
+  position: z.string().min(1, 'Position applying for is required'),
   linkedin: z.union([z.literal(''), z.string().url('Invalid URL')]),
   source: z.string().optional(),
   coverLetter: z.string().optional(),
@@ -156,9 +156,7 @@ export function ApplicationForm() {
               <span className="btn-dual-line__line">
                 Choose File <span className="text-gray-700">+</span>
               </span>
-              <span className="btn-dual-line__line">
-                Choose File <span className="text-gray-700">+</span>
-              </span>
+              
             </span>
           </button>
           <input
@@ -248,16 +246,14 @@ export function ApplicationForm() {
             <label htmlFor="position" className="mb-2 text-sm font-medium font-general text-gray-900">
               Position Applying For
             </label>
-            <select
+            <input
+              type="text"
               id="position"
-              className={`${inputClasses} text-gray-500 font-inter font-regular leading-relaxed ${errors.position ? 'border-red-500' : ''}`}
+              placeholder="e.g. Curriculum Developer, Software Engineer"
+              autoComplete="organization-title"
+              className={`${inputClasses} font-inter font-regular leading-relaxed ${errors.position ? 'border-red-500' : ''}`}
               {...register('position')}
-            >
-              <option value="">select an option</option>
-              <option value="developer">Developer</option>
-              <option value="designer">Designer</option>
-              <option value="educator">Educator</option>
-            </select>
+            />
             {errorText(errors.position?.message)}
           </div>
           <div className="flex flex-col">
@@ -278,7 +274,9 @@ export function ApplicationForm() {
               How did you hear about us?
             </label>
             <select id="source" className={`${inputClasses} text-gray-500 font-inter font-regular leading-relaxed`} {...register('source')}>
-              <option value="">select an option</option>
+              <option value="" disabled hidden>
+                Select an Option
+              </option>
               <option value="linkedin">LinkedIn</option>
               <option value="referral">Referral</option>
               <option value="other">Other</option>
