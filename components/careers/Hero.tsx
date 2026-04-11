@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-48 text-white">
       <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-darkBlack),var(--color-edu-gold))]"
+        className="absolute inset-0 bg-[linear-gradient(to_bottom_right,var(--color-darkBlack),var(--color-edu-gold))]"
         aria-hidden
       />
 
