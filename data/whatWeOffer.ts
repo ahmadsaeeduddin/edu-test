@@ -40,7 +40,7 @@ export const whatWeOfferPrograms: WhatWeOfferProgram[] = [
     cardDescription:
       'Learn from anywhere with flexible scheduling',
     cardImage: '/assets/WhatWeOffer/Self-Paced_Learning_Programs.webp',
-    heroImage: '/assets/Service_hero_imgs/selfpaced1.png',
+    heroImage: '/assets/Service_hero_imgs/selfpaced1.webp',
     highlights: [
       {
         heading: 'Learn anywhere. Grow everywhere',

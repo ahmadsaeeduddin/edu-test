@@ -33,6 +33,7 @@ export default function Hero() {
               fill
               className="scale-x-[-1] object-cover"
               priority
+              fetchPriority="high"
               sizes="(min-width: 568px) 40vw, 80vw"
             />
           </div>
@@ -71,6 +72,7 @@ export default function Hero() {
             fill
             className="scale-x-[-1] object-cover"
             priority
+            fetchPriority="high"
             sizes="100vw"
           />
         </div>

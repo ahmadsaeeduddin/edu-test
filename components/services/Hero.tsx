@@ -36,6 +36,7 @@ export function Hero({ program }: { program: WhatWeOfferProgram }) {
               className="object-contain object-center"
               sizes="(min-width: 768px) 28rem, 100vw"
               priority
+              fetchPriority="high"
             />
           </div>
         </div>

@@ -66,6 +66,7 @@ export default function Hero() {
               className="object-cover"
               fill
               priority
+              fetchPriority="high"
               sizes="(min-width: 768px) 40vw, 100vw"
               src="/assets/hero-images/about-us-hero.webp"
             />
@@ -87,6 +88,7 @@ export default function Hero() {
               className="object-cover"
               fill
               priority
+              fetchPriority="high"
               sizes="100vw"
               src="/assets/hero-images/about-us-hero.webp"
             />
